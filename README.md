@@ -1,6 +1,6 @@
 # FI - Transports
 
-![Main logo](images\traffic-189115_1280.jpg)
+![Main logo](./images/traffic-189115_1280.jpg)
 
 Ce projet a été développé dans le cadre du cours "Fiction Interactive", dispensé par Isaac Pante (SLI, Lettres, UNIL).
 
