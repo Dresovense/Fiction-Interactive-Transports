@@ -1,0 +1,1147 @@
+:: StoryTitle
+FI - transports
+
+
+:: StoryData
+{
+  "ifid": "AB8632C3-668F-45D2-989D-E5E3DD12DCC2",
+  "format": "Harlowe",
+  "format-version": "3.3.8",
+  "start": "Situation initiale",
+  "zoom": 1
+}
+
+
+:: \ drive1 {"position":"425,0","size":"100,100"}
+
+
+
+:: \ end {"position":"6100,500","size":"100,100"}
+Voici les résultats du jeu:
+
+- Ecologie : $ecologie
+(if:$ecologie < 4)[Il faut faire des efforts au niveau écologique, c'est pas très bien de prendre autant la voiture.](else-if: $ecologie < 7)[Des efforts ont été faits, on peut pas demander beaucoup plus!](else:)[Wow! T'es un champion de l'écologie!]
+
+- Santé: $sante
+(if:$sante < 4)[Il faut savoir prendre des pauses parfois. Les études ce n'est pas tout! Il faut prendre soin de soi-même](else-if:$sante < 7)[Comme-ci comme-ça. On est en forme, mais on pourrait toujours aller mieux!](else:)[Tu as fini le jeu en pleine forme! Aller bien c'est le plus important!]
+
+- Alex: (if: $alex is true)[Tu as pu développer une relation avec Alex!](else:)[Malheureusement, Alex n'es toujours que ton crush]
+
+- Examen : $revision
+(if:$revision < 5)[Tu n'as vraiment pas beaucoup étudié. C'est pas comme ça que tu vas passer l'année, ...](else-if: $revision < 7)[(if:$examen is true)[Tu as travaillé assez pour passer. Bien joué!](else:)[Bien que t'aies travaillé assez pour passer, ta santé était trop faible pour être à l'aise à l'examen. Il faut aussi savoir prendre soin de soi-même!]](else:)[Facile les études pour toi! Bien joué!]
+
+
+
+Merci d'avoir joué.
+
+
+[[Rejouer ->Situation initiale]]
+
+
+:: \ fin-hopital {"position":"2350,0","size":"100,100"}
+Un an plus tard je n'ai plus vraiment de séquelles, mais cette expérience m'a traumatisé. Il va sans dire que j'ai perdu tout le semestre et qu'il faudra recommencer mon expérience universitaire.
+
+[[Rejouer ->Situation initiale]] 
+
+
+:: \ jeudi-accepter-Lou {"position":"4375,625","size":"100,100"}
+(set: $soiree to "Lou")
+Il faut que je me détende. Je dis donc à Lou que je serai présent. Bien qu'elle m'ai proposé de m'y amener en voiture, peut-être que c'est mieux que je prenne la mienne, ou bien que j'aille en transports, afin de rentrer quand je veux. Si ça se trouve, je n'aurais pas envie de faire très tard et embêter mon amie pour rentrer tôt. D'un autre côté, les transports ne sont pas très fiables pendant la nuit.
+
+(set: $choice1 to "Accepter d'aller en voiture avec Lou (~22 min)")
+(event: when time > 4500)[(replace: $choice1)[[[$choice1 -> jeudi-soiree-voiture-Lou]]]]$choice1
+
+(set: $choice2 to "Aller en transports publics (~50 min)")
+(event: when time > 10000)[(replace: $choice2)[[[$choice2 -> jeudi-soiree-bus]]]]$choice2
+
+(set: $choice3 to "Prendre mon SUV (~20 min")
+(event: when time > 4000)[(replace: $choice3)[[[$choice3 -> jeudi-soiree-voiture]]]]$choice3
+
+
+
+:: \ jeudi-accepter-alex {"position":"4375,250","size":"100,100"}
+(set: $soiree to "Alex")
+Il faut que je me détende et j'ai très envie de voir Alex. Ainsi, je lui dis que je serai présent. J'hésite entre prendre ma voiture ou aller en bus. Je risque de ne plus avoir moyen de rentrer en allant en transports, mais si je vais en voiture je pourrais moins en profiter. 
+
+(set: $choice2 to "Aller en transports publics (~50 min)")
+(event: when time > 10000)[(replace: $choice2)[[[$choice2 -> jeudi-soiree-alex-bus]]]]$choice2
+
+(set: $choice3 to "Prendre mon SUV (~20 min)")
+(event: when time > 4000)[(replace: $choice3)[[[$choice3 -> jeudi-soiree-alex-voiture]]]]$choice3
+
+
+
+:: \ jeudi-fete {"position":"4725,675","size":"100,100"}
+(set: $sante to $sante + 1)
+La soirée est vraiment cool. Les gens dansent, rient, boivent. On s’éclate. 
+
+- Lou : Hey! Josh a préparé son fameux cocktail : le Columbia Queen. Faut qu’tu l’goûtes!
+- Moi : Il est à quoi ?
+- Lou : Jus de cranberries, vodka, une pointe de sirop d’érable et un ingrédient secret ;).
+- Moi : Hmm, je vais réfléchir…
+
+[[Boire le //Columbia Queen// -> jeudi-soiree-columbia]]
+[[Ne pas boire le //Columbia Queen// -> jeudi-soiree-pas-boire]]
+
+
+
+:: \ jeudi-fete-alex {"position":"4800,225","size":"100,100"}
+(set: $sociabilite to $sociabilite + 1)
+(set: $sante to $sante + 1)
+(if: $sociabilite >= 5)[
+(set:$alex to true)
+La soirée se passe hyper bien. Alex m’a pris à part, dans le jardin derrière la maison. 
+
+- Alex : Je me sens bien avec toi.
+- Moi : Moi aussi.
+
+On s’est embrassé. Je suis heureux et me sens apaisé. Je vais à l’examen avec la tête moins lourde.
+
+Cette soirée était vraiment magique, mais je dois pas oublier mon examen de demain. Ainsi, il faut malheureusement que je rentre.
+](else:)[
+La soirée s'est bien passée, mais je n'ai pas pu avoir un moment seul à seul avec Alex. Mais bon, je suis déjà content qu'il ait pensé à m'inviter à la soirée ! On aura du temps pour nous une autre fois.
+
+Il se fait tard, c'est peut-être le moment de rentrer.
+]
+(if: $transportFete is "voiture")[
+J'étais venu en voiture, donc j'ai évité de beaucoup boire. Je peux essayer de rentrer dans cet état, mais c'est peut-être mieux si je dors ici. Il y a pas de chambres libres, donc faudrait dormir dans la voiture. 
+
+(set: $choice1 to "Rentrer à la maison (~30 min)")
+(event: when time > 6000)[(replace: $choice1)[[[$choice1 -> jeudi-retour-seul-voiture]]]] $choice1
+[[Dormir dans la voiture -> vendredi-réveil-voiture]] 
+](else:)[
+C'est bien trop tard, il y a plus de bus à ce moment. Peut-être que quelqu'un pense rentrer maintenant et pourrait me ramener ? Je crois que c'est mon seul choix, il y a nulle part où dormir ici et il faudrait que je repasse par chez moi demain avant d'aller à l'examen. Heureusement, il y a quelqu'un qui est d'accord de m'amener. Il a l'air fatigué, mais ça devrait le faire
+
+(set: $choice2 to "Rentrer à la maison avec la personne (~30 min)")
+(event: when time > 6000)[(replace: $choice2)[[[$choice2 -> jeudi-rentrer-covoiture]]]] $choice2
+]
+
+
+:: \ jeudi-refuser-Lou {"position":"4375,500","size":"100,100"}
+(set: $sante to $sante - 1)
+On peut pas faire mieux pour une journée banale… J'ai soupé et je suis allé me coucher à 21h30. Il faut être en forme pour demain.
+
+[[Aller dormir -> vendredi-réveil]]
+
+
+:: \ jeudi-refuser-alex {"position":"4375,375","size":"100,100"}
+(set: $sante to $sante - 1)
+(set: $sociabilite to $sociabilite - 1)
+
+On peut pas faire mieux pour une journée banale… Alex devra attendre pour son bisou. Les études sont plus importantes que l’amour ? C’est une question en suspens… Dans tous les cas et quelque soit la réponse, j'ai soupé et je suis allé me coucher à 21h30.
+
+[[Aller se coucher -> vendredi-réveil]] 
+
+
+:: \ jeudi-rentrer-Lou {"position":"5025,525","size":"100,100"}
+(set: $mort to (random:1, 10))
+
+(if:$mort is 10)[
+On rentre dans la voiture de Lou. Toutefois, à travers le peu d'esprit qui me reste, je sens quelque chose qui cloche. Lou n'avais pas bu autant que moi, mais elle avait quand même pas mal bu non? Alors que j'essaie de formuler ces pensées, je ressents un lourd choc et une violente douleur. La voiture a cessé d'avancer. Heureusement, des passants ont vu la scène et appellent l'ambulance.
+[[C'est la fin -> fin-hopital]]
+](else:)[
+On rentre dans la voiture de Lou. Toutefois, à travers le peu d'esprit qui me reste, je sens quelque chose qui cloche. Lou n'avais pas bu autant que moi, mais elle avait quand même pas mal bu non? Heureusement, la rentrée s'est passé sans trop de problèmes, mais je devrais lui en parler demain, un jour ça pourrait mal se passer.
+[[Rentrer à la maison -> vendredi-réveil]]
+]
+
+
+:: \ jeudi-rentrer-covoiture {"position":"4925,150","size":"100,100"}
+(set: $mort to (random:1, 10))
+
+(if:$mort is 10)[
+On rentre dans sa voiture. Toutefois, à travers le peu d'esprit qui me reste, je sens quelque chose qui cloche. Il me semblait que la personne était juste fatiguée, mais peut-être qu'elle avait aussi bu? Alors que j'essaie de formuler ces pensées, je ressents un lourd choc et une violente douleur. La voiture a cessé d'avancer. Heureusement, des passants ont vu la scène et appellent l'ambulance.
+[[C'est la fin -> fin-hopital]]
+]
+(else:)[
+On rentre dans sa voiture. La personne était plaisante, et on discute un peu pour qu'elle reste réveillée. On se reverra probablement jamais, mais c'était un voyage sympathique et heureusement que la personne n'avait pas bu.
+[[Rentrer à la maison -> vendredi-réveil]]
+]
+
+
+:: \ jeudi-retour-seul-voiture {"position":"4975,850","size":"100,100"}
+(set: $mort to (random:1, 5))
+
+(if:$mort is 5)[
+Je ne suis clairement pas en état de prendre la voiture. Je le sais, mais mon esprit est trop flou pour que j'en ai pleinement conscience. Alors que j'essaie de formuler ces pensées, je ressents un lourd choc et une violente douleur. La voiture a cessé d'avancer. Heureusement, des passants ont vu la scène et appellent l'ambulance.
+[[C'est la fin -> fin-hopital]]
+](else:)[
+Je ne suis clairement pas en état de prendre la voiture. Je le sais, mais mon esprit est trop flou pour que j'en ai plainement conscience. Heureusement, la rentrée s'est passé sans trop de problèmes, mais c'est la dernière fois que je me mets autant en danger..
+[[Rentrer à la maison -> vendredi-réveil]]
+]
+
+
+:: \ jeudi-reveil {"position":"4200,400","size":"100,100"}
+(set: $revision to $revision + 1)
+J'ai pu me lever tard aujourd'hui. En effet, j'ai pas de cours! J'ai même pu avancer tranquillement sur mes révisions.
+
+Après deux heures de travail, je suis à bout. Je sens que je dois me vider la tête, m'amuser un peu.
+
+(if: $sociabilite < 2)[
+Et, alors que je pensais à sortir, je reçois un message. Lou m’a écrit pour m’inviter à une soirée étudiants ce soir chez une connaissance. J’hésite à y aller car j’ai mon examen demain, mais d’un autre côté, je sens que j’ai aussi besoin de me détendre et de passer un bon moment. Lou m’a dit qu’elle viendra en voiture et qu’elle pourra me raccompagner à la maison. Après tout ce n’est qu’une petite soirée…
+[[Accepter l'invitation de Lou -> jeudi-accepter-Lou]]
+[[Refuser l'invitation de Lou -> jeudi-refuser-Lou]]
+](else:)[
+Et, alors que je pensais à sortir, je reçois un message. Alex m’a écrit pour m’inviter à une soirée étudiants ce soir chez une connaissance. J’hésite à y aller car j’ai mon examen demain, mais d’un autre côté, je sens que j’ai aussi besoin de me détendre et de passer un bon moment en compagnie d’Alex. Je sens qu’on s’apprécie bien. Après tout ce n’est qu’une petite soirée…
+
+[[Accepter l'invitation d'Alex -> jeudi-accepter-alex]]
+[[Refuser l'invitation d'Alex -> jeudi-refuser-alex]]
+]
+
+
+:: \ jeudi-soiree-alex-bus {"position":"4575,150","size":"100,100"}
+(set: $ecologie to $ecologie + 1)
+
+Je prends les transports et j'arrive à la soirée un peu moins d'une heure plus tard. 
+
+(set: $transportFete to "bus")
+[[Allons faire la fête! -> jeudi-fete-alex]]
+
+
+:: \ jeudi-soiree-alex-voiture {"position":"4575,275","size":"100,100"}
+(set: $ecologie to $ecologie - 1)
+
+Je préfére pouvoir partir quand je veux. Toutefois, ça voudra dire que je ne pourrais pas boire. C'est peut-être pour le mieux, j'ai un examen demain de toute manière.
+(set: $transportFete to "voiture")
+[[Allons faire la fête! -> jeudi-fete-alex]]
+
+
+:: \ jeudi-soiree-bus {"position":"4575,575","size":"100,100"}
+(set: $ecologie to $ecologie + 1)
+Je prends les transports et j'arrive à la soirée un peu moins d'une heure plus tard. 
+
+(set: $transportFete to "bus")
+[[Allons faire la fête! -> jeudi-fete]]
+
+
+:: \ jeudi-soiree-columbia {"position":"4850,725","size":"100,100"}
+(set: $sante to $sante - 1)
+(set: $malade to (random:1, 3))
+
+(if: $malade is 3)[
+(set: $sante to 2)
+Ce cocktail est vraiment bon, mais il a un arrière-goût bizarre. 
+
+//5 minutes plus tard//
+
+J’ai la tête qui tourne. Je me sens vraiment pas bien. Il faut que j’aille prévenir Lou et que je sache quel est cet ingrédient secret. 
+
+- Moi : Lou ! J’ai envie de vomir, ce cocktail m’a mis dans un sale état. Il faut que je prenne un médicament. Tu peux demander à Josh quel est son ingrédient secret ?
+- Lou : Oui bien sûr. Assieds-toi sur cette chaise. Je vais lui demander
+ 
+ //J'attends un petit moment, Josh revient avec Lou//
+ 
+- Josh : Euh, t’as mauvaise mine …
+- Moi : Ah bon ?! J’étais pas au courant. Non mais sérieux t’as mis quoi dedans ? Je me sens super mal. 
+- Josh : Alors… bon ça m’embête de révéler mon secret, mais c’est de l’huile de crotale (serpent)…
+- Lou et moi : QUOI ?! 
+- Moi : Mais tu rigoles j’espère !
+- Josh : Non, malheureusement…
+- Lou : Et comment on soigne ça ?
+- Josh : Aucune idée. C’est la première fois que ça arrive…
+- Moi à Lou : Lou, il faut que tu m’emmènes aux urgences. Mon ventre me fait un mal de chien.
+- Lou : Oui, bien sûr. Josh t’es vraiment nul !
+
+On se rend aux urgences à 23h00 et un médecin me voit deux heures plus tard. Heureusement, ce n'est rien de grave, mais je ne suis pas à la maison avant 4h.
+
+[[Le lendemain, ... -> vendredi-reveil-hopital]]
+](else:)[
+Ce cocktail est vraiment bon, mais il a un arrière-goût bizarre. 
+
+J'ai un peu mal au ventre après l'avoir bu, mais c'est sûrement à cause de l'alcool. C'est peut-être le moment d'arrêter de boire et de gentillement rentrer.
+
+(if: $transportFete is "voiture")[
+C'est vrai que j'étais venu en voiture, j'aurais pas dû boire autant. Je peux essayer de rentrer dans cet état, mais c'est peut-être mieux si je dors ici. Il y a pas de chambres libres, donc faudrait dormir dans la voiture. 
+
+(set: $choice1 to "Rentrer à la maison (~30 min)")
+(event: when time > 6000)[(replace: $choice1)[[[$choice1 -> jeudi-retour-seul-voiture]]]] $choice1
+[[Dormir dans la voiture -> vendredi-réveil-voiture]] 
+](else-if: $transportFete is "bus")[
+C'est bien trop tard, il y a plus de bus à ce moment. Lou m'avait proposer de rentrer avec elle, peut-être qu'elle peut me ramener ? Je crois que c'est mon seul choix, il y a nulle part où dormir ici et il faudrait que je repasse par chez moi demain avant d'aller à l'examen.
+
+(set: $choice2 to "Rentrer à la maison avec Lou (~30 min)")
+(event: when time > 6000)[(replace: $choice2)[[[$choice2 -> jeudi-rentrer-Lou]]]] $choice2
+](else-if: $transportFete is "Lou")[
+Je vais dire à Lou que j'aimerais rentrer, et elle a l'air d'être plutôt d'accord. Elle aussi commence à fatiguer. 
+(set: $choice2 to "Rentrer à la maison avec Lou (~30 min)")
+(event: when time > 6000)[(replace: $choice2)[[[$choice2 -> jeudi-rentrer-Lou]]]] $choice2
+]
+]
+
+
+:: \ jeudi-soiree-pas-boire {"position":"4850,600","size":"100,100"}
+(if: $transportFete is "voiture")[
+Je suis venu en voiture, boire ce n'est probablement pas la meilleure des idées. Et en plus, qui sait ce que Josh a mis dans son cocktail? Je le sens pas.
+
+- Moi : Lou, j'ai pas envie de boire ce soir, j'ai la bagnole. Et en parlant de ça, il commence à se faire tard, je vais rentrer bientôt. T'as besoin que je te ramène?
+- Lou : Responsable? Toi? L'université t'as bien changé! Merci pour la proposition, mais je vais encore rester un moment. Rentre bien!
+
+(set: $choice1 to "Rentrer à la maison (~20 min)")
+(event: when time > 4000)[(replace: $choice1)[[[$choice1 -> vendredi-réveil]]]] $choice1
+](else-if: $transportFete is "bus")[
+J’ai déjà assez bu. Et en plus qui sait ce que Josh a mis dans son cocktail, je le sens pas. 
+
+- Moi : Lou, j’ai pas envie de boire le cocktail. D’ailleurs il se fait tard, je vais bientôt rentrer.
+- Lou : Ah! Déjà? Tu veux pas rester encore un moment?
+- Moi : Non, demain j'ai un exa, faudrait pas que je sois trop fatigué.
+- Lou : T'es venu en bus non? T'as encore des transports à cette heure ci?
+
+Je regarde sur mon téléphone et Lou a raison. Le dernier bus est parti il y a 20 minutes.
+
+- Moi : Mince, plus de bus.
+- Lou : Reste encore une heure et je te ramène à la maison!
+
+Une heure passe et je bois encore un peu. Après avoir fait le tour de la soirée 2 fois, on est enfin prêts à partir.
+
+(set: $choice2 to "Rentrer à la maison avec Lou (~30 min)")
+(event: when time > 6000)[(replace: $choice2)[[[$choice2 -> jeudi-rentrer-Lou]]]] $choice2
+](else-if: $transportFete is "Lou")[
+J’ai déjà assez bu. Et en plus qui sait ce que Josh a mis dans son cocktail, je le sens pas.
+
+- Moi : Lou, j’ai pas envie de boire le cocktail. D’ailleurs il se fait tard, faut que je rentre bientôt. T’es toujours ok pour me raccompagner chez moi ?
+- Moi : Pas de soucis, je te ramène à la maison.
+
+Après avoir fait le tour de la soirée 2 fois, on est enfin prêts à partir.
+
+(set: $choice2 to "Rentrer à la maison avec Lou (~30 min)")
+(event: when time > 6000)[(replace: $choice2)[[[$choice2 -> jeudi-rentrer-Lou]]]] $choice2
+]
+
+
+:: \ jeudi-soiree-voiture {"position":"4575,675","size":"100,100"}
+(set: $ecologie to $ecologie - 1)
+Je préfére pouvoir partir quand je veux. Toutefois, ça voudra dire que je ne pourrais pas boire. C'est peut-être pour le mieux, j'ai un examen demain de toute manière.
+(set: $transportFete to "voiture")
+[[Allons faire la fête! -> jeudi-fete]]
+
+
+:: \ jeudi-soiree-voiture-Lou {"position":"4575,775","size":"100,100"}
+Lou arrive quelques minutes après l'heure de rendez-vous. La ponctualité n'a jamais été son point fort! On se met en route pour la soirée, et elle me parle de ses amis qui y seront.
+(set: $transportFete to "Lou")
+[[Allons faire la fête! -> jeudi-fete]]
+
+
+:: \ lundi-Alex-matin {"position":"700,300","size":"100,100"}
+(set: $sociabilite = $sociabilite + 1)
+(set: $sante = $sante + 1)
+Je salue Alex qui me salue chaleureusement en retour. Il m'invite à aller à la cafète, chose que jt'accepte volontiers afin de passer du temps avec lui (et parce que la faim commence à se faire sentir). Notre discussion se poursuit jusqu'à 8h, heure à laquelle on se sépare pour suivre nos cours respectifs
+
+[[Aller en cours -> lundi-cours1-bus-alex]]
+
+
+:: \ lundi-café-alex {"position":"925,500","size":"100,100"}
+(set: $sociabilite to $sociabilite + 1)
+C'est la première fois que je suis allé à un café seul à seul avec Alex. J'espère que je n'ai pas eu l'air trop nerveux. On a bien discuté pendant une heure avant que chacun parte de son côté. J'espère avoir l'opportunité de refaire ça dans le futur!
+
+L'endroit avait été particulièrement bien trouvé par Alex. Le donut était trop bon et le nouveau café est super joli. Ca a fait du bien de sortir, surtout après une longue journée de cours comme celle-ci!
+
+(set: $choice1 to "Il est temps de rentrer (~70 min)")
+(event: when time > 14000)[(replace: $choice1)[[[$choice1 -> lundi-maison-soir]]]]$choice1
+
+
+:: \ lundi-café-lou-bus {"position":"925,400","size":"100,100"}
+(set: $sante to $sante + 1)
+Ca faisait un bout de temps que je n'avais plus vu mon amie Lou! C'est vrai que depuis qu'on est rentrés à l'université on se voit moins étant donné que nous avons des majeurs différents. Elle m'avait bien manquée! 
+
+Comme d'habitude, Lou est à la pointe sur les tendences. Le donut était trop bon et le nouveau café est super joli. Ca a fait du bien de sortir, surtout après une longue journée de cours comme celle-ci!
+
+(set: $choice1 to "Il est temps de rentrer (~70 min)")
+(event: when time > 14000)[(replace: $choice1)[[[$choice1 -> lundi-maison-soir]]]]$choice1
+
+
+:: \ lundi-café-lou-suv {"position":"925,600","size":"100,100"}
+(set: $sante to $sante + 1)
+Ca faisait un bout de temps que je n'avais plus vu mon amie Lou! C'est vrai que depuis qu'on est rentrés à l'université on se voit moins étant donné que nous avons des majeurs différents. Elle m'avait bien manquée! 
+
+Comme d'habitude, Lou est à la pointe sur les tendences. Le donut était trop bon et le nouveau café est super joli. Ca a fait du bien de sortir, surtout après une longue journée de cours comme celle-ci!
+
+J'ai pris la voiture, donc j'ai pu passer encore un moment avec Lou pendant que je la ramenais!
+
+(set: $choice1 to "Il est temps de rentrer (~40 min)")
+(set: $ecologie to $ecologie - 1)
+(event: when time > 8000)[(replace: $choice1)[[[$choice1 -> lundi-maison-soir]]]]$choice1
+
+
+:: \ lundi-campus-bus {"position":"600,100","size":"100,100"}
+(set: $ecologie to $ecologie + 1)
+Je me dépêche de prendre le bus et je pars en direction du campus. La route me prend presque une heure et j'ai dû faire un changement. Je profite de ce temps pour avancer une série que je regarde, ce n'est donc pas vraiment du temps perdu!
+
+Le bus arrive au campus juste à temps pour le début des cours! Il ne faut pas être en retard!
+
+[[Aller en cours -> lundi-cours1-bus-lou]] 
+
+
+:: \ lundi-campus-bus-tard {"position":"600,400","size":"100,100"}
+(set: $ecologie to $ecologie + 1)
+(set: $sante to $sante + 1)
+Je me dépêche de prendre le bus et je pars en direction du campus. La route me prend presque une heure et j'ai dû faire un changement. Je profite de ce temps pour avancer une série que je regarde, ce n'est donc pas vraiment du temps perdu! Toutefois, je commence à avoir faim, et je pourrai pas manger avant la fin du premier cours!
+
+Le bus arrive au campus juste à temps pour le début des cours! Il ne faut pas être en retard!
+
+[[Aller en cours -> lundi-cours1-bus-lou]] 
+
+
+:: \ lundi-campus-bus-tot {"position":"600,300","size":"100,100"}
+(set: $ecologie to $ecologie + 1)
+Je me dépêche de prendre le bus et je pars en direction du campus. La route me prend presque une heure et j'ai dû faire un changement. Je profite de ce temps pour avancer une série que je regarde, ce n'est donc pas vraiment du temps perdu!
+
+Etant donné que j'ai pris un bus plus tôt, je suis arrivé 30 minutes avant le début des cours. Je peux profiter de ce temps pour avancer mes révisions! D'un autre côté, ... j'aperçois Alex qui sort d'un bus arrivé au même temps que le mien. Je l'ai recontré au début du semestre et on est rapidement devenus amis. Pourtant, j'aimerais parfois que ça aille plus loin.
+
+[[Sociabiliser avec Alex -> lundi-Alex-matin]]
+[[Aller en cours -> lundi-cours1-bus-lou]] 
+
+
+:: \ lundi-campus-suv {"position":"600,200","size":"100,100"}
+(set: $traffic to (random:1, 4))
+(set: $ecologie to $ecologie - 1)
+(if:$traffic < 4)[
+Je roule pendant un petit moment, la musique à fond, ce qui me détend un peu. J'ai eu de la chance, pas de gros traffic aujourd'hui.
+
+En arrivant sur le campus, je regarde un peu aux alentours en essayant de trouver mon ami Alex. Je l'as rencontré au début du semestre et on est rapidement devenus amis, mais j'aimerais parfois que ça pourrait aller plus loin. Toutefois, je ne vois personne et décide donc de profiter pour réviser. Je le verrais sûrement pendant la journée. 
+(set: $sante to $sante + 1)
+(set: $revision to $revision + 1)
+](if:$traffic >= 4)[
+Malheureusement, je suis tombé sur un mauvais jour: je tombe sur les bouchons et sur chaque feu rouge. J'ai beau mettre ma playlist préférée, cette situation me stresse.
+
+J'arrive sur le campus juste à temps pour le cours. 
+(set: $sante to $sante - 1)
+]
+
+[[Aller en cours -> lundi-cours1-suv-lou]]
+
+
+:: \ lundi-cours1-bus-alex {"position":"800,400","size":"100,100"}
+Le reste du lundi se passe ... comme un lundi. Les cours à 8h, c'est quand même très dur, mais faut bien tenir jusqu'à vendredi!
+
+Lorsque j'ai bu le café avec Alex ce matin, il m'a proposé d'aller visiter le tout nouveau café du centre-ville avec lui. J'ai senti un petit noeud se former dans mon ventre, et lui ai répondu précipitement que je serais ravi, mais que tu reconfirmerais à la fin des cours, dans le cas où je préférerais étudier à la place ou bien rentrer plus tôt.
+
+
+[[Réviser à la bibliothéque de l'université -> lundi-reviser-bus]]
+(set: $choice2 to "Aller au café avec Alex (~20 min)")
+(event: when time > 4000)[(replace: $choice2)[[[$choice2 -> lundi-café-alex]]]]$choice2
+(set: $choice1 to "Je préfére rentrer (~60 min)")
+(event: when time > 12000)[(replace: $choice1)[[[$choice1 -> lundi-rentrer-bus]]]]$choice1
+
+
+:: \ lundi-cours1-bus-lou {"position":"800,300","size":"100,100"}
+Le reste du lundi se passe ... comme un lundi. Les cours à 8h, c'est quand même très dur, mais faut bien tenir jusqu'à vendredi!
+
+J'ai mangé à midi avec mon amie Lou et elle m'a proposé d'aller manger un donut dans le nouveau café du centre-ville. Je lui ai dit que je reconfirmerais à la fin des cours dans le cas où je préférerais profiter pour étudier à la place. De plus, j'ai pris le bus ce matin. Ce petit détour risque de me coûter 30 minutes de plus en transports pour rentrer! 
+
+
+[[Réviser à la bibliothéque de l'université -> lundi-reviser-bus]]
+(set: $choice2 to "Aller au café avec Lou (~20 min)")
+(event: when time > 4000)[(replace: $choice2)[[[$choice2 -> lundi-café-lou-bus]]]]$choice2
+(set: $choice1 to "Cette journée m'a fatigué, je préfére rentrer (~60 min)")
+(event: when time > 12000)[(replace: $choice1)[[[$choice1 -> lundi-rentrer-bus]]]]$choice1
+
+
+:: \ lundi-cours1-suv-lou {"position":"800,200","size":"100,100"}
+Le reste du lundi se passe ... comme un lundi. Les cours à 8h, c'est quand même très dur, mais faut bien tenir jusqu'à vendredi!
+
+J'ai mangé à midi avec mon amie Lou et elle m'a proposé d'aller manger un donut dans le nouveau café du centre-ville. Je lui ai dit que je reconfirmerais à la fin des cours dans le cas où je préférerais profiter pour étudier à la place. De plus, j'ai pris le suv ce matin. Je peux amener mon amie chez elle sans que me fasse un grand détour! Heureusement que je l'ai pris, c'est plutôt pratique!
+
+
+[[Réviser à la bibliothéque de l'université -> lundi-reviser-suv]]
+(set: $choice2 to "Aller au café avec Lou (~10 min)")
+(event: when time > 2000)[(replace: $choice2)[[[$choice2 -> lundi-café-lou-suv]]]]$choice2
+(set: $choice1 to "Je préfére rentrer (~30 min)")
+(event: when time > 6000)[(replace: $choice1)[[[$choice1 -> lundi-rentrer-suv]]]]$choice1
+
+
+:: \ lundi-maison-soir {"position":"1075,350","size":"100,100"}
+J'arrive enfin chez moi après avoir passé du bon temps dans le café. Je dois désormais faire à manger, mais avec cette sortie, l'envie de le faire me manque. Je pourrais toujours commander quelque chose?
+
+[[Flemme, je vais commander des sushis (set: $sante to $sante + 1) -> lundi-soir-commande]]
+[[C'est parti pour la cuisine! (set: $sante to $sante - 1)-> lundi-soir-cuisine]]
+
+
+:: \ lundi-manger {"position":"500,150","size":"100,100"}
+(set: $heure to "6h50")
+Je mange rapidement deux toasts, bois mon café, et je suis prêt à commencer pleinement ma journée.
+
+Les cours commencent à 8h et mon bus part dans 5 minutes. Toutefois, réviser un peu avant le cours ne serait pas de refus.
+
+(set: $choice1 to "Je prends mon SUV jusqu'au campus (~30 min)")
+(set: $choice2 to "Je préfére prendre les transports publics (~60 min)")
+
+(event: when time > 6000)[(replace: $choice1)[[[$choice1 -> lundi-campus-suv]]]] $choice1
+
+(event: when time > 12000)[(replace: $choice2)[[[$choice2 -> lundi-campus-bus]]]]$choice2
+
+
+
+:: \ lundi-pas-manger {"position":"500,250","size":"100,100"}
+(set: $sante to $sante - 1)
+A quoi bon manger? Si vraiment je peux toujours aller à la cafétéria du campus! Le plus important maintenant est l'examen de vendredi!
+
+Un bus part bientôt, mais il prend un moment avant d'arriver. Je pourrais aller en voiture et avoir encore plus de temps!
+
+(set: $choice1 to "Je prends mon SUV jusqu'au campus (~30 min)")
+(set: $choice2 to "Je préfére prendre les transports publics (~60 min)")
+
+(event: when time > 6000)[(replace: $choice1)[[[$choice1 -> lundi-campus-suv]]]] $choice1
+
+(event: when time > 12000)[(replace: $choice2)[[[$choice2 -> lundi-campus-bus-tot]]]]$choice2
+
+
+
+:: \ lundi-rentrer-bus {"position":"1075,175","size":"100,100"}
+Epuisé, je décide de prendre le bus pour rentrer. Ce dernier me semble encore plus interminable que d'habitude, mais je n'ose pas fermer les yeux par peur de rater mon arrêt.
+
+(set: $sante to $sante - 1)
+(set: $ecologie to $ecologie + 1)
+En arrivant chez moi je décide de manger quelque chose. Je pourrais profiter pour me reposer un peu et commander un repas sur Oberfeats, ou bien préparer quelque chose par moi même!
+
+[[Flemme, je vais commander des sushis -> lundi-soir-commande]]
+[[C'est parti pour la cuisine! -> lundi-soir-cuisine]]
+
+
+:: \ lundi-rentrer-suv {"position":"1025,50","size":"100,100"}
+Je suis fatigué et j'ai donc préféré rentrer plus tôt. Rien de mal à ça, il faut aussi savoir prendre du temps pour soi!
+(set: $traffic to (random:1, 4))
+(set: $ecologie to $ecologie - 1)
+(if:$traffic <= 2)[
+J'ai de la chance, pas de traffic au retour!
+(set: $sante to $sante + 1)
+](if:$traffic > 2)[
+Malheureusement, je roule pile à la mauvaise heure et les bouchons s'accumulent. Cela me provoque un sentiment de nervosité.
+(set: $sante to $sante - 1)
+]
+
+En arrivant chez moi je décide de manger quelque chose. Je pourrais profiter pour me reposer un peu et commander un repas sur Oberfeats, ou bien préparer quelque chose par moi-même!
+
+[[Flemme, je vais commander des sushis -> lundi-soir-commande]]
+[[C'est parti pour la cuisine! -> lundi-soir-cuisine]]
+
+
+:: \ lundi-reviser-bus {"position":"925,300","size":"100,100"}
+(set: $revision = $revision + 1)
+J'ai bien fait d'aller réviser, le plus important est de passer l'examen vendredi. Je pourrais toujours retourner au café après les révisions!
+
+(set: $choice1 to "Il est temps de rentrer (~60 min)")
+(event: when time > 12000)[(replace: $choice1)[[[$choice1 -> lundi-rentrer-bus]]]]$choice1
+
+
+:: \ lundi-reviser-suv {"position":"925,200","size":"100,100"}
+(set: $revision = $revision + 1)
+J'ai bien fait d'aller réviser, le plus important est de passer l'examen vendredi. Je pourrais toujours retourner au café après les révisions!
+
+(set: $choice1 to "Il est temps de rentrer (~30 min)")
+(event: when time > 6000)[(replace: $choice1)[[[$choice1 -> lundi-rentrer-suv]]]]$choice1
+
+
+:: \ lundi-soir-commande {"position":"1225,100","size":"100,100"}
+(set: $ecologie = $ecologie - 1)
+C'est vrai que c'est pas mal de juste relaxer. Je savoure mes sushis, je regarde un petit film avec Leonard Dicaprisun et je me couche vers 22h30
+
+[[Passer au jour suivant -> mardi-réveil]]
+
+
+:: \ lundi-soir-cuisine {"position":"1225,250","size":"100,100"}
+Je me prépare un bon plat de pâtes aux champignons. Je le savoure en regardant un petit film avec Leonard Dicaprisun et je me couche vers 22h30.
+
+[[Passer au jour suivant -> mardi-réveil]]
+
+
+:: \ lundi-tard {"position":"400,400","size":"100,100"}
+Je me suis laissé aller et il faut que je me dépêche si je veux prendre le bus. Malheureusement, je dois faire un choix entre manger et m'habiller, choix que je fais rapidement. Pas de café ce matin! A part si je choisis de prendre la voiture à la place!
+
+(set: $choice1 to "Je prends mon SUV jusqu'au campus (~30 min)")
+(set: $choice2 to "Tant pis pour le café, je préfére prendre les transports publics (~60 min)")
+
+(event: when time > 6000)[(replace: $choice1)[[[$choice1 -> lundi-campus-suv]]]] $choice1
+
+(event: when time > 12000)[(replace: $choice2)[[[$choice2 -> lundi-campus-bus-tard]]]]$choice2
+
+
+
+:: \ lundi-tot {"position":"400,200","size":"100,100"}
+Je me suis levé sacrément tôt ! Je m'habille en 10 minutes et suis prêt à prendre mon petit déjeuner. Mais en vrai, je pourrais partir un peu en avance et réviser avant les cours.
+
+[[Manger le matin c'est important -> lundi-manger]]
+[[L'examen c'est bientot -> lundi-pas-manger]] 
+
+
+:: \ mardi-avant-midi {"position":"1675,500","size":"100,100"}
+Je suis enfin prêt, il est temps d'aller voir Papa et Maman. C'est vrai que ça fait un moment. Ils habitent pas très loin, j'aurais même pu y aller à pied, mais une partie du chemin n'a pas de trottoir. Sinon, il y a toujours la solution du bus ou de prendre la voiture.
+
+(set: $choice1 to "Je n'ai pas envie d'attendre le bus, allons à pied! (~10 min)")
+(set: $choice2 to "Je dois attendre un peu, mais prenons le bus (~15 min)")
+(set: $choice3 to "Autant prendre la voiture, je dois aller en cours après (~5 min)")
+
+(event: when time > 2000)[(replace: $choice1)[[[$choice1 -> mardi-parents-pied]]]]$choice1
+
+(event: when time > 3000)[(replace: $choice2)[[[$choice2 -> mardi-parents-bus]]]]$choice2
+
+(event: when time > 1000)[(replace: $choice3)[[[$choice3 -> mardi-parents-voiture]]]]$choice3
+
+
+
+:: \ mardi-bus-avant-courses {"position":"2450,750","size":"100,100"}
+Comme prévu, le bus avait du retard. Ils pourraient prévoir ce retard sur les horaires quand même! Bref, je n'ai pas envie de m'énerver.
+
+J'arrive enfin à //Malwart//. Je fais mes achats rapidement et il est désormais temps de rentrer.
+
+(set: $choice1 to "Rentrer à la maison (~40 min)")
+(event: when time > 8000)[(replace: $choice1)[[[$choice1 -> mardi-maison]]]] $choice1
+
+
+:: \ mardi-campus-bus {"position":"2050,475","size":"100,100"}
+(set: $ecologie to $ecologie + 1)
+J'ai refusé la proposition de Maman par conviction. Je pense qu'elle voulait juste passer un moment de plus avec moi, et aller dans la direction c'était juste une excuse. Mais j'aurais peut-être du accepter, on se voit rarement maintenant.
+
+Le voyage en bus est long comme d'habitude, mais rien de particulier s'est passé. J'ai pu regarder quelques vidéos et discuter avec des amis.
+
+[[Aller en cours -> mardi-cours]]
+
+
+
+:: \ mardi-campus-maman {"position":"2050,375","size":"100,100"}
+(set: $sante to $sante + 1)
+Maman m'a amené sur le campus et j'ai pu profiter de discuter un peu plus avec elle. J'ai apprécié ce moment, on le fait plus si souvent depuis que j'ai commencé l'université.
+
+Heureusement à cette heure-ci il n'y a pas beaucoup de traffic, on est donc arrivés rapidement au campus.
+
+[[Aller en cours -> mardi-cours]]
+
+
+:: \ mardi-campus-voiture {"position":"2050,600","size":"100,100"}
+Si j'avais su que Maman allait proposer de m'amener je serais pas venu en voiture. J'aurais pu passer encore un moment avec elle, depuis que j'ai commencé l'université on se voit beaucoup moins. 
+
+Le traffic à cette heure ci était calme et j'ai rapidement pu rejoindre le campus.
+
+[[Aller en cours -> mardi-cours]]
+
+
+:: \ mardi-courir {"position":"1550,550","size":"100,100"}
+(set: $sante = $sante + 1)
+Qu'est-ce que ça fait du bien de courir! Je me sens décontracté. J'aurais de toute manière d'autres moments pour étudier!
+
+[[Revenir à la maison et se préparer pour aller chez les parents -> mardi-avant-midi]]
+
+
+
+:: \ mardi-cours {"position":"2200,500","size":"100,100"}
+Il est 13h50. Le cours de développement écologique commence dans 10 minutes.
+
+*ding, notification de sms* Oh tiens, c’est Alex (mon crush) qui m’envoie un message. Il me propose d’aller boire un cappuccino au caramel au bord du lac. Trop mignon ! Je commence le cours dans pas longtemps. J'accepte ou refuse l’invitation d’Alex ?
+
+[[Accepter l'invitation d'Alex -> mardi-lac-Alex]]
+[[Refuser l'invitation d'Alex -> mardi-cours-2]]
+
+
+:: \ mardi-cours-2 {"position":"2325,600","size":"100,100"}
+(set: $revision to $revision + 1)
+Je ne peux pas me permettre de sécher ce cours, il est bien trop important pour mes révisions. Tant pis pour Alex, je lui proposerai d'aller au lac la semaine prochaine!
+
+Le cours est long. Si long que je me suis retrouvé à fermer les yeux pendant quelques instants. Mais il est enfin terminé. Il est temps de rentrer!
+
+Il faudrait que j'aille faire des courses, mon frigo commence à être vide.
+(if: $mardiVoiture is true)[
+(set: $choice1 to "Prendre la voiture et aller au //Malwart// le plus proche (~5 min)")
+(event: when time > 1000)[(replace: $choice1)[[[$choice1 -> mardi-courses]]]] $choice1
+
+(set: $choice2 to "Rentrer à la maison (~40 min)")
+(event: when time > 8000)[(replace: $choice1)[[[$choice2 -> mardi-maison]]]] $choice2
+](if: $mardiVoiture is false)[
+Pour aller au //Malwart// le plus proche, j’ai le choix entre: marcher, appeler un taxi ou encore prendre le bus, mais ce dernier a toujours du retard.
+
+(set: $choice1 to "Aller à pied (~15 min)")
+(event: when time > 3000)[(replace: $choice1)[[[$choice1 -> mardi-marche-avant-courses]]]] $choice1
+
+(set: $choice2 to "Aller en taxi (~5 min)")
+(event: when time > 1000)[(replace: $choice2)[[[$choice2 -> mardi-taxi-avant-courses]]]] $choice2
+
+(set: $choice3 to "Aller en bus (~20 min)")
+(event: when time > 2500)[(replace: $choice3)[[[$choice3 -> mardi-bus-avant-courses]]]] $choice3
+
+(set: $choice4 to "Rentrer à la maison en bus (~60 min)")
+(event: when time > 12000)[(replace: $choice4)[[[$choice4 -> mardi-maison]]]] $choice4
+]
+
+
+
+:: \ mardi-courses {"position":"2450,425","size":"100,100"}
+J'arrive en 5 minutes au //Malwart//. Je sais ce dont j'ai besoin, donc je ne fais pas long. Une fois tout acheté, il est temps de renter!
+
+(set: $choice1 to "Rentrer (~20 min)")
+(event: when time > 4000)[(replace: $choice1)[[[$choice1 -> mardi-maison]]]] $choice1
+
+
+:: \ mardi-lac-Alex {"position":"2325,450","size":"100,100"}
+(set: $sociabilite to $sociabilite + 1)
+Alex m’a offert le cappuccino et un joli bouquet de roses. On a passé un excellent moment ensemble. J’ai bien fait d’aller prendre l’air, je me serais endormi en plein cours sinon…
+
+(if: $mardiVoiture is false)[
+J'aimerais prolonger ce moment, mais il me faut rentrer bientôt. Alors que je me dis ça, Alex me propose de me ramener chez moi dans sa //EnviroDrive//. J'accepte de suite!
+
+(set: $choice2 to "Rentrer avec Alex (~40 min)")
+(event: when time > 8000)[(replace: $choice2)[[[$choice2 -> mardi-rentrer-Alex]]]]$choice2
+](if: $mardiVoiture is true)[
+J'aurais aimé prolonger ce moment, mais chaque événement a une fin. Il faudrait que je rentre bientôt. 
+
+Une fois que j'ai la voiture, je pourrais profiter pour aller faire mes courses. Je dirais pas non à faire un tour après une journée chargée en émotions. Sinon, je peux rentrer maintenant et aller me reposer.
+
+(set: $choice2 to "Aller faire les courses (~20 min)")
+(event: when time > 4000)[(replace: $choice2)[[[$choice2 -> mardi-courses]]]]$choice2
+
+(set: $choice1 to "Rentrer (~40 min)")
+(event: when time > 8000)[(replace: $choice1)[[[$choice1 -> mardi-rentrer-seul]]]]$choice1
+]
+
+
+:: \ mardi-maison {"position":"2675,450","size":"100,100"}
+Enfin à la maison! Il est 20h actuellement, bien plus tard que l'heure à laquelle j'arrive habituellement. Je me fais rapidement quelque chose à manger, en regardant ma série.
+
+Il est 21h, c'est encore très tôt pour aller se coucher. Je peux en profiter pour réviser encore un moment, pour m’occuper autrement ou alors aller dormir plus tôt.
+
+[[Réviser jusqu'à minuit -> mardi-reviser]]
+[[S'occuper jusqu'à 22h30 -> mardi-occuper]]
+[[Dormir plus tôt (set: $sante to $sante + 1) -> mercredi-reveil]]
+
+
+:: \ mardi-marche-avant-courses {"position":"2450,650","size":"100,100"}
+(set: $ecologie to $ecologie + 1)
+Une petite marche ne fais pas de mal. Ma playlist en fond, j'arrive à //Malwart// en à peine 15 minutes.
+
+Les courses faites, je peux rentrer.
+
+(set: $choice1 to "Rentrer à la maison (~40 min)")
+(event: when time > 8000)[(replace: $choice1)[[[$choice1 -> mardi-maison]]]] $choice1
+
+
+:: \ mardi-occuper {"position":"2800,350","size":"100,100"}
+(set: $sante to $sante + 1)
+Je réviserai à un autre moment. Je vais finir mon manga et après au dodo.
+
+[[Aller dormir -> mercredi-reveil]]
+
+
+:: \ mardi-parents-bus {"position":"1800,500","size":"100,100"}
+(set: $mardiVoiture to false)
+Après avoir attendu le bus pendant quelques minutes, le voyage s'est fait rapidement et sans soucis!
+
+[[Hâte du repas! -> mardi-repas-pas-voiture]]
+
+
+:: \ mardi-parents-pied {"position":"1800,375","size":"100,100"}
+(set: $mort to (random:1, 15))
+(set: $ecologie to $ecologie + 1)
+(set: $mardiVoiture to false)
+(if:$mort is 15)[
+Je m'avance dans la route sans trottoir, lorsque soudain, une voiture me remarque un peu trop tard et me percutte. Je suis immédiattement ammené à l'hopital, dans lequel je reste pendant prêt d'un mois.
+[[C'est la fin -> fin-hopital]]
+](else:)[
+Le voyage s'est passé sans trop de problèmes, même si un trottoir m'aurait fait sentir plus en sécurité.
+
+[[Hâte du repas! -> mardi-repas-pas-voiture]]
+]
+
+
+:: \ mardi-parents-voiture {"position":"1800,600","size":"100,100"}
+(set: $ecologie to $ecologie - 1)
+(set: $mardiVoiture to true)
+Je prends ma voiture et le voyage se fait en un instant.
+
+[[Hâte du repas! -> mardi-repas-voiture]]
+
+
+:: \ mardi-rentrer-Alex {"position":"2450,175","size":"100,100"}
+(set: $sociabilite to $sociabilite + 1)
+(set: $sante to $sante + 1)
+La route était pleine de bouchons. En général je serais devenu légerement nerveux, mais dans ce cas ça me permet de passer plus de temps avec Alex. Il m'a fait écouter quelques musiques, et on a discuté. J'ai même de la peine qu'il n'y ait pas eu plus de bouchons.
+
+Il m'a déposé devant la porte et on s'est dit "au revoir". Je suis très content qu'il m'ait proposé cette escapade, et je suis content d'avoir accepté.
+
+[[Rentrer à la maison -> mardi-maison]]
+
+
+:: \ mardi-rentrer-seul {"position":"2450,300","size":"100,100"}
+(set: $ecologie to $ecologie - 1)
+(set: $sante to $sante - 1)
+La route était pleine de bouchons, j'en ai rarement vu autant. Au début j'étais calme. Je repensais encore à la belle escapade avec Alex au lieu de mon cours. Toutefois, plus ça durait plus ces arrêts incessants me rendent nerveux. Triste fin pour une si belle journée.
+
+Après un long moment je suis enfin à la maison.
+
+[[Rentrer à la maison -> mardi-maison]]
+
+
+:: \ mardi-repas-pas-voiture {"position":"1925,450","size":"100,100"}
+Le hachis parmentier de Papa : un vrai délice ! Et la crème au chocolat de Maman était exquise. En tout, on a passé un bon moment! Malheureusement, je ne peux pas rester plus longtemps, mes cours commencent dans 1h. 
+
+Maman me propose de m'amener avec elle en voiture jusqu'à l'université, vu qu'elle doit aller de toute manière dans cette direction.
+
+(set: $choice1 to "Aller sur le campus avec maman (~35 min)")
+(set: $choice2 to "Refuser et aller en bus (~60 min)")
+
+(event: when time > 7000)[(replace: $choice1)[[[$choice1 -> mardi-campus-maman]]]] $choice1
+
+(event: when time > 12000)[(replace: $choice2)[[[$choice2 -> mardi-campus-bus]]]]$choice2
+
+
+:: \ mardi-repas-voiture {"position":"1925,600","size":"100,100"}
+Le hachis parmentier de Papa : un vrai délice ! Et la crème au chocolat de Maman était exquise. En tout, c'était un moment bien passé! Malheureusement, je ne peux pas rester plus longtemps, mes cours commencent dans 1h. 
+
+Maman voulait me proposer de m'amener avec elle en voiture jusqu'à l'université, mais vu que je suis venu en voiture je dois refuser.
+
+(set: $choice1 to "Aller sur le campus (~30 min)")
+
+(event: when time > 6000)[(replace: $choice1)[[[$choice1 -> mardi-campus-voiture]]]] $choice1
+
+
+:: \ mardi-reviser {"position":"2800,550","size":"100,100"}
+(set:$revision to $revision + 1)
+(set:$sante to $sante - 1)
+Il est actuellement minuit. Je suis ko, faut vraiment que je me repose…
+
+(set: $bienDormi to false)
+
+[[Aller dormir -> mercredi-reveil]] 
+
+
+:: \ mardi-réveil {"position":"1425,450","size":"100,100"}
+Ah! il fait beau aujourd’hui, le soleil brille et les oiseaux chantent! Et surtout, je peux me lever tard! (En effet, les cours ne commencent qu'à 14h). Faut pas que j’oublie que papa et maman m’invitent à dîner chez eux à midi. Mais là j’ai du temps libre. J’aimerais bien aller courir, mais il serait peut-être plus sage d’en profiter pour étudier un peu. Je sais pas.
+
+[[Aller courir -> mardi-courir]]
+[[Profiter pour réviser -> mardi-réviser]]
+
+
+:: \ mardi-réviser {"position":"1550,425","size":"100,100"}
+(set: $revision = $revision + 1)
+J’ai pu bien avancer dans mes révisions, c’est déjà ça de fait et tant mieux ! J’irai courir un autre jour, il fait quand même un peu frisquet ce matin.
+
+[[Se préparer pour aller chez les parents -> mardi-avant-midi]]
+
+
+
+:: \ mardi-taxi-avant-courses {"position":"2450,550","size":"100,100"}
+(set: $ecologie to $ecologie - 1)
+J'ai eu de la chance, un taxi passait justement à côté du campus. On ne discute pas beaucoup, et 5 minutes plus tard il me dépose au //Malwart//.
+
+Les courses faites, je peux rentrer chez moi. 
+
+(set: $choice1 to "Rentrer à la maison (~40 min)")
+(event: when time > 8000)[(replace: $choice1)[[[$choice1 -> mardi-maison]]]] $choice1
+
+
+:: \ mercredi-biblio {"position":"3675,200","size":"100,100"}
+(set: $revision to $revision + 1)
+(set: $mercrediRevisions to true)
+J'ai passé une bonne heure à la bibliothéque pour avancer les révisions, j'espère être prêt pour l'examen! Il commence à se faire tard toutefois, il va falloir rentrer!
+
+(if: $velo is true)[
+J'ai toujours le vélo avec moi, mais c'est un peu tard pour rentrer avec maintenant. Je peux attendre un bus vide dans lequel je pourrais l'amener.
+](if: $voitureMercredi is true)[
+(set: $choice3 to "Rentrer en voiture (~30 min)")
+(event: when time > 6000)[(replace: $choice3)[[[$choice3 -> mercredi-rentrer-suv]]]] $choice3
+](else:)[
+(set: $choice4 to "Prendre le bus pour rentrer (~ 60 min)")
+(event: when time > 12000)[(replace: $choice4)[[[$choice4 -> mercredi-rentrer-bus]]]] $choice4
+]
+
+
+:: \ mercredi-campus-bus {"position":"3275,275","size":"100,100"}
+(set: $ecologie to $ecologie + 1)
+(set: $rencontre to (random:1, 5))
+(if: $random is 5)[
+(set: $sante to $sante + 1)
+En montant dans le bus je croise mon amie Lou. Je m'attendais pas à cette rencontre, vu qu'elle ne prend pas le bus souvent, mais c'est sympa de la revoir. Le trajet se passe bien plus vite comme ça!
+](else:)[
+(set: $sante to $sante - 1)
+Le bus est interminable et je loupe mon changement. Encore 15 minutes à attendre avant le prochain. C'est des petites choses, mais elles mettent une mauvaise ambiance dans la journée. En plus, elles arrives souvent. 
+(if: $sociabilite > 1)[
+Je sais! Je vais discuter avec Alex pour passer le temps! Je lui envois un message et, heureusement, il répond vite. Je pourrais lui proposer de se voir ce soir, mais je ne sais pas si j'ose le faire. De plus, si je lui propose de se voir je pourrais plus étudier.
+[[Proposer une recontre à Alex -> mercredi-proposition]]
+]
+]
+[[Aller en cours -> mercredi-cours]]
+
+
+:: \ mercredi-campus-suv {"position":"3275,450","size":"100,100"}
+(set: $ecologie to $ecologie - 1)
+(set: $traffic to (random:1, 5))
+(set: $voitureMercredi to true)
+(if: $traffic > 3)[
+(set: $sante to $sante - 1)
+Encore une journée pleine de traffic. Pourquoi ils n'élargissent pas les routes, s'ils savent qu'on est autant? Si seulement le métro allait de chez moi jusqu'au campus, au moins il y aurait plus ce soucis. J'espère ne pas arriver en retard!
+](else:)[
+(set: $sante to $sante + 1)
+Heureusement que aujourd'hui c'est une journée à peu de traffic! C'est reposant de rouler quand il n'y a pas beaucoup de gens. Et j'arrive beaucoup plus vite sur le campus! Je pourrais avancer un peu dans mes révisions!
+(set: $revision to $revision + 1)
+]
+
+[[Aller en cours -> mercredi-cours]] 
+
+
+:: \ mercredi-campus-velo {"position":"3275,600","size":"100,100"}
+(set: $ecologie to $ecologie + 1)
+(set: $velo to true)
+(set: $sante to $sante + 1)
+(set: $mort to (random:1, 15))
+
+(if:$mort is 15)[
+Tout se passe bien, jusqu'au moment ou je dois brièvement traverser la route principale. C'était peut-être pas la meilleure idée le vélo finalement, mais c'est trop tard pour revenir en arrière. Je m'élance dans la route, lorsqu'une voiture me percutte. Je suis immédiattement ammené à l'hopital.
+[[C'est la fin -> fin-hopital]]
+](else:)[
+Tout s'est bien passé, même si j'ai eu peur quand j'ai du traverser la route principale. C'est vrai que je ne suis pas habitué de voir des cyclistes ici, le manque de voies cyclables et la nécessité de traverser les routes principales (ou parfois les trottoirs mêmes sont inexistants) expliquent pourquoi. Bon je suis arrivé c'est le principal, et tout cet effort m'a fait du bien!
+[[Aller en cours -> mercredi-cours]]
+]
+
+
+:: \ mercredi-cours {"position":"3550,400","size":"100,100"}
+Le cours n'avait rien d'extraordinaire. J'ai même fait quelques sudokus pour passer le temps. Mais c'est quand même important d'être là, on ne sait jamais ce qu'on pourrait apprendre!
+
+(if: $propositionMercredi is true)[
+(set: $sociabilite to $sociabilite + 1)
+Encore un très bon moment passé avec Alex. Je pouvais sentir un peu de tension de chaque côté, mais je n'ai pas osé agir dessus ce soir. C'est sur, la prochaine fois j'essaierais!
+(set: $choice1 to "Prendre le bus pour rentrer (~65 min)")
+(event: when time > 13000)[(replace: $choice1)[[[$choice1 -> mercredi-rentrer-bus]]]] $choice1
+](else:)[
+J'ai encore du temps cet après-midi, je pourrais aller à la bibliothèque réviser un moment. Après tout, l'examen c'est bientôt!
+[[Aller réviser à la bibliothèque -> mercredi-biblio]]
+](if: $velo is true)[
+J'ai toujours le vélo avec moi. Est-ce que je rentre de nouveau en vélo? Dans ce cas je pourrais pas réviser. Sinon je peux attendre un bus vide dans lequel je pourrais l'amener.
+(set: $choice2 to "Rentrer en vélo (~ 1h40min)")
+(event: when time > 20000)[(replace: $choice2)[[[$choice2 -> mercredi-rentrer-velo]]]] $choice2
+](if: $voitureMercredi is true)[
+(set: $choice3 to "Rentrer en voiture (~30 min)")
+(event: when time > 6000)[(replace: $choice3)[[[$choice3 -> mercredi-rentrer-suv]]]] $choice3
+](else:)[
+(set: $choice4 to "Prendre le bus pour rentrer (~ 60 min)")
+(event: when time > 12000)[(replace: $choice4)[[[$choice4 -> mercredi-rentrer-bus]]]] $choice4
+]
+
+
+:: \ mercredi-maison-soir {"position":"4000,400","size":"100,100"}
+(if: $velo is true)[
+Enfin à la maison! Maintenant c'est: douche, manger, dodo. Je suis épuisé!
+
+[[Aller dormir -> jeudi-reveil]]
+](else:)[
+Enfin à la maison! Cette journée (if:$propositionMercredi is false)[banale] m'a épuisé. Je vais manger et regarder quelques épisodes avant d'aller dormir.
+
+[[Aller dormir -> jeudi-reveil]]
+]
+
+
+:: \ mercredi-proposition {"position":"3425,250","size":"100,100"}
+(set: $sociabilite to $sociabilite + 1)
+(set: $propositionMercredi to true)
+Alex a accepté ma proposition! Hâte d'être ce soir!!
+
+[[Aller en cours -> mercredi-cours]] 
+
+
+:: \ mercredi-rentrer-bus {"position":"3825,525","size":"100,100"}
+Le trajet en bus était long et ce n'est jamais un trajet plaisant. Mais au moins j'ai pas à penser au traffic de la route, je peux juste regarder des vidéos ou écouter de la musique tranquillement.
+
+[[Rentrer à la maison -> mercredi-maison-soir]] 
+
+
+:: \ mercredi-rentrer-suv {"position":"3825,400","size":"100,100"}
+Le trajet s'effectue sans problèmes, je suis même arrivé plus vite à la maison que prévu!
+
+[[Rentrer à la maison -> mercredi-maison-soir]]
+
+
+:: \ mercredi-rentrer-velo {"position":"3825,275","size":"100,100"}
+(set: $sante to $sante + 1)
+(set: $mort to (random:1, 10))
+
+(if:$mort is 10)[
+Il commence à se faire tard. Je roule sans trop de soucis, mais retraverser la route principale m'inquiète. Surtout que, bien que la route soit encore visible, la lumière commence peu à peu à s'amoindrir. Je m'élance dans cet enfer de voitures, quand, soudain, une voiture me percutte. Je suis immédiattement ammené à l'hôpital.
+[[C'est la fin -> fin-hopital]]
+](else:)[
+Je suis arrivé sain et sauf chez moi, bien que la route principale avec cette visibilité ait été un enfer. Je suis pas passé loin de l'accident! Mais tout est bien qui fini bien, je suis toujours vivant et en forme!
+[[Rentrer à la maison -> mercredi-maison-soir]]
+]
+
+
+:: \ mercredi-reveil {"position":"3100,425","size":"100,100"}
+(if: $bienDormi is false)[
+	Aujourd'hui j'ai eu de la peine à me lever. J'aurais peut-être pas dû rester autant de temps à étudier, mais l'examen est dans deux jours. Bon, un petit café est la journée se passera mieux !
+](else:)[
+	Aujourd'hui je me suis réveillé en forme, et, vu que les cours ne commencent qu'à 12h30, j'hésite à y aller en vélo. Faire du sport de temps à autres c'est bien aussi !
+]
+(set: $choice1 to "Aller à l'université en SUV (~30 min)")
+(set: $choice2 to "Aller à l'université en bus (~60 min)")
+(set: $choice3 to "Aller à l'université en vélo (~ 1h40min)")
+
+(event: when time > 6000)[(replace: $choice1)[[[$choice1 -> mercredi-campus-suv]]]] $choice1
+
+(event: when time > 12000)[(replace: $choice2)[[[$choice2 -> mercredi-campus-bus]]]]$choice2
+
+(event: when time > 20000)[(replace: $choice3)[[[$choice3 -> mercredi-campus-velo]]]]$choice3
+
+
+
+:: \ resultats {"position":"5925,500","size":"100,100"}
+Un mois plus tard, les résultats sont enfin disponibles sur le site.
+(set: $revision to 5)
+(set: $sante to 7)
+
+(if: $revision + ($sante-4)/4 > 6)[
+(set: $examen to true)
+Trop bien ! Je suis hyper content.e. J’ai bossé et ça a porté ces fruits. Une chose de faite ! Bravo !
+](else:)[
+(set: $examen to false)
+AH… bon bah… je… ferai mieux aux rattrapages… Faut vraiment que j’apprenne à m’organiser… Dommage…
+]
+
+[[Fin -> end]]
+
+
+:: \ situation-initiale-2 {"position":"175,300","size":"100,100"}
+Hello ! Je suis un étudiant de 21 ans à l’Université de //Green Academics// au Canada et j’étudie les sciences de l’environnement . J’habite seul, à 55 min de l’uni en transports et si je prends le gros Pick-up, c’est en moyenne 30 min de trajet (même si pratique car plus rapide, ce type de voiture pollue beaucoup).
+Comme on est à la fin de l’année, les examens approchent et le stress monte. Justement, j’ai un examen hyper important ce vendredi que je dois à tout prix réussir pour passer en deuxième année… Mais attends, vu qu’on est lundi, ça veut dire qu’il ne me reste plus que quelques jours pour réviser ! Va falloir que je m’organise pour préparer au mieux cette épreuve… Entre les révisions, la maison, et les activités (santé et santé mentale/sociabilité), ça va être compliqué… mais je peux le faire ! 
+Bon allez, il faut que je dorme, demain c’est lundi et je dois bien commencer la semaine.
+
+[[Aller dormir ->lundi-réveil]]
+
+
+:: \ test1 {"position":"400,0","size":"100,100"}
+
+
+
+:: \ vendredi-bus {"position":"5550,425","size":"100,100"}
+(set: $stress to (random:1, 3))
+
+(if: $sante - $stress < 3)[
+(set: $sante to $sante - 1)
+Le trajet est interminable. Le stress me ronge et j'ai l'impression que le bus n'avance pas. Quand j'arrive enfin au terminal afin de prendre la correspondance, l'autre bus est en retard. 
+
+J'arrive enfin sur le campus. Il manque pas beaucoup de temps avant l'examen. Je vais le faire!
+
+[[Passer l'examen -> vendredi-examen]]
+](else:)[
+(set: $sante to $sante + 1)
+Le trajet est long, mais je peux me détendre en écoutant de la musique. Je pense que j'ai bien fait de prendre les bus, j'aurais pu me stresser encore plus en prenant la voiture
+
+J'arrive enfin sur le campus. Il manque pas beaucoup de temps avant l'examen. Je vais le faire!
+
+[[Passer l'examen -> vendredi-examen]]
+]
+
+
+:: \ vendredi-examen {"position":"5750,500","size":"100,100"}
+17h00: fin de l’examen.
+
+(if: $soiree is "Alex")[
+J’ai l’impression que l’examen s’est bien passé, en tout cas j’ai la pêche ! Mais peut-être que c’est parce que je pense à Alex… enfin bon, c’est fini maintenant. C’est l’heure de l’été !
+](else-if: $soiree is "mal")[
+Bon on verra bien. J'étais pas en état. Je vais juste rentrer chez moi, et dormir.
+](else:)[
+J’ai tout donné, normalement ça doit bien se passer. Le stress diminue. L’été est là, les beaux jours arrivent.
+]
+
+[[Recevoir les résultats -> resultats]]
+
+
+:: \ vendredi-maison {"position":"5375,650","size":"100,100"}
+J'arrive le lendemain à la maison. J'ai mal au dos, mais je suis fier de ne pas avoir pris la voiture hier soir. Je n'étais clairement pas en état. Et comme ça j'ai pu un peu dormir aussi. Je suis plutôt en forme.
+
+Toutefois, je stresse pour l'examen, alors que pourtant j'ai beaucoup révisé. J’ai le coeur qui palpite. Je vais prendre une grande respiration. 
+
+*Souffle*… allez ça va bien se passer. 
+
+
+Pour aller sur le campus je peux toujours prendre le bus ou la voiture:
+
+(set: $choice1 to "Prendre le bus (~60 min)")
+(event: when time > 12000)[(replace: $choice1)[[[$choice1 -> vendredi-bus]]]] $choice1
+
+(set: $choice2 to "Prendre la voiture (~30 min)")
+(event: when time > 6000)[(replace: $choice2)[[[$choice2 -> vendredi-voiture]]]]$choice2
+
+
+:: \ vendredi-reveil-hopital {"position":"5200,550","size":"100,100"}
+(set: $soiree to "mal")
+Aujourd'hui, jour d'examen! Après la grosse épreuve de hier soir, j’ai très mal dormi. Je ne suis pas à 100% de ma forme. Le stress monte. Je n’aurais jamais dû accepter cet horrible cocktail. Je vais mettre toute l’énergie qui me reste dans l’examen.
+
+Je n'ai pas le courage ni la force de prendre la voiture. Faudra prendre le bus.
+
+(set: $choice1 to "Prendre le bus (~60 min)")
+(event: when time > 12000)[(replace: $choice1)[[[$choice1 -> vendredi-bus]]]] $choice1
+
+
+:: \ vendredi-réveil {"position":"5200,425","size":"100,100"}
+(if: $soiree is "Alex")[
+Aujourd'hui, jour d'examen! Je suis de bonne humeur et, j’ai des papillons dans le ventre hihi ! Faut pas que j’oublie que j’ai le fameux examen cet après-midi. Allez, concentration ! Je vais le faire !
+](else:)[
+Aujourd'hui, jour d'examen. Je me suis réveillé dans le stress, pourtant j’ai beaucoup révisé. J’ai le coeur qui palpite. Je vais prendre une grande respiration. 
+
+*Souffle*… allez ça va bien se passer. 
+]
+
+Pour aller sur le campus je peux toujours prendre le bus ou la voiture:
+
+(set: $choice1 to "Prendre le bus (~60 min)")
+(event: when time > 12000)[(replace: $choice1)[[[$choice1 -> vendredi-bus]]]] $choice1
+
+(set: $choice2 to "Prendre la voiture (~30 min)")
+(event: when time > 6000)[(replace: $choice2)[[[$choice2 -> vendredi-voiture]]]]$choice2
+
+
+
+:: \ vendredi-réveil-voiture {"position":"5200,675","size":"100,100"}
+J'ai bien fait de dormir ici, je n'étais clairement pas en état de rentrer. Au moins, bien que la nuit n'aie pas été confortable, j'ai pu me reposer un peu. Temps de rentrer chercher mes affaires, prendre un douche et manger quelque chose avant l'examen!
+
+(set: $choice1 to "Renter à la maison (~20 min)")
+(event: when time > 4000)[(replace: $choice1)[[[$choice1 -> vendredi-maison]]]] $choice1
+
+
+:: \ vendredi-voiture {"position":"5550,575","size":"100,100"}
+(set: $stress to (random:1, 3))
+
+(if: $sante - $stress < 5)[
+(set: $sante to $sante - 1)
+Il fallait que ce soit le jour où je tombe sur les bouchons. J'ai l'impression que la file n'avance pas et je sens le stress monter. Quand les voitures commencent enfin à diminuer, je me prends les feux rouges. Il va falloir que je me calme un peu avant l'examen.
+
+J'arrive enfin sur le campus. Il manque pas beaucoup de temps. Je vais le faire!
+
+[[Passer l'examen -> vendredi-examen]]
+](else:)[
+(set: $sante to $sante + 1)
+Je mets un peu de musique et il y a pas grand monde sur la route. Que demander de plus? Ce trajet me fait du bien et je me détends un peu avant l'examen.
+
+J'arrive enfin sur le campus. Il manque pas beaucoup de temps. Je vais le faire!
+
+[[Passer l'examen -> vendredi-examen]]
+]
+
+
+
+:: Situation initiale {"position":"50,300","size":"100,100"}
+(set: $ecologie to 5)
+(set: $revision to 0)
+(set: $sante to 5)
+(set: $sociabilite to 0)
+Ce jeu élaboré dans le cadre du cours de Fiction Interactive de l'Université de Lausanne vise à prendre conscience d'une partie des problèmes causés par certaines philosophies de développement urbain. Il met en lumière les conséquences mentales et environnementales que ces philosophies peuvent entraîner pour les habitants des villes.
+
+Dans ce but, certains choix ne seront pas immédiatement disponibles, mais seront débloqués après un certain temps, afin de montrer la différence de temps que deux moyens de locomotion engendrent (1 sec = 5 min de trajet). 
+
+(set: $choice2 to "Commencer le jeu (~25 min)")
+(event: when time > 5000)[(replace: $choice2)[[[$choice2 -> situation-initiale-2]]]]$choice2
+
+
+
+:: Untitled Passage {"position":"250,0","size":"100,100"}
+
+
+(set: $choice1 to "I want to take the bus")
+(event: when time > 4000)[(replace: $choice1)[[[$choice1 -> test1]]]] $choice1
+
+(set: $choice2 to "I want to drive")
+(event: when time > 2000)[(replace: $choice2)[[[$choice2 -> drive1]]]]$choice2
+
+1 min --> 200
+30 min --> 6'000 
+1h --> 12'000
+1 min -->200
+
+
+:: lundi-réveil {"position":"300,300","size":"100,100"}
+*sonnerie du réveil*
+
+[[C'est 6h30, heure de se réveiller -> lundi-tot]]
+[[Encore un tout petit peu, ...-> lundi-tard]]
