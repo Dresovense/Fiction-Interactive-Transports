@@ -647,7 +647,7 @@ J&#39;arrive enfin sur le campus. Il manque pas beaucoup de temps. Je vais le fa
 ](else:)[J’ai tout donné, normalement ça doit bien se passer. Le stress diminue. L’été est là, les beaux jours arrivent.
 ]
 
-[[Recevoir les résultats -&gt; resultats]]</tw-passagedata><tw-passagedata pid="85" name=" resultats" tags="" position="5925,500" size="100,100">Un mois plus tard, les résultats sont enfin disponibles sur le site.(set: $passer to $revision + ($sante - 1)/4)(if: $passer &gt; 4)[(set: $examen to true)(track: &#39;game-success&#39;, &#39;play&#39;)Trop bien ! Je suis hyper content.e. J’ai bossé et ça a porté ces fruits. Une chose de faite ! Bravo !
+[[Recevoir les résultats -&gt; resultats]]</tw-passagedata><tw-passagedata pid="85" name=" resultats" tags="" position="5925,500" size="100,100">Un mois plus tard, les résultats sont enfin disponibles sur le site.(set: $passer to $revision + ($sante - 3)/5)(if: $passer &gt;= 4)[(set: $examen to true)(track: &#39;game-success&#39;, &#39;play&#39;)Trop bien ! Je suis hyper content.e. J’ai bossé et ça a porté ces fruits. Une chose de faite ! Bravo !
 &lt;script&gt;
 img = document.createElement(&quot;img&quot;)
 img.src = &quot;./images/game_success.jpeg&quot;
