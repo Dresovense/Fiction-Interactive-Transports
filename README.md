@@ -1,10 +1,10 @@
-# FI - Transports
+# FI - La dernière ligne droite
 
-![Main logo](./images/traffic-189115_1280.jpg)
+![Main logo](./images/start.jpeg)
 
 Ce projet a été développé dans le cadre du cours "Fiction Interactive", dispensé par Isaac Pante (SLI, Lettres, UNIL).
 
-Travail réalisé par Clara Montoya Silva et André da Glória Santiago.
+Travail réalisé par Clara Montoya et André da Glória Santiago.
 
 # Jouer au jeu
 Le jeu est sur la plateforme [itch.io](https://dresovense.itch.io/fiction-interactive-transports).
@@ -22,7 +22,7 @@ de ces derniers ou encore sur la possibilité de se passer de voiture sans que c
 
 Ainsi, le concept central de la fiction se trouve derrière la durée d'attente devant les choix de déplacement. Afin que le joueur fasse
 l'expérience du choix qu'une personne habitant dans les banlieues de ces villes possède, il doit attendre un nombre de secondes équivalant
-à la durée du trajet (1 seconde = 5 minutes de trajet). Le but étant ainsi de montrer la frustration qu'une personne peut avoir dès qu'elle
+à la durée du trajet (1 seconde = 2min30 de trajet). Le but étant ainsi de montrer la frustration qu'une personne peut avoir dès qu'elle
 décide (ou même n'a plus le choix) de se déplacer en transports publics, et de la perte de temps utile qu'engendre de tels choix.
 
 
@@ -32,5 +32,7 @@ Quelques articles pour approfondir ces thèmes:
 - https://smartgrowthamerica.org/wp-content/uploads/2016/08/measuring-sprawl-2014.pdf
 
 
-L'image utilisée précédemment est disponible (gratuitement) sur le site suivant:
-https://pixabay.com/fr/
+Les sons utilisés dans la fiction sont disponibles (gratuitement) sur le site suivant:
+https://freesound.org/
+
+Les images ont été générées artificiellement grâce à Dall•e

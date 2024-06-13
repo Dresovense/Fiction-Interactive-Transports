@@ -3,59 +3,64 @@
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1" name="viewport">
-<title>test</title>
+<title>FI - transports</title>
 <style title="Twine CSS">@keyframes appear{0%{opacity:0}to{opacity:1}}@keyframes fade-in-out{0%,to{opacity:0}50%{opacity:1}}@keyframes rumble{25%{top:-0.1em}75%{top:.1em}0%,to{top:0px}}@keyframes shudder{25%{left:.1em}75%{left:-0.1em}0%,to{left:0px}}@keyframes buoy{25%{top:.25em}75%{top:-0.25em}0%,to{top:0px}}@keyframes sway{25%{left:.25em}75%{left:-0.25em}0%,to{left:0px}}@keyframes pulse{0%{transform:scale(0, 0)}20%{transform:scale(1.2, 1.2)}40%{transform:scale(0.9, 0.9)}60%{transform:scale(1.05, 1.05)}80%{transform:scale(0.925, 0.925)}to{transform:scale(1, 1)}}@keyframes zoom-in{0%{transform:scale(0, 0)}to{transform:scale(1, 1)}}@keyframes shudder-in{0%,to{transform:translateX(0em)}5%,25%,45%{transform:translateX(-1em)}15%,35%,55%{transform:translateX(1em)}65%{transform:translateX(-0.6em)}75%{transform:translateX(0.6em)}85%{transform:translateX(-0.2em)}95%{transform:translateX(0.2em)}}@keyframes rumble-in{0%,to{transform:translateY(0em)}5%,25%,45%{transform:translateY(-1em)}15%,35%,55%{transform:translateY(1em)}65%{transform:translateY(-0.6em)}75%{transform:translateY(0.6em)}85%{transform:translateY(-0.2em)}95%{transform:translateY(0.2em)}}@keyframes fidget{0%,8.1%,82.1%,31.1%,38.1%,44.1%,40.1%,47.1%,74.1%,16.1%,27.1%,72.1%,24.1%,95.1%,6.1%,36.1%,20.1%,4.1%,91.1%,14.1%,87.1%,to{left:0px;top:0px}8%,82%,31%,38%,44%{left:-1px}40%,47%,74%,16%,27%{left:1px}72%,24%,95%,6%,36%{top:-1px}20%,4%,91%,14%,87%{top:1px}}@keyframes slide-right{0%{transform:translateX(-100vw)}}@keyframes slide-left{0%{transform:translateX(100vw)}}@keyframes slide-up{0%{transform:translateY(100vh)}}@keyframes slide-down{0%{transform:translateY(-100vh)}}@keyframes fade-right{0%{opacity:0;transform:translateX(-1em)}to{opacity:1}}@keyframes fade-left{0%{opacity:0;transform:translateX(1em)}to{opacity:1}}@keyframes fade-up{0%{opacity:0;transform:translateY(1em)}to{opacity:1}}@keyframes fade-down{0%{opacity:0;transform:translateY(-1em)}to{opacity:1}}@keyframes flicker{0%,29%,31%,63%,65%,77%,79%,86%,88%,91%,93%{opacity:0}30%{opacity:.2}64%{opacity:.4}78%{opacity:.6}87%{opacity:.8}92%,to{opacity:1}}@keyframes blur{0%{filter:blur(2rem);opacity:0}25%{opacity:1}to{filter:blur(0rem);opacity:1}}.dom-debug-mode tw-story,.dom-debug-mode tw-passage,.dom-debug-mode tw-sidebar,.dom-debug-mode tw-include,.dom-debug-mode tw-hook,.dom-debug-mode tw-expression,.dom-debug-mode tw-link,.dom-debug-mode tw-dialog,.dom-debug-mode tw-columns,.dom-debug-mode tw-column,.dom-debug-mode tw-align{outline:1px solid #f5a3da;min-height:32px;display:block !important}.dom-debug-mode tw-story::before,.dom-debug-mode tw-passage::before,.dom-debug-mode tw-sidebar::before,.dom-debug-mode tw-include::before,.dom-debug-mode tw-hook::before,.dom-debug-mode tw-expression::before,.dom-debug-mode tw-link::before,.dom-debug-mode tw-dialog::before,.dom-debug-mode tw-columns::before,.dom-debug-mode tw-column::before,.dom-debug-mode tw-align::before{position:absolute;top:0;left:0;height:16px;background-color:#f5a3da;color:#000;font-size:16px;font-weight:normal;font-style:normal;font-family:monospace;display:inline-block;line-height:100%;white-space:pre;z-index:999997}.dom-debug-mode tw-story:hover,.dom-debug-mode tw-passage:hover,.dom-debug-mode tw-sidebar:hover,.dom-debug-mode tw-include:hover,.dom-debug-mode tw-hook:hover,.dom-debug-mode tw-expression:hover,.dom-debug-mode tw-link:hover,.dom-debug-mode tw-dialog:hover,.dom-debug-mode tw-columns:hover,.dom-debug-mode tw-column:hover,.dom-debug-mode tw-align:hover{outline:1px solid #fc9}.dom-debug-mode tw-story:hover::before,.dom-debug-mode tw-passage:hover::before,.dom-debug-mode tw-sidebar:hover::before,.dom-debug-mode tw-include:hover::before,.dom-debug-mode tw-hook:hover::before,.dom-debug-mode tw-expression:hover::before,.dom-debug-mode tw-link:hover::before,.dom-debug-mode tw-dialog:hover::before,.dom-debug-mode tw-columns:hover::before,.dom-debug-mode tw-column:hover::before,.dom-debug-mode tw-align:hover::before{background-color:#fc9;transition:background-color 1s}.dom-debug-mode tw-passage,.dom-debug-mode tw-include,.dom-debug-mode tw-hook,.dom-debug-mode tw-expression,.dom-debug-mode tw-link,.dom-debug-mode tw-dialog,.dom-debug-mode tw-columns,.dom-debug-mode tw-column,.dom-debug-mode tw-align{padding:1em;margin:0}.dom-debug-mode tw-story::before{content:'<tw-story tags="' attr(tags) '">'}.dom-debug-mode tw-passage::before{top:-16px;content:'<tw-passage tags="' attr(tags) '">'}.dom-debug-mode tw-sidebar::before{top:-16px;content:"<tw-sidebar>"}.dom-debug-mode tw-hook::before{content:'<tw-hook name="' attr(name) '">'}.dom-debug-mode tw-expression::before{content:'<tw-expression name="' attr(name) '">'}.dom-debug-mode tw-link::before{content:'<tw-link name="' attr(name) '">'}.dom-debug-mode tw-dialog::before{content:"<tw-dialog>"}.dom-debug-mode tw-columns::before{content:"<tw-columns>"}.dom-debug-mode tw-column::before{content:"<tw-column>"}.dom-debug-mode tw-align::before{content:"<tw-align>"}.dom-debug-mode tw-include::before{content:'<tw-include type="' attr(type) '" name="' attr(name) '">'}tw-open-button[goto]{display:none}.debug-mode tw-open-button[replay],.debug-mode tw-open-button[goto]{display:inline}.debug-mode tw-expression{display:inline-block !important}.debug-mode tw-expression[type=variable]::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"$" attr(name)}.debug-mode tw-expression[type=tempVariable]::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"_" attr(name)}.debug-mode tw-expression[return=boolean]{background-color:rgba(179,179,179,.2)}.debug-mode tw-expression[return=array]{background-color:rgba(255,102,102,.2)}.debug-mode tw-expression[return=dataset]{background-color:rgba(255,128,0,.2)}.debug-mode tw-expression[return=number]{background-color:rgba(255,179,102,.2)}.debug-mode tw-expression[return=datamap]{background-color:rgba(255,255,102,.2)}.debug-mode tw-expression[return=changer]{background-color:rgba(179,255,102,.2)}.debug-mode tw-expression[return=lambda]{background-color:rgba(102,255,102,.2)}.debug-mode tw-expression[return=hookname]{background-color:rgba(102,255,204,.2)}.debug-mode tw-expression[return=string]{background-color:rgba(102,255,255,.2)}.debug-mode tw-expression[return=datatype]{background-color:rgba(102,153,255,.2)}.debug-mode tw-expression[return=gradient],.debug-mode tw-expression[return=colour]{background-color:rgba(204,102,255,.2)}.debug-mode tw-expression[return=instant],.debug-mode tw-expression[return=macro]{background-color:rgba(240,117,199,.2)}.debug-mode tw-expression[return=command]{background-color:rgba(153,153,255,.2)}.debug-mode tw-expression.false{background-color:rgba(255,0,0,.2) !important}.debug-mode tw-expression[type=macro]::before{content:"(" attr(name) ":)";padding:0 .5rem;font-size:1rem;vertical-align:middle;line-height:normal;background-color:inherit;border:1px solid rgba(255,255,255,.5)}.debug-mode tw-expression[title]:not([title=""]){cursor:help}.debug-mode tw-hook{background-color:rgba(0,85,255,.1) !important}.debug-mode tw-hook::before{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"["}.debug-mode tw-hook::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"]"}.debug-mode tw-hook[name]::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"]<" attr(name) "|"}.debug-mode tw-pseudo-hook{background-color:rgba(255,170,0,.1) !important}.debug-mode tw-collapsed::before{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"{"}.debug-mode tw-collapsed::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"}"}.debug-mode tw-verbatim::before,.debug-mode tw-verbatim::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"`"}.debug-mode tw-align[style*="text-align: center"]{background:linear-gradient(to right, hsla(14deg, 100%, 87%, 0) 0%, hsla(14deg, 100%, 87%, 0.25) 50%, hsla(14deg, 100%, 87%, 0) 100%)}.debug-mode tw-align[style*="text-align: left"]{background:linear-gradient(to right, hsla(14deg, 100%, 87%, 0.25) 0%, hsla(14deg, 100%, 87%, 0) 100%)}.debug-mode tw-align[style*="text-align: right"]{background:linear-gradient(to right, hsla(14deg, 100%, 87%, 0) 0%, hsla(14deg, 100%, 87%, 0.25) 100%)}.debug-mode tw-column{background-color:rgba(189,228,255,.2)}.debug-mode tw-enchantment{animation:enchantment .5s infinite;border:1px solid}.debug-mode tw-link::after,.debug-mode tw-broken-link::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:attr(passage-name)}.debug-mode tw-include{background-color:rgba(204,128,51,.1)}.debug-mode tw-include::before{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:attr(type) ' "' attr(name) '"'}.debug-dialogs tw-backdrop:not(.eval-replay):not(.harlowe-crash){pointer-events:none;opacity:.1}tw-eval-replay tw-eval-code,tw-eval-replay tw-eval-explanation{max-height:20vh;overflow:auto;margin:10px auto}tw-eval-replay tw-eval-code{display:block;font-family:monospace;padding-bottom:1ex;border-bottom:2px solid gray}tw-eval-replay tw-eval-explanation{display:block;text-align:center}tw-eval-replay tw-eval-explanation>code{white-space:pre-wrap}tw-eval-replay tw-eval-explanation>code.from-block{width:40%;display:inline-block;text-align:left;max-height:4em;overflow-wrap:anywhere;overflow-y:scroll}tw-eval-replay tw-eval-explanation>code.from-block~.to-desc{width:calc(40% - 2em);margin-left:2em;display:inline-block}tw-eval-replay tw-eval-explanation>code.from-block+span::after{content:"..."}tw-eval-replay tw-eval-explanation>code.from-inline{text-align:right}tw-eval-replay tw-eval-explanation>:nth-child(2){white-space:pre}tw-eval-replay tw-eval-explanation>.to-desc{text-align:left}tw-eval-replay tw-eval-explanation>table{width:100%;margin-top:1em}tw-eval-replay tw-eval-explanation>table td{white-space:pre-wrap !important;word-wrap:anywhere}tw-eval-replay tw-eval-reason{text-align:center;font-size:80%;font-style:italic;display:block}tw-eval-replay tw-eval-it{text-align:center;font-size:80%;display:block}tw-eval-replay tw-dialog-links{display:-ms-flexbox;display:flex;-ms-flex-pack:distribute;justify-content:space-around}@keyframes enchantment{0%,to{border-color:#ffb366}50%{border-color:#6fc}}tw-debugger{position:fixed;box-sizing:border-box;bottom:0;right:0;z-index:999999;min-width:14em;min-height:1em;padding:0em .5em .5em 1em;font-size:1.25em;font-family:sans-serif;color:#262626;background-color:#fff;border-left:solid #262626 2px;border-top:solid #262626 2px;border-top-left-radius:.5em;opacity:1}tw-debugger.fade-panel:not(:hover){opacity:.33}tw-debugger.theme-dark{color:#d9d9d9;background-color:#000}tw-debugger.theme-dark{border-color:#d9d9d9 rgba(0,0,0,0) rgba(0,0,0,0) #d9d9d9}tw-debugger select{margin-right:1em;width:12em}tw-debugger button,tw-debugger tw-link{border-radius:3px;border:solid #999 1px;margin:auto 4px;color:#262626;background-color:#fff;cursor:pointer}tw-debugger button.enabled,tw-debugger tw-link.enabled{color:#000;background-color:#d9d9d9;box-shadow:inset #999 3px 5px .5em}tw-debugger.theme-dark button,tw-debugger.theme-dark tw-link{color:#d9d9d9;background-color:#000;border-color:#666}tw-debugger.theme-dark button.enabled,tw-debugger.theme-dark tw-link.enabled{color:#e6e6e6;background-color:#424242;box-shadow:inset #666 3px 5px .5em}tw-debugger button{font-size:1em;overflow-x:hidden;text-overflow:ellipsis;white-space:pre}tw-debugger tw-link{font-size:1.25em;border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block}tw-debugger tw-link:hover{border-color:#262626;color:#262626}tw-debugger.theme-dark tw-link:hover{border-color:#d9d9d9;color:#d9d9d9}tw-debugger tw-dialog{background-color:#fff;color:#000;font-size:1.25em}tw-debugger.theme-dark tw-dialog{background-color:#000;color:#e6e6e6}tw-debugger .panel{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;position:absolute;bottom:100%;left:-2px;right:0;padding:1em;overflow-y:scroll;overflow-x:hidden;border:inherit;box-sizing:content-box;background-color:#fff;border-bottom:solid #999 2px;border-top-left-radius:.5em;border-bottom-left-radius:.5em;font-size:.8em}tw-debugger .panel:empty,tw-debugger .panel[hidden]{display:none}tw-debugger.theme-dark .panel{background-color:#000;border-bottom-color:#666}tw-debugger .panel-source .panel-row-buttons{width:2rem}tw-debugger .panel-source .source-tags{width:20%;font-style:italic}tw-debugger .panel-row-source td{font-family:monospace;font-size:1rem;white-space:pre-wrap;overflow-wrap:anywhere;max-height:8rem;padding:1rem}tw-debugger .panel-rows{width:100%;overflow-x:scroll}tw-debugger .panel-rows>*{display:table-row}tw-debugger .panel-rows>div:nth-of-type(2n){background-color:#e6e6e6}tw-debugger .panel-tools .panel-rows>*,tw-debugger .panel-options .panel-rows>*{margin-top:.4rem;display:block}tw-debugger.theme-dark .panel-rows>div:nth-of-type(2n){background-color:#212121}tw-debugger .panel-row-buttons{text-align:right}tw-debugger .panel-variables .panel-rows:empty::before{content:"~ No variables ~";font-style:italic;color:#575757;text-align:center}tw-debugger .panel-enchantments .panel-rows:empty::before{content:"~ No enchantments ~";font-style:italic;color:#575757;text-align:center}tw-debugger .panel-errors .panel-rows:empty::before{content:"~ No errors... for now. ~";font-style:italic;color:#575757;text-align:center}tw-debugger .panel-errors .panel-rows:empty+.panel-errors-bottom{display:none}tw-debugger.theme-dark .panel-variables .panel-rows:empty::before,tw-debugger.theme-dark .panel-enchantments .panel-rows:empty::before,tw-debugger.theme-dark .panel-errors .panel-rows:empty::before{color:#a8a8a8}tw-debugger .panel-rows:empty+.panel-variables-bottom{display:none}tw-debugger th[data-col]{text-decoration:underline;cursor:pointer}tw-debugger th[data-col][data-order=asc]::after{content:"↓"}tw-debugger th[data-col][data-order=desc]::after{content:"↑"}tw-debugger .panel-storylets:not(.panel-exclusive) .storylet-exclusive,tw-debugger .panel-storylets:not(.panel-urgent) .storylet-urgent{display:none}tw-debugger .storylet-exclusive,tw-debugger .storylet-urgent,tw-debugger .storylet-open{text-align:center}tw-debugger .panel-variables-bottom{padding-top:5px}tw-debugger .enchantment-row{min-height:1.5em}tw-debugger .variable-path{opacity:.4}tw-debugger .temporary-variable-scope,tw-debugger .enchantment-local{font-family:sans-serif;font-weight:normal;opacity:.8;font-size:.75em}tw-debugger .temporary-variable-scope:not(:empty)::before,tw-debugger .enchantment-local:not(:empty)::before{content:" in "}tw-debugger .variable-name,tw-debugger .enchantment-name{font-family:monospace;font-weight:bold}tw-debugger .variable-type{color:#575757;font-weight:normal;text-overflow:ellipsis;overflow:hidden;max-width:10em}tw-debugger.theme-dark .variable-type{color:#a8a8a8}tw-debugger .error-row{display:table-row;background-color:rgba(230,101,204,.3)}tw-debugger .error-row:nth-of-type(2n){background-color:rgba(237,145,219,.3)}tw-debugger .error-row>*{display:table-cell;padding:.25em .5em}tw-debugger .error-row .error-message[title]:not([title=""]){cursor:help}tw-debugger .error-row .error-passage{color:#575757}tw-debugger.theme-dark .error-row .error-passage{color:#a8a8a8}tw-debugger .storylet-row{background-color:rgba(193,240,225,.3)}tw-debugger .storylet-row:nth-child(2n){background-color:rgba(152,231,204,.3)}tw-debugger .storylet-row.storylet-closed{font-style:italic;background-color:#fff}tw-debugger .storylet-row.storylet-closed:nth-child(2n){background-color:#e6e6e6}tw-debugger .storylet-row.storylet-closed>:not(.storylet-lambda){opacity:.6}.storylet-error tw-debugger .storylet-row{background-color:rgba(230,101,204,.3)}.storylet-error tw-debugger .storylet-row:nth-child(2n){background-color:rgba(237,145,219,.3)}tw-debugger .storylet-row .storylet-name,tw-debugger .storylet-row .storylet-value{display:inline-block;width:50%}tw-debugger .storylet-row .storylet-lambda{font-family:monospace;font-size:1rem;white-space:pre-wrap;overflow-wrap:anywhere}tw-debugger.theme-dark .storylet-row.storylet-closed{background-color:#000}tw-debugger.theme-dark .storylet-row.storylet-closed:nth-child(2n){background-color:#212121}tw-debugger .tabs{padding-bottom:.5em}tw-debugger .tab{border-radius:0px 0px .5em .5em;border-top:none;top:-2px}tw-debugger .resizer-h{position:absolute;height:14em;border-left:2px solid #999;border-right:2px solid #999;top:10px;left:4px;width:8px;cursor:ew-resize}tw-debugger.theme-dark .resizer-h{border-color:rgba(0,0,0,0) #666}tw-debugger .resizer-v{position:absolute;height:8px;border-top:2px solid #999;border-bottom:2px solid #999;margin-bottom:4px;top:4px;left:10px;width:95%;cursor:ns-resize;box-sizing:border-box}tw-debugger.theme-dark .resizer-v{border-color:#666 rgba(0,0,0,0)}tw-debugger mark{color:inherit;background-color:rgba(101,230,230,.3) !important}tw-dialog{z-index:999997;border:#fff solid 2px;padding:2em;color:#fff;background-color:#000;display:block}@media(min-width: 576px){tw-dialog{max-width:50vw}}tw-dialog input[type=text]{font-size:inherit;width:100%;border:solid #fff !important}tw-dialog-links{text-align:right;display:-ms-flexbox;display:flex;-ms-flex-pack:end;justify-content:flex-end}tw-backdrop{z-index:999996;position:fixed;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,.8);display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}tw-backdrop~tw-backdrop{display:none}tw-link,.enchantment-link{cursor:pointer;color:#4169e1;font-weight:bold;text-decoration:none;transition:color .2s ease-in-out}tw-passage [style^=color] tw-link:not(:hover),tw-passage [style*=" color"] tw-link:not(:hover),tw-passage [style^=color][hover=true] tw-link:hover,tw-passage [style*=" color"][hover=true] tw-link:hover,tw-passage [style^=color] .enchantment-link:not(:hover),tw-passage [style*=" color"] .enchantment-link:not(:hover),tw-passage [style^=color][hover=true] .enchantment-link:hover,tw-passage [style*=" color"][hover=true] .enchantment-link:hover{color:inherit}tw-link:hover,.enchantment-link:hover{color:#00bfff}tw-link:active,.enchantment-link:active{color:#dd4b39}.visited{color:#6941e1}tw-passage [style^=color] .visited:not(:hover),tw-passage [style*=" color"] .visited:not(:hover),tw-passage [style^=color][hover=true] .visited:hover,tw-passage [style*=" color"][hover=true] .visited:hover{color:inherit}.visited:hover{color:#e3e}tw-broken-link{color:#933;border-bottom:2px solid #933;cursor:not-allowed}tw-passage [style^=color] tw-broken-link:not(:hover),tw-passage [style*=" color"] tw-broken-link:not(:hover),tw-passage [style^=color][hover=true] tw-broken-link:hover,tw-passage [style*=" color"][hover=true] tw-broken-link:hover{color:inherit}tw-link.enchantment-mouseover,.link.enchantment-mouseover,tw-expression.enchantment-mouseover>tw-link{color:inherit;font-weight:inherit;transition:none;cursor:inherit;border-bottom:2px dashed #999}tw-link.enchantment-mouseover:hover,tw-link.enchantment-mouseover:active,.link.enchantment-mouseover:hover,.link.enchantment-mouseover:active,tw-expression.enchantment-mouseover>tw-link:hover,tw-expression.enchantment-mouseover>tw-link:active{color:inherit}tw-link.enchantment-mouseover.enchantment-button,.link.enchantment-mouseover.enchantment-button,tw-expression.enchantment-mouseover>tw-link.enchantment-button{border-style:dashed}tw-link.enchantment-mouseout,.link.enchantment-mouseout,tw-expression.enchantment-mouseout>tw-link{color:inherit;font-weight:inherit;transition:none;cursor:inherit;border:rgba(64,149,191,.6) 1px solid;border-radius:.2em}tw-link.enchantment-mouseout:hover,tw-link.enchantment-mouseout:active,.link.enchantment-mouseout:hover,.link.enchantment-mouseout:active,tw-expression.enchantment-mouseout>tw-link:hover,tw-expression.enchantment-mouseout>tw-link:active{color:inherit}tw-link.enchantment-mouseout:hover,.link.enchantment-mouseout:hover,tw-expression.enchantment-mouseout>tw-link:hover{background-color:rgba(175,197,207,.75);border:rgba(0,0,0,0) 1px solid}tw-link.enchantment-dblclick,.link.enchantment-dblclick,tw-expression.enchantment-dblclick>tw-link{color:inherit;font-weight:inherit;transition:none;cursor:inherit;cursor:pointer;border:2px solid #999;border-radius:0}tw-link.enchantment-dblclick:hover,tw-link.enchantment-dblclick:active,.link.enchantment-dblclick:hover,.link.enchantment-dblclick:active,tw-expression.enchantment-dblclick>tw-link:hover,tw-expression.enchantment-dblclick>tw-link:active{color:inherit}tw-link.enchantment-dblclick:active,.link.enchantment-dblclick:active,tw-expression.enchantment-dblclick>tw-link:active{background-color:#999}tw-link.enchantment-button,.link.enchantment-button,.enchantment-button:not(.link) tw-link,.enchantment-button:not(.link) .link{border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block}.enchantment-button{display:block}.enchantment-clickblock{cursor:pointer;width:100%;height:100%;display:block}.enchantment-clickblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;color:rgba(65,105,225,.5);transition:color .2s ease-in-out}.enchantment-clickblock>:not(tw-enchantment):hover::after{color:rgba(0,191,255,.5)}.enchantment-clickblock>:not(tw-enchantment):active::after{color:rgba(222,78,59,.5)}.enchantment-clickblock>:not(tw-enchantment)::after{box-shadow:inset 0 0 0 .5vmax}.enchantment-clickblock>tw-passage::after,.enchantment-clickblock>tw-sidebar::after{box-shadow:0 0 0 .5vmax}.enchantment-mouseoverblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;border:2px dashed #999}.enchantment-mouseoutblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;border:rgba(64,149,191,.6) 2px solid}.enchantment-mouseoutblock:hover>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;background-color:rgba(175,197,207,.75);border:rgba(0,0,0,0) 2px solid;border-radius:.2em}.enchantment-dblclickblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;cursor:pointer;border:2px solid #999}tw-dialog-links{padding-top:1.5em}tw-dialog-links tw-link{border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block;display:inline-block}html{margin:0;height:100%;overflow-x:hidden}*,:before,:after{position:relative;box-sizing:inherit}body{margin:0;height:100%}tw-storydata{display:none}tw-story{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;font:100% Georgia,serif;box-sizing:border-box;width:100%;min-height:100%;font-size:1.5em;line-height:1.5em;padding:5% 5%;overflow:hidden;background-color:#000;color:#fff}tw-story [style*=content-box] *{box-sizing:border-box}@media(min-width: 576px){tw-story{padding:5% 20%}}tw-story tw-consecutive-br{display:block;height:1.6ex;visibility:hidden}tw-story select{background-color:rgba(0,0,0,0);font:inherit;border-style:solid;padding:2px}tw-story select:not([disabled]){color:inherit}tw-story textarea{resize:none;background-color:rgba(0,0,0,0);font:inherit;color:inherit;border-style:none;padding:2px}tw-story input[type=text]{background-color:rgba(0,0,0,0);font:inherit;color:inherit;border-style:none}tw-story input[type=checkbox]{transform:scale(1.5);margin:0 .5em .5em .5em;vertical-align:middle}tw-story tw-noscript{animation:appear .8s}tw-passage{display:block}tw-sidebar{text-align:center;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between}@media(min-width: 576px){tw-sidebar{left:-5em;width:3em;position:absolute;-ms-flex-direction:column;flex-direction:column}tw-enchantment[style*=width]>tw-sidebar{width:inherit}}tw-icon{display:inline-block;margin:.5em 0;font-size:66px;font-family:"Verdana",sans-serif}tw-icon[alt]{opacity:.2;cursor:pointer}tw-icon[alt]:hover{opacity:.4}tw-icon[data-label]::after{font-weight:bold;content:attr(data-label);font-size:20px;bottom:-20px;left:-50%;white-space:nowrap}tw-meter{display:block}tw-hook:empty,tw-expression:empty{display:none}tw-error{display:inline-block;border-radius:.2em;padding:.2em;font-size:1rem;cursor:help;white-space:pre-wrap}tw-error.error{background-color:rgba(223,58,190,.6);color:#fff}tw-error.warning{background-color:rgba(223,140,58,.6);color:#fff;display:none}.debug-mode tw-error.warning{display:inline}tw-error-explanation{display:block;font-size:.8rem;line-height:1rem}tw-open-button,tw-folddown{cursor:pointer;line-height:0em;border-radius:4px;border:1px solid rgba(255,255,255,.5);font-size:.8rem;margin:0 .2rem;padding:3px;white-space:pre}tw-folddown::after{content:"▶"}tw-folddown.open::after{content:"▼"}tw-open-button[replay]{display:none}tw-error tw-open-button,tw-eval-replay tw-open-button{display:inline !important}tw-open-button::after{content:attr(label)}tw-notifier{border-radius:.2em;padding:.2em;font-size:1rem;background-color:rgba(223,182,58,.4);display:none}.debug-mode tw-notifier{display:inline}tw-notifier::before{content:attr(message)}tw-colour{border:1px solid #000;display:inline-block;width:1em;height:1em}tw-enchantment:empty{display:none}h1{font-size:3em}h2{font-size:2.25em}h3{font-size:1.75em}h1,h2,h3,h4,h5,h6{line-height:1em;margin:.3em 0 .6em 0}pre{font-size:1rem;line-height:initial}small{font-size:70%}big{font-size:120%}mark{color:rgba(0,0,0,.6);background-color:#ff9}ins{color:rgba(0,0,0,.6);background-color:rgba(255,242,204,.5);border-radius:.5em;box-shadow:0em 0em .2em #ffe699;text-decoration:none}center{text-align:center;margin:0 auto;width:60%}blink{text-decoration:none;animation:fade-in-out 1s steps(1, end) infinite alternate}tw-align{display:block}tw-columns{display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-pack:justify;justify-content:space-between}.transition-in{animation:appear 0ms step-start}.transition-out{animation:appear 0ms step-end}[data-t8n^=dissolve].transition-in,[data-t8n=fade].transition-in{animation:appear .8s}[data-t8n^=dissolve].transition-out,[data-t8n=fade].transition-out{animation:appear .8s reverse}[data-t8n^=shudder].transition-in{display:inline-block !important;animation:shudder-in .8s}[data-t8n^=shudder].transition-out{display:inline-block !important;animation:shudder-in .8s reverse}[data-t8n^=rumble].transition-in{display:inline-block !important;animation:rumble-in .8s}[data-t8n^=rumble].transition-out{display:inline-block !important;animation:rumble-in .8s reverse}[data-t8n^=pulse].transition-in{animation:pulse .8s;display:inline-block !important}[data-t8n^=pulse].transition-out{animation:pulse .8s reverse;display:inline-block !important}[data-t8n^=zoom].transition-in{animation:zoom-in .8s;display:inline-block !important}[data-t8n^=zoom].transition-out{animation:zoom-in .8s reverse;display:inline-block !important}[data-t8n^=blur].transition-in{animation:blur .8s;display:inline-block !important}[data-t8n^=blur].transition-out{animation:blur .8s reverse;display:inline-block !important}[data-t8n^=slideleft].transition-in{animation:slide-left .8s;display:inline-block !important}[data-t8n^=slideleft].transition-out{animation:slide-right .8s reverse;display:inline-block !important}[data-t8n^=slideright].transition-in{animation:slide-right .8s;display:inline-block !important}[data-t8n^=slideright].transition-out{animation:slide-left .8s reverse;display:inline-block !important}[data-t8n^=slideup].transition-in{animation:slide-up .8s;display:inline-block !important}[data-t8n^=slideup].transition-out{animation:slide-down .8s reverse;display:inline-block !important}[data-t8n^=slidedown].transition-in{animation:slide-down .8s;display:inline-block !important}[data-t8n^=slidedown].transition-out{animation:slide-up .8s reverse;display:inline-block !important}[data-t8n^=fadeleft].transition-in{animation:fade-left .8s;display:inline-block !important}[data-t8n^=fadeleft].transition-out{animation:fade-right .8s reverse;display:inline-block !important}[data-t8n^=faderight].transition-in{animation:fade-right .8s;display:inline-block !important}[data-t8n^=faderight].transition-out{animation:fade-left .8s reverse;display:inline-block !important}[data-t8n^=fadeup].transition-in{animation:fade-up .8s;display:inline-block !important}[data-t8n^=fadeup].transition-out{animation:fade-down .8s reverse;display:inline-block !important}[data-t8n^=fadedown].transition-in{animation:fade-down .8s;display:inline-block !important}[data-t8n^=fadedown].transition-out{animation:fade-up .8s reverse;display:inline-block !important}[data-t8n^=flicker].transition-in{animation:flicker .8s}[data-t8n^=flicker].transition-out{animation:flicker .8s reverse}
 </style>
 </head>
 <body>
-<tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play test.</tw-noscript></noscript></tw-story>
-<tw-storydata name="test" startnode="4" creator="Twine" creator-version="2.8.1" format="Harlowe" format-version="3.3.8" ifid="AB8632C3-668F-45D2-989D-E5E3DD12DCC2" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Untitled Passage" tags="" position="250,0" size="100,100">
+<tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play FI - transports.</tw-noscript></noscript></tw-story>
+<tw-storydata name="FI - transports" startnode="89" creator="Twine" creator-version="2.8.1" format="Harlowe" format-version="3.3.8" ifid="AB8632C3-668F-45D2-989D-E5E3DD12DCC2" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/**
+ * Harlowe Audio Library (HAL), by Chapel, v2.3.0
+ * for Harlowe 2.1.0 and higher
+ * Released under the Unlicense, and dedicated to the public domain.
+**/
+#audio-overlay{position:fixed;top:0;right:0;left:0;bottom:0;z-index:100000;background:#111}.lds-ring{display:block;position:relative;top:20%;margin:auto;width:20em;height:20em}.lds-ring div{box-sizing:border-box;display:block;position:absolute;width:18em;height:18em;margin:6px;border:6px solid #fff;border-radius:50%;-webkit-animation:lds-ring 1.2s cubic-bezier(.5,0,.5,1) infinite;animation:lds-ring 1.2s cubic-bezier(.5,0,.5,1) infinite;border-color:#fff transparent transparent transparent}.lds-ring div:nth-child(1){-webkit-animation-delay:-.45s;animation-delay:-.45s}.lds-ring div:nth-child(2){-webkit-animation-delay:-.3s;animation-delay:-.3s}.lds-ring div:nth-child(3){-webkit-animation-delay:-.15s;animation-delay:-.15s}@-webkit-keyframes lds-ring{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes lds-ring{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}input#audio-volume{width:100%;margin:2em 0}span#vol-title{position:relative;bottom:-1em;font-size:1rem;float:left}tw-link#audio-mute{display:inline-block;padding:.3em;width:90%;text-decoration:none;color:#111;background:#eee;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;border:1px solid #000}tw-link#audio-mute:hover{opacity:.8}tw-link#audio-mute:active{opacity:.6}tw-link#audio-mute span{display:inline-block;width:1em;position:relative;height:1em;top:.2em;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAQAAABLCVATAAABF0lEQVR4Ae2VJVREYRSEB3ftuFUaLhF6I22iF7TgLr1XvAc849CwiBac9Xtm3e97cefp/Pec7+mdH0mZrGtMoBomyAEHfjGHXKg07gNxeUS3BuMAqGZswE7YcOIYgqgG7BFlSQgTAgKysC2jNjQmghFQCOpMxq+QmQgmFATU4kcq/YlgfKB1lALUqFSukRIbEwpy4BTZPM/Bu9TaQ362KAsl56sAtSR+Sgv6RCFdr/gjBYiuj65c3J0eNEmXz95TgybocvmoJj3avf5l59L1iD/WglZCP7/uh8zgeQ6epdahaZENFIPCCFvEYNPW4JdNazBGzhkj6caCbSc02DRRu0+8RR/+rb7wx6D505HxCVKvG0zpp+yknHe8MBDkT/s8AAAAAElFTkSuQmCC);background-size:contain}tw-link#audio-mute.muted span{right:4px;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAASElEQVR4Ae3WsQ0AMAjAsJ7ez9MTGEmlRGL3BJzPq6prw2DDYMNgw2DDYMOwh1kAMUygQIEC2RejANVxnVE9aDOqJ39GVZWqB5Z3r1ndBX5oAAAAAElFTkSuQmCC)}div#audio-volume{float:left}div#audio-controls{font:100% Georgia,serif;font-size:1.5em;position:fixed;width:8em;height:100%;padding:1em 2em;z-index:10000;top:0;left:0;bottom:0;background:#333;color:#eee;transition:left .3s;text-align:center}div#audio-controls.closed{left:-10.5em}div#audio-controls tw-link#audio-panel-toggle{display:inline-block;width:1.5em;position:absolute;height:1.5em;top:0;right:0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;text-decoration:none;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAQAAABLCVATAAAAYklEQVR4Ae3MsQFAMAAEQMDEagCgN4EuVTrbPcACeUBugDNeSdMQomI0PmYdTEYD9DA5jcVoBKuxGY1kNQ6jGRSaGaIj8gw1aI/KYVUSNqsSzMpiVT2zMjlVN0fqVW5o2luMGHqkQmD9cPYAAAAASUVORK5CYII=);background-size:contain}div#audio-controls.closed tw-link#audio-panel-toggle{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAQAAABLCVATAAAAZElEQVR4Ae3TpwGAMBQAUfrEeHB0cDhcXBSO7ehlgBw9N8BL/YZO95r6uA/UEbOv+ylfHRJ9z1BWLynKJqmWohyS6ijKOygKCpmjZYqXTTA2xUiCsShGAMw8/Q3ArFgFMHek0w3WCaR74eO2YQAAAABJRU5ErkJggg==)}@media screen and (max-width:800px){div#audio-controls.closed{left:-12em}div#audio-controls.closed tw-link#audio-panel-toggle{right:-1.5em}}div#story-menu{margin:1em 0}tw-link.story-menu{width:100%;display:block;font-weight:400;background:#ccc;font-size:.9em;padding:.1em 0;color:#111;border:1px solid #333}tw-link.story-menu.hide{display:none}tw-link.story-menu:hover{opacity:.8}tw-link.story-menu:active{opacity:.6}input[type=range].hal{-webkit-appearance:none;width:100%;margin:2.25px 0}input[type=range].hal:focus{outline:0}input[type=range].hal::-webkit-slider-runnable-track{width:100%;height:15.5px;cursor:pointer;box-shadow:.4px .4px 1px #000,0 0 .4px #0d0d0d;background:#111;border-radius:0;border:0 solid #010101}input[type=range].hal::-webkit-slider-thumb{box-shadow:0 0 2.2px rgba(17,17,17,.1),0 0 0 rgba(30,30,30,.1);border:0 solid #fff;height:20px;width:11px;border-radius:0;background:rgba(255,255,255,.93);cursor:pointer;-webkit-appearance:none;margin-top:-2.25px}input[type=range].hal:focus::-webkit-slider-runnable-track{background:#444}input[type=range].hal::-moz-range-track{width:100%;height:15.5px;cursor:pointer;box-shadow:.4px .4px 1px #000,0 0 .4px #0d0d0d;background:#111;border-radius:0;border:0 solid #010101}input[type=range].hal::-moz-range-thumb{box-shadow:0 0 2.2px rgba(17,17,17,.1),0 0 0 rgba(30,30,30,.1);border:0 solid #fff;height:20px;width:11px;border-radius:0;background:rgba(255,255,255,.93);cursor:pointer}input[type=range].hal::-ms-track{width:100%;height:15.5px;cursor:pointer;background:0 0;border-color:transparent;color:transparent}input[type=range].hal::-ms-fill-lower{background:#000;border:0 solid #010101;border-radius:0;box-shadow:.4px .4px 1px #000,0 0 .4px #0d0d0d}input[type=range].hal::-ms-fill-upper{background:#111;border:0 solid #010101;border-radius:0;box-shadow:.4px .4px 1px #000,0 0 .4px #0d0d0d}input[type=range].hal::-ms-thumb{box-shadow:0 0 2.2px rgba(17,17,17,.1),0 0 0 rgba(30,30,30,.1);border:0 solid #fff;height:20px;width:11px;border-radius:0;background:rgba(255,255,255,.93);cursor:pointer;height:15.5px}input[type=range].hal:focus::-ms-fill-lower{background:#111}input[type=range].hal:focus::-ms-fill-upper{background:#444}
+/** End of HAL code */
 
-(set: $choice1 to &quot;I want to take the bus&quot;)
-(event: when time &gt; 4000)[(replace: $choice1)[[[$choice1 -&gt; test1]]]] $choice1
-
-(set: $choice2 to &quot;I want to drive&quot;)
-(event: when time &gt; 2000)[(replace: $choice2)[[[$choice2 -&gt; drive1]]]]$choice2
-
-1 min --&gt; 200
-30 min --&gt; 6&#39;000 
-1h --&gt; 12&#39;000
-1 min --&gt;200</tw-passagedata><tw-passagedata pid="2" name=" drive1" tags="" position="425,0" size="100,100"></tw-passagedata><tw-passagedata pid="3" name=" test1" tags="" position="400,0" size="100,100"></tw-passagedata><tw-passagedata pid="4" name="Situation initiale" tags="" position="50,300" size="100,100">(set: $ecologie to 5)
-(set: $revision to 0)
-(set: $sante to 5)
-(set: $sociabilite to 0)
+img{
+height: 40vh;
+width: 40vh;
+position: absolute;
+right: -50vh;
+top: 20vh;
+border-radius: 5px;
+}
+tw-passage{
+width: 100vh;
+text-align: justify;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">/**
+ * Harlowe Audio Library (HAL), by Chapel, v2.3.0
+ * for Harlowe 2.1.0 and higher
+ * Released under the Unlicense, and dedicated to the public domain.
+**/
+;!function(e){(jQuery.browser=jQuery.browser||{}).mobile=/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(e)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(e.substr(0,4))}(navigator.userAgent||navigator.vendor||window.opera),function(){"use strict";window.Fast={filter:function(e,t){for(var o=e.length,n=[],a=0;a<o;a++)t(e[a],a,e)&&n.push(e[a]);return n},forEach:function(e,t){for(var o=e.length,n=0;n<o;n++)t(e[n],n,e)},map:function(e,t){for(var o=e.length,n=new Array(o),a=0;a<o;a++)n[a]=t(e[a],a,e);return n},find:function(e,t){for(var o=e.length,n=0;n<o;n++)if(t(e[n],n,e))return e[n]},findIndex:function(e,t){for(var o=e.length,n=0;n<o;n++)if(t(e[n],n,e))return n;return-1},some:function(e,t){for(var o=e.length,n=0;n<o;n++)if(t(e[n],n,e))return!0;return!1}}}(),window.Chapel=window.Chapel||{},window.Chapel.options={preload:!0,loadDelay:0,muteOnBlur:!0,startingVol:.5,persistPrefs:!0,globalA:!0,showControls:!0,sidebarStartClosed:!0,volumeDisplay:!1,trackLoadLimit:500,totalLoadLimit:8e3,debug:!1},window.Chapel.debug=function(){Chapel.options.debug&&console.log.apply(null,arguments)},function(){"use strict";var n=$("tw-storydata"),o=/(.+?):(.+)/,t=/[\r\n]+/,a=/^["']/,r=/["']$/;function e(e){return Fast.map(Fast.filter(e.split(t),function(e){return e&&e.trim()&&e.includes(":")}),function(e){return e.trim()})}function i(e){return e.trim().replace(a,"").replace(r,"").trim()}function s(e){var t=e.match(o);return t instanceof Array?{key:i(t[1]),value:i(t[2])}:e}var u,l,c,p=n.find('tw-passagedata[name="hal.tracks"]'),d=null,p=(p.length&&(p=e(p.text()),u=[],l=[],Fast.forEach(p,function(e){var e=s(e);"string"==typeof e&&l.push(e),u.push([e.key,(e=e.value,Fast.map(e.split(","),i))])}),l.length&&console.error("Some track definitions could not be parsed:\n"+l.join("\n")+"\nPlease check these definitions and try again."),d=new Map(u)),n.find('tw-passagedata[name="hal.config"]')),m=null;function f(e){var t=n.attr("format-version");if(e)return t;var e=t.split("."),t=e[0],o=e[1],e=e[2],t=Number(t),o=Number(o);return[t=(t=Number.isNaN(t)?3:t)<1?3:t,o=Number.isNaN(o)?3:o,e=Number.isNaN(e)?0:e]}function h(){var e=f();return!(3<=e[0]&&3<=e[1])}function g(t){return function(){var e=[].slice.call(arguments).slice(1),e=t.apply(null,e);return"string"==typeof e||"boolean"==typeof e||"number"==typeof e?e:""}}p.length&&(p=e(p.text()),c={},Fast.forEach(Fast.map(p,function(e){return s(e)}),function(e){c[e.key]=e.value}),m=c),m&&Fast.forEach(Object.keys(m),function(e){var t=e,o=c[e],e=typeof Chapel.options[e];"boolean"==e?"true"===o?Chapel.options[t]=!0:"false"===o&&(Chapel.options[t]=!1):"number"==e?(o=Number(o),Number.isNaN(o)||(Chapel.options[t]=o)):"string"==e&&o&&(Chapel.options[t]=o)});var y=require("macros");if(window.Chapel=window.Chapel||{},window.Chapel.Macros={add:function(o){o&&"object"==typeof o&&Fast.forEach(Object.keys(o),function(e){var t;t=o[e=e],h()?y.add(e,g(t),y.TypeSignature.zeroOrMore(y.TypeSignature.Any)):y.add(e,"Any",g(t),y.TypeSignature.zeroOrMore(y.TypeSignature.Any))})}},window.Chapel.Get=Object.freeze({version:f(),isHarlowe3OrLater:3<=f()[0],storyTitle:n.attr("name"),IFID:n.attr("ifid"),useOldMacroAPI:h(),fromPassage:d}),Chapel.debug("Harlowe Version -> ",Chapel.Get.version.join(".")),Chapel.debug("Harlowe Major Version -> ",Chapel.Get.version[0]),Chapel.debug("Story Title -> ",Chapel.Get.storyTitle),Chapel.debug("Story IFID -> ",Chapel.Get.IFID),Chapel.Get.version[0]<2)throw new Error("The Harlowe Audio Library is only designed to work with Harlowe 2 and 3; you appear to be using Harlowe 1 or an otherwise invalid story format.","get.js -> initialization",176);Chapel.options.storagekey="%%hal-"+Chapel.Get.IFID+"-{"+Chapel.Get.storyTitle+"}",Chapel.debug("Storage Key -> ",Chapel.options.storagekey)}(),function(){"use strict";var t=Chapel.options,e=function(e,t){if(window.localStorage)try{e=""+e,"string"!=typeof t&&(t=JSON.stringify(t)),window.localStorage.setItem(e,t)}catch(e){console.error(e)}},o=function(e){if(window.localStorage)try{return e=""+e,window.localStorage.getItem(e)}catch(e){console.error(e)}},n=function(e){if(window.localStorage)try{e=""+e,window.localStorage.removeItem(e)}catch(e){console.error(e)}},a={loaded:[],classes:{},master:{volume:t.startingVol,mute:!1},groups:{playing:[],looping:[],custom:{}},mute:function(e){a.master.mute=!!e,$(document).trigger({type:":master-mute",mute:!!e})},isMuted:function(){return!!a.master.mute},volume:function(e){e=Number(e),Number.isNaN(e)||(1<e?e=1:e<0&&(e=0),a.master.volume=e),$(document).trigger({type:":master-volume",volume:e})},getVolume:function(){return a.master.volume},stopAll:function(){a.classes.Track&&Fast.forEach(a.classes.Track.list,function(e){e.stop()})},audioPlaying:function(){return!!a.groups.playing.length},savePrefs:function(){e(t.storagekey,a.master)},loadPrefs:function(){var e=o(t.storagekey);e&&"object"==typeof e&&e.hasOwnProperty("volume")&&"number"==typeof e.volume&&e.hasOwnProperty("mute")&&"boolean"==typeof e.volume&&(delete a.master,a.master=e)},clearPrefs:function(){n(t.storagekey)}},r={track:[":available",":loaded",":play",":stop",":mute",":volume"],master:[":master-mute",":master-volume"]};var i=r.track.concat(r.master);function s(e,t){if(!e||"string"!=typeof e||!e.trim())return null;e=Fast.filter(Fast.map(e.split(" "),function(e){return(e=":"!==(e=e.split(".")[0])[0]?":"+e:e)+".userland"}),function(e){return(t?i:r.track).includes(e)}).join(" ");return e&&e.trim()?e:null}a.data={parseEvent:s,bail:function(e){throw new Error(e,"audio.js -> bail()",140)}},a.on=function(e,t){t&&"function"==typeof t?(e=s(e,!0))&&$(document).on(e,t):console.error("Chapel.Audio.on() -> invalid callback")},a.one=function(e,t){t&&"function"==typeof t?(e=s(e,!0))&&$(document).one(e,t):console.error("Chapel.Audio.one() -> invalid callback")},a.off=function(e){(e=s(e,!0))&&$(document).off(e)},t.persistPrefs&&($(document).on(":master-mute",a.savePrefs),$(document).on(":master-volume",a.savePrefs)),$(document).on(":play",function(e){e.track.addToGroup("playing")}),$(document).on(":stop",function(e){e.track.removeFromGroup("playing")}),t.muteOnBlur&&$(window).on("blur",function(){a.isMuted()||(a.mute(!0),$(window).one("focus",function(){a.mute(!1)}))}),a.parseEvent=s,window.Chapel=window.Chapel||{},window.Chapel.Audio=a}(),function(){"use strict";var a=Chapel.Audio,o=a.data.pareEvent,r=a.data.bail,i=Chapel.options,t=$(document.createElement("div")).attr("id","audio-container").css("display","none").appendTo(document.body),s={aac:"audio/aac",caf:"audio/x-caf","x-caf":"audio/x-caf",mp3:'audio/mpeg; codecs="mp3"',mpeg:'audio/mpeg; codecs="mp3"',m4a:"audio/mp4",mp4:"audio/mp4","x-m4a":"audio/mp4","x-mp4":"audio/mp4",oga:"audio/ogg",ogg:"audio/ogg",opus:'audio/ogg; codecs="opus"',wav:"audio/wav",wave:"audio/wav",weba:"audio/webm",webm:"audio/webm"};function u(e,t,o){this instanceof u||r("Track: called without `new` operator"),e||r("Track: no id specified"),"string"!=typeof e&&r("Track: track id is not a string"),t&&(!Array.isArray(t)||t.length)||r("Track: no sources specified"),o?t=[].slice.call(arguments).slice(1):"string"==typeof t&&(t=[t]);var n=$(document.createElement("audio"));Fast.forEach(t,function(e){$(document.createElement("source")).attr({src:e,type:(e=(e=(e=(e=(e=e).split("."))[e.length-1]).includes("?")?e.split("?")[0]:e).toLowerCase().trim(),Object.keys(s).includes(e)||r('Track: unsupported file type "'+e+'"'),s[e])}).appendTo(n)}),n.attr({"data-track":"id","data-volume":1,"data-mute":!1}).one("canplaythrough.hal",function(){a.loaded.push(e)}),i.preload&&n.attr("preload","auto"),n[0].volume=+a.master.volume,this.id=e,this.$el=n,this.unwrap=n[0],this.sources=t}Object.assign(u,{list:[],is:function(e){return e instanceof u},has:function(t){return Fast.some(u.list,function(e){return e.id===t})},emit:function(e,t){$(document).trigger({type:e,track:t}),t.emit(e)},add:function(e,t,o){var n=new u(e,t=o?[].slice.call(arguments).slice(1):t);return u.list.push(n),n.$el.on("canplay",function(){u.emit(":available",n)}),n.$el.on("canplaythrough",function(){u.emit(":loaded",n)}),n.attach(),n},renew:function(){Fast.forEach(u.list,function(e){e.mute(e.isMuted()),e.volume(e.getVolume())})},getIdx:function(t){return Fast.findIndex(u.list,function(e){return e.id===t})},get:function(t){var e=Fast.find(u.list,function(e){return e.id===t});if(e)return e;throw new ReferenceError('There is no track with the id "'+t+'". Please check your spelling and capitalization.',"track.js -> Track.get()",155)},removeFromDOM:function(e){(e="string"==typeof e?u.get(e):e)&&u.is(e)?e.unattach():t.remove()},_runOnMultiple:function(e,t,o){e instanceof Array&&u.prototype.hasOwnProperty(t)&&Fast.forEach(e,function(e){(e=u.is(e)?e:u.get(e)||null)&&e[t].apply(e,o&&o instanceof Array?o:[])})}}),Object.assign(u.prototype,{constructor:u,emit:function(e){this.$el.trigger({type:e,track:this})},clone:function(){return new u(this.id,this.sources)},isAttached:function(){return $.contains(t[0],this.unwrap)},attach:function(){return this.isAttached()||this.$el.appendTo(t),this},unattach:function(){return this.isAttached()&&this.$el.remove(),this},isPlaying:function(){return!this.unwrap.paused},play:function(){var e=this;return this.unwrap.play(),u.emit(":play",this),this.$el.on("ended",function(){e.unwrap.loop||(e.unwrap.currentTime=0,u.emit(":stop",e))}),this},playWhenPossible:function(){var t=this;return this.unwrap.play().then(function(){u.emit(":play",t),t.$el.on("ended",function(){t.unwrap.loop||(t.unwrap.currentTime=0,u.emit(":stop",t))})},function(e){$(document).one("click mousedown keydown touchstart",function(){t.play()})}).catch(function(e){console.error(e)}),this},forcePlay:function(){var e=this,t=$(document.createElement("a")).css("display","none").appendTo(document.body).on("click",function(){e.play()});setTimeout(function(){t.trigger("click")},safeAudioStart)},pause:function(){return this.unwrap.pause(),u.emit(":pause",this),this},stop:function(){return this.unwrap.pause(),this.unwrap.currentTime=0,u.emit(":stop",this),this},mute:function(e){return this.$el.attr("data-mute",e=!!e),a.master.mute?this.unwrap.muted=!0:this.unwrap.muted=e,u.emit(":mute",this),this},isMuted:function(){var e=this.$el.attr("data-mute");return"boolean"==typeof e?e:"false"!==e},toggleMute:function(){return this.mute(!this.isMuted()),this},volume:function(e){return e=Number(e),Number.isNaN(e)||(1<e?e=1:e<0&&(e=0),this.$el.attr("data-volume",e),this.unwrap.volume=e*a.master.volume),u.emit(":volume",this),this},getVolume:function(){return Number(this.$el.attr("data-volume"))},addToGroup:function(e,t){var o=this,t=(t?a.groups.custom:a.groups)[e];return Fast.some(t,function(e){return o.id===e.id})||t.push(this),this},removeFromGroup:function(e,t){var o=this,t=(t?a.groups.custom:a.groups)[e],e=Fast.findIndex(t,function(e){return e.id&&e.id===o.id});return t.splice(e,1),this},loop:function(e){return this.unwrap.loop=!!e,this.unwrap.loop?this.addToGroup("looping"):this.removeFromGroup("looping"),this},isLooping:function(){return!!this.unwrap.loop},toggleLoop:function(){return this.loop(!this.isLooping()),this},seek:function(e){return e<0?e=this.unwrap.duration-e:e>this.unwrap.duration&&(e=this.unwrap.duration),this.unwrap.currentTime=e,this},fadeIn:function(e){var t=this,o=(e=e||1,this.getVolume());return this.volume(0),this.play(),this.$el.animate({volume:o*a.master.volume},1e3*e,function(){t.volume(o),u.emit(":volume",t),u.emit(":fade",t)}),this},fadeOut:function(e){e=e||1;var t=this,o=this.getVolume();return this.$el.animate({volume:0},1e3*e,function(){t.stop(),t.volume(o),u.emit(":volume",t),u.emit(":fade",t)}),this},fadeTo:function(e,t){var o=this;if(e=e||1,t=Number(t),!Number.isNaN(t))return 1<t?t=1:t<0&&(t=0),this.$el.animate({volume:t*a.master.volume},1e3*e,function(){o.volume(t),u.emit(":volume",o),u.emit(":fade",o)}),this;alert("ivalid volume level")},delay:function(e,t){var o=this;"function"==typeof t&&(e=Number(e),(Number.isNaN(e)||e<0)&&(e=0),setTimeout(function(){t.call(o,o,e)},e))},on:function(e,t){if(!t||"function"!=typeof t)return console.error("<track>.on() -> invalid callback"),this;(e=o(e))&&this.$el.on(e,t)},one:function(e,t){if(!t||"function"!=typeof t)return console.error("<track>.one() -> invalid callback"),this;(e=o(e))&&this.$el.one(e,t)},off:function(e){(e=o(e))&&this.$el.off(e)}}),a.classes.Track=u,a.newTrack=function(){try{return u.add.apply(null,arguments)}catch(e){console.error(e.message),alert("Error in A.newTrack() -> see the console for more information.")}},a.track=function(e){try{return u.get(e)}catch(e){console.error(e.message),alert("Error in A.track() -> see the console for more information.")}},$(document).on(":master-mute",u.renew),$(document).on(":master-volume",u.renew)}(),function(){"use strict";var n=Chapel.Audio,a=n.classes.Track,o=(n.data._extend,/(play)?list:(.+)/i);n.createGroup=function(e,t,o){o=o?[].slice.call(arguments).slice(1):t;t=e,(e=o)&&Array.isArray(e)||(e=[]),n.groups.custom[t]=Fast.map(e,function(e){return a.get(e)})},n.group=function(e){if(!(this instanceof n.group))return new n.group(e);if(Object.keys(n.groups.custom).includes(e))this.members=n.groups.custom[e];else{if(!(n.groups[e]&&n.groups[e]instanceof Array))throw new ReferenceError('There is no group with the id "'+id+'". Please check your spelling and capitalization.',"group.js -> A.group()",29);this.members=n.groups[e]}var t;o.test(e)&&(t=e.match(o)[2])&&t.trim()&&(this.members=n.playlist(t).tracks),Array.isArray(this.members)||(this.members=[],console.error('Could not find members for track group "'+e+'"!'))},Object.assign(n.group,{is:function(e){return this instanceof n.group},_runOnAll:function(e,t,o,n){null!=n?o=[].slice.call(arguments).slice(2):o instanceof Array||(o=[o]);n=[e.members,t,o];a._runOnMultiple.apply(null,n)}}),Object.assign(n.group.prototype,{constructor:n.group,_run:function(){n.group._runOnAll.apply(null,[this].concat([].slice.call(arguments)))},play:function(){return this._run("play"),this},pause:function(){return this._run("pause"),this},stop:function(){return this._run("stop"),this},mute:function(e){return this._run("mute",e),this},volume:function(e){return this._run("volume",e),this},loop:function(e){return this._run("loop",e),this}})}(),function(){"use strict";var e=Chapel.Audio,a=e.classes.Track;e.data._extend;function n(e,t){if(!(this instanceof n))return new n(e,t);this.id=e,this.tracks=t.map(function(e){return a.get(e)}),this.looping=!1,this.current="",this.playing=!1}Object.assign(n,{list:{},is:function(e){return e instanceof n},add:function(e,t,o){return o&&(t=[].slice.call(arguments).slice(1)),n.list[e]=new n(e,t),n.list[e]},_runOnAll:function(e,t,o,n){null!=n?o=[].slice.call(arguments).slice(2):o instanceof Array||(o=[o]);n=[e.tracks,t,o];a._runOnMultiple.apply(null,n)}}),Object.assign(n.prototype,{constructor:n,clone:function(){return new n(this.id,this.tracks.map(function(e){return e.id}))},_run:function(){n._runOnAll.apply(null,[this].concat([].slice.call(arguments)))},volume:function(e){return this._run("volume",e),this},mute:function(e){return this._run("mute",e),this},shuffle:function(){for(var e,t,o=this.tracks,n=o.length-1;0<n;n--)e=Math.floor(Math.random()*(n+1)),t=o[n],o[n]=o[e],o[e]=t;return this.tracks=o,this},random:function(){return this.tracks[Math.floor(Math.random()*this.tracks.length)]},isPlaying:function(){return this.playing},nowPlaying:function(){return a.get(this.current)},play:function(e){var t=this;if((e=e||(t.current?Fast.findIndex(t.tracks,function(e){return e.id===t.current}):0))>=t.tracks.length&&t.looping)e=0;else if(e>=t.tracks.length)return t.current="",void(t.playing=!1);var o=t.tracks[e],n=o.isLooping();return o.loop(!1),o.play(),t.playing=!0,setTimeout(function(){o.isPlaying()||(t.playing=!1)},20),t.current=o.id,o.$el.one("ended.playlist",function(){e++,o.loop(n),t.play(e)}),t},loop:function(e){return this.looping=!!e,this},isLooping:function(){return this.looping},stop:function(){var e;return this.current&&this.isPlaying()?(e=this.nowPlaying())&&(e.stop(),e.$el.off(".playlist")):this._run("stop"),this.current="",this.playing=!1,this},pause:function(){var e;return this.current&&this.isPlaying()&&((e=this.nowPlaying())&&e.pause()),this.playing=!1,this}}),e.classes.Playlist=n,e.createPlaylist=function(){try{n.add.apply(null,arguments)}catch(e){console.error(e.message),alert("Error in A.createPlaylist() -> see the console for more information.")}},e.playlist=function(e){try{var t=n.list[e]||null;if(t)return t;throw new ReferenceError('There is no playlist with the id "'+e+'". Please check your spelling and capitalization.',"list.js -> A.playlist()",171)}catch(e){console.error(e.message),alert("Error in A.createPlaylist() -> see the console for more information.")}}}(),function(){"use strict";var t=Chapel.Audio,o=t.classes.Track,n=t.classes.Playlist;function a(t,o){if("object"!=typeof o)throw new TypeError("Invalid extension.","extensions.js -> _extend()",8);Fast.forEach(Object.keys(o),function(e){if(void 0!==t[e])throw new Error('Invalid extension: cannot clobber existing property "'+e+'".',"extensions.js -> _extend()",8);t[e]=o[e]})}t.extend=function(e){a(Audio,e)},o.extend=function(e){a(o,e)},o.extendPrototype=function(e){a(o.prototype,e)},t.extendTrack=o.extend,t.extendTrackProto=o.extendPrototype,t.group.extend=function(e){a(t.group,e)},t.group.extendPrototype=function(e){a(t.group.prototype,e)},t.extendGroup=t.group.extend,t.extendGroupProto=t.group.extendPrototype,n.extend=function(e){a(n,e)},n.extendPrototype=function(e){a(n.prototype,e)},t.extendPlaylist=n.extend,t.extendPlaylistProto=n.extendPrototype}(),function(){"use strict";var e,t,o,n,a,r,i,s=Chapel.options;s.showControls&&(e=$(document.createElement("div")).attr("id","story-menu").css("display","none"),t=$(document.createElement("span")).attr("id","vol-title").append("Volume"),s.volumeDisplay||t.css("display","none"),o=$(document.createElement("input")).attr({id:"audio-volume",type:"range",min:1,max:99,step:1,title:"Volume"}).addClass("hal"),(a=Math.trunc(100*window.Chapel.Audio.master.volume))<0?a=0:100<a&&(a=100),o.attr("value",a),n=function(e){void 0===e&&(e=o.val()),t.empty().append("Volume "+e)},o.on("input",function(){window.Chapel.Audio.volume($(this).val()/100),n($(this).val())}),a=$(document.createElement("tw-link")).attr({id:"audio-mute",title:"Mute"}).append("Mute <span></span>").on("click",function(e){e.preventDefault(),$(this).toggleClass("muted"),Chapel.Audio.mute(!Chapel.Audio.isMuted())}),Chapel.Audio.isMuted()&&a.addClass("muted"),r=$(document.createElement("tw-link")).attr("id","audio-panel-toggle").on("click",function(e){e.preventDefault(),i.toggleClass("closed")}),i=$(document.createElement("div")).attr("id","audio-controls").append(e,t,o,a,r).appendTo(document.body),s.sidebarStartClosed&&i.addClass("closed"),window.Chapel=window.Chapel||{},window.Chapel.Audio=window.Chapel.Audio||{},window.Chapel.Audio.controls={$panel:i,$volume:o,$mute:a,$user:e,close:function(){i.addClass("closed")},open:function(){i.removeClass("closed")},toggle:function(){i.toggleClass("closed")},hide:function(){i.css("display","none")},show:function(){i.css("display","block")},updateVolume:n})}(),function(){"use strict";var s=Chapel.options,t=State,e=$(document.createElement("div")).attr("id","audio-overlay").css("display","none").appendTo(document.body);function o(){e.css("display","block").append('<div class="lds-ring"><div></div><div></div><div></div><div></div></div>')}function u(){e.fadeOut(function(){e.empty()})}window.Chapel=window.Chapel||{},window.Chapel.Audio=window.Chapel.Audio||{},window.Chapel.Audio.loadScreen={show:o,dismiss:u,kill:function(){$("#audio-overlay").remove()}},window.Chapel.Audio.$overlay=e,window.Chapel.Audio.preload=function(){var a,e,r,i;Chapel.debug("This is a mobile browser -> ",$.browser.mobile),t.pastLength||t.futureLength||$.browser.mobile||($(document).ready(function(){o()}),a=100+s.loadDelay,e=Chapel.Audio.classes.Track.list,r=Chapel.Audio.loaded,e.length?(i=Fast.map(e,function(e){return e.id}),0<s.totalLoadLimit&&setTimeout(function(){u()},s.totalLoadLimit),function e(){var t,o,n;i.length?(t=i.shift(),r.includes(t)?e():(o=Chapel.Audio.classes.Track.get(t)).unwrap.readyState<2?(n=!1,o.$el.one("canplaythrough.hal",function(){e(),n=!0}),setTimeout(function(){n||(o.$el.off("canplaythrough.hal"),e())},s.trackLoadLimit)):(r.includes(t)||r.push(t),e())):setTimeout(u,a)}()):setTimeout(u,a))}}(),function(){"use strict";var e,t,o=Chapel.options.storagekey+"_hal_restart_",n=(Chapel.debug("HAL Session Key -> ",o),window.sessionStorage?(Chapel.debug("Session Storage Available"),e=function(e,t){window.sessionStorage.setItem(o+e,t)},t=function(e){return window.sessionStorage.getItem(o+e)}):(Chapel.debug("Session Storage Unavailable"),e=function(){},t=function(){},console.warn("Session storage is unavailable...")),{save:e,load:t});window.Chapel.Audio.state={_store:n,saveTracks:function(){var e;try{e=Fast.map(Chapel.Audio.classes.Track.list,function(e){return{id:e.id,sources:e.sources}}),Chapel.debug("Session Saved (Tracks) -> ",e),e=JSON.stringify(e),n.save("tracks",e)}catch(e){console.error(e.message)}},loadTracks:function(){var e;try{e=(e=n.load("tracks"))&&JSON.parse(e),Array.isArray(e)&&e.length&&(Chapel.debug("Session Loaded (Tracks) -> ",e),Fast.forEach(e,function(e){e.id&&e.sources&&!Chapel.Audio.classes.Track.has(e.id)?Chapel.Audio.newTrack.apply(null,[e.id].concat(e.sources)):Chapel.debug("Track reloading skipped.")}))}catch(e){console.error(e.message)}},savePlaylists:function(){try{var o=Chapel.Audio.classes.Playlist.list,e=Fast.map(Object.keys(o),function(e){var t={};return t.tracks=Fast.map(o[e].tracks,function(e){return e.id}),t.id=o[e].id,t});Chapel.debug("Session Saved (Playlists) -> ",e),e=JSON.stringify(e),n.save("playlists",e)}catch(e){console.error(e.message)}},loadPlaylists:function(){var e;try{(e=(e=n.load("playlists"))&&JSON.parse(e))&&Array.isArray(e)&&e.length&&(Chapel.debug("Session Loaded (Playlists) -> ",e),Fast.forEach(e,function(e){e.id&&e.tracks&&Chapel.Audio.createPlaylist(e.id,e.tracks)}))}catch(e){console.error(e.message)}},saveGroups:function(){var t;try{t={},Fast.forEach(Object.keys(Chapel.Audio.groups.custom),function(e){t[e]=Fast.map(Chapel.Audio.groups.custom[e],function(e){return"string"==typeof e?e:e.id})}),Chapel.debug("Session Saved (Groups) -> ",t),t=JSON.stringify(t),n.save("groups",t)}catch(e){console.error(e.message)}},loadGroups:function(){var t;try{(t=(t=n.load("groups"))&&JSON.parse(t))&&"object"==typeof t&&(Chapel.debug("Session Loaded (Groups) -> ",t),Fast.forEach(Object.keys(t),function(e){Fast.map(t[e],function(e){return Chapel.Audio.classes.Track.get(e)})}),Chapel.Audio.groups.custom=t)}catch(e){console.error(e.message)}}}}(),function(){"use strict";var e=Chapel.options;e.globalA&&void 0===window.A&&(Chapel.debug("Created global A interface."),window.A=window.Chapel.Audio),Chapel.Get.fromPassage&&(Chapel.debug("Loading tracks from track def special passage -> ",Chapel.Get.fromPassage),Chapel.Get.fromPassage.forEach(function(e,t){Chapel.Audio.newTrack.apply(null,[t].concat(e))})),$(document).on("unload",function(){Chapel.debug("User Prefs Saved"),window.Chapel.Audio.savePrefs()}),Chapel.Audio.classes.Track.renew(),Chapel.Audio.controls&&Chapel.Audio.controls.updateVolume(),Chapel.Get.isHarlowe3OrLater&&($(window).on("unload",function(){Chapel.debug("HAL State Saved"),Chapel.Audio.state.saveTracks(),Chapel.Audio.state.savePlaylists(),Chapel.Audio.state.saveGroups()}),Chapel.debug("HAL State Loaded"),Chapel.Audio.state.loadTracks(),Chapel.Audio.state.loadPlaylists(),Chapel.Audio.state.loadGroups()),e.persistPrefs&&(Chapel.debug("User Prefs Loaded"),Chapel.Audio.loadPrefs())}(),function(){"use strict";var i,s,e,u,t;Chapel.options.showControls&&(i=Engine,s=Chapel.Audio.controls.$user,e=function(){return"none"!==s.css("display")},u=function(){return e()||s.css("display","block"),s},t=function(){return e()&&s.css("display","none"),s},Chapel.Audio.menu={hide:t,show:u,isShown:e,links:{add:function(e,t,o){var n,a;if(!e||"string"!=typeof e)return r="undefined",alert(r),void console.error(r);o||"function"!=typeof t?(t&&"string"==typeof t&&(n=t),o&&"function"==typeof o&&(a=o)):(a=t,n=null);var r=$(document.createElement("tw-link")).append(e).attr({tabindex:"0",name:e.toLowerCase().trim()}).on("click",function(){n&&i.goToPassage(n),a&&a()}).addClass("story-menu").appendTo(s);return u(),r},clear:function(){return s.empty(),t()},hide:function(e){e=e.toLowerCase().trim(),$('tw-link.story-menu[name="'+e+'"]').addClass("hide")},show:function(e){e=e.toLowerCase().trim(),$('tw-link.story-menu[name="'+e+'"]').removeClass("hide")},toggle:function(e){e=e.toLowerCase().trim(),$('tw-link.story-menu[name="'+e+'"]').toggleClass("hide")},remove:function(e){e=e.toLowerCase().trim(),$('tw-link.story-menu[name="'+e+'"]').remove()}}})}(),function(){"use strict";var n=Chapel.Audio;function o(e){return e&&"function"==typeof e}function a(e,t){if(!e||"string"!=typeof e)return null;switch(e=e.toLowerCase().trim()){case"isplaying":e="isPlaying";break;case"playwhenpossible":e="playWhenPossible";break;case"ismuted":e="isAMuted";break;case"togglemute":e="toggleMute";break;case"getvolume":e="getVolume";break;case"islooping":e="isLooping";break;case"toggleloop":e="toggleLoop";break;case"fadein":e="fadeIn";break;case"fadeout":e="fadeOut";break;case"fadeto":e="fadeTo";break;case"stopall":e="stopAll"}if("isPlaying"===e&&"master"===t&&(e="audioPlaying"),"group"===t){if(o(n.group.prototype[e]))return e}else if("master"===t){if(o(n[e]))return e}else if(o(n.classes[t].prototype[e]))return e;throw new ReferenceError('Cannot run the command: "'+e+'" on the API "'+t+'". The command may be invalid, or this may be a bug in HAL.',"macros.js -> getCommand()",10)}window.Chapel.Macros.add({newtrack:function(){var e=[].slice.call(arguments);try{return n.newTrack.apply(null,e)}catch(e){alert("Error in the (newtrack:) macro: "+e.message)}},newplaylist:function(e,t){t=[].slice.call(arguments).slice(1);try{return n.createPlaylist(e,t)}catch(e){alert("Error in the (newplaylist:) macro: "+e.message)}},newgroup:function(e,t){t=[].slice.call(arguments).slice(1);try{return n.createGroup(e,t)}catch(e){alert("Error in the (newgroup:) macro: "+e.message)}},masteraudio:function(e){try{return e=a(e,"master"),n[e].apply(null,[].slice.call(arguments).slice(1))}catch(e){alert("Error in the (masteraudio:) macro: "+e.message)}},track:function(e,t){try{var o=n.track(e);return o[t=a(t,"Track")].apply(o,[].slice.call(arguments).slice(2))}catch(e){alert("Error in the (track:) macro: "+e.message)}},playlist:function(e,t){try{var o=n.playlist(e);return o[t=a(t,"Playlist")].apply(o,[].slice.call(arguments).slice(2))}catch(e){alert("Error in the (playlist:) macro: "+e.message)}},group:function(e,t){try{var o=n.group(e);return o[t=a(t,"group")].apply(o,[].slice.call(arguments).slice(2))}catch(e){alert("Error in the (group:) macro: "+e.message)}}})}();
+/** End of HAL code */</script><tw-passagedata pid="1" name="Situation initiale" tags="" position="50,300" size="100,100">(set: $ecologie to 5)(set: $revision to 0)(set: $sante to 5)(set: $sociabilite to 0)
 Ce jeu élaboré dans le cadre du cours de Fiction Interactive de l&#39;Université de Lausanne vise à prendre conscience d&#39;une partie des problèmes causés par certaines philosophies de développement urbain. Il met en lumière les conséquences mentales et environnementales que ces philosophies peuvent entraîner pour les habitants des villes.
 
-Dans ce but, certains choix ne seront pas immédiatement disponibles, mais seront débloqués après un certain temps, afin de montrer la différence de temps que deux moyens de locomotion engendrent (1 sec = 5 min de trajet). 
+Dans ce but, certains choix ne seront pas immédiatement disponibles, mais seront débloqués après un certain temps, afin de montrer la différence de temps que deux moyens de locomotion engendrent (1 sec = 2min30 de trajet). 
 
-(set: $choice2 to &quot;Commencer le jeu (~25 min)&quot;)
-(event: when time &gt; 5000)[(replace: $choice2)[[[$choice2 -&gt; situation-initiale-2]]]]$choice2
-</tw-passagedata><tw-passagedata pid="5" name="lundi-réveil" tags="" position="300,300" size="100,100">*sonnerie du réveil*
+(set: $choice2 to &quot;Commencer le jeu (~10 min)&quot;)
+(event: when time &gt; 4000)[(replace: $choice2)[[[$choice2 -&gt; situation-initiale-2]]]]$choice2
 
+</tw-passagedata><tw-passagedata pid="2" name="lundi-réveil" tags="" position="300,300" size="100,100">*sonnerie du réveil*
+(track: &#39;alarme&#39;, &#39;play&#39;)
 [[C&#39;est 6h30, heure de se réveiller -&gt; lundi-tot]]
-[[Encore un tout petit peu, ...-&gt; lundi-tard]]</tw-passagedata><tw-passagedata pid="6" name=" lundi-tot" tags="" position="400,200" size="100,100">Je me suis levé sacrément tôt ! Je m&#39;habille en 10 minutes et suis prêt à prendre mon petit déjeuner. Mais en vrai, je pourrais partir un peu en avance et réviser avant les cours.
+[[Encore un tout petit peu, ...-&gt; lundi-tard]]</tw-passagedata><tw-passagedata pid="3" name=" lundi-tot" tags="" position="400,200" size="100,100">Je me suis levé sacrément tôt ! Je m&#39;habille en 10 minutes et suis prêt à prendre mon petit déjeuner. Mais en vrai, je pourrais partir un peu en avance et réviser avant les cours.
 
 [[Manger le matin c&#39;est important -&gt; lundi-manger]]
-[[L&#39;examen c&#39;est bientot -&gt; lundi-pas-manger]] </tw-passagedata><tw-passagedata pid="7" name=" lundi-manger" tags="" position="500,150" size="100,100">(set: $heure to &quot;6h50&quot;)
-Je mange rapidement deux toasts, bois mon café, et je suis prêt à commencer pleinement ma journée.
+[[L&#39;examen c&#39;est bientot -&gt; lundi-pas-manger]] </tw-passagedata><tw-passagedata pid="4" name=" lundi-manger" tags="" position="500,150" size="100,100">(set: $heure to &quot;6h50&quot;)Je mange rapidement deux toasts, bois mon café, et je suis prêt à commencer pleinement ma journée.
 
 Les cours commencent à 8h et mon bus part dans 5 minutes. Toutefois, réviser un peu avant le cours ne serait pas de refus.
 
-(set: $choice1 to &quot;Je prends mon SUV jusqu&#39;au campus (~30 min)&quot;)
-(set: $choice2 to &quot;Je préfére prendre les transports publics (~60 min)&quot;)
+(set: $choice1 to &quot;Je prends mon SUV jusqu&#39;au campus (~30 min)&quot;)(set: $choice2 to &quot;Je préfére prendre les transports publics (~60 min)&quot;)
+(event: when time &gt; 12000)[(replace: $choice1)[[[$choice1 -&gt; lundi-campus-suv]]]] $choice1
 
-(event: when time &gt; 6000)[(replace: $choice1)[[[$choice1 -&gt; lundi-campus-suv]]]] $choice1
-
-(event: when time &gt; 12000)[(replace: $choice2)[[[$choice2 -&gt; lundi-campus-bus]]]]$choice2
-</tw-passagedata><tw-passagedata pid="8" name=" lundi-campus-bus" tags="" position="600,100" size="100,100">(set: $ecologie to $ecologie + 1)
-Je me dépêche de prendre le bus et je pars en direction du campus. La route me prend presque une heure et j&#39;ai dû faire un changement. Je profite de ce temps pour avancer une série que je regarde, ce n&#39;est donc pas vraiment du temps perdu!
+(event: when time &gt; 24000)[(replace: $choice2)[[[$choice2 -&gt; lundi-campus-bus]]]]$choice2
+</tw-passagedata><tw-passagedata pid="5" name=" lundi-campus-bus" tags="" position="600,100" size="100,100">(set: $ecologie to $ecologie + 1)(track: &#39;bus&#39;, &#39;play&#39;)Je me dépêche de prendre le bus et je pars en direction du campus. La route me prend presque une heure et j&#39;ai dû faire un changement. Je profite de ce temps pour avancer une série que je regarde, ce n&#39;est donc pas vraiment du temps perdu!
 
 Le bus arrive au campus juste à temps pour le début des cours! Il ne faut pas être en retard!
 
-[[Aller en cours -&gt; lundi-cours1-bus-lou]] </tw-passagedata><tw-passagedata pid="9" name=" lundi-campus-suv" tags="" position="600,200" size="100,100">(set: $traffic to (random:1, 4))
-(set: $ecologie to $ecologie - 1)
-(if:$traffic &lt; 4)[
-Je roule pendant un petit moment, la musique à fond, ce qui me détend un peu. J&#39;ai eu de la chance, pas de gros traffic aujourd&#39;hui.
+[[Aller en cours -&gt; lundi-cours1-bus-lou]] </tw-passagedata><tw-passagedata pid="6" name=" lundi-campus-suv" tags="" position="600,200" size="100,100">(set: $traffic to (random:1, 4))(set: $ecologie to $ecologie - 1)(track: &#39;voiture&#39;, &#39;play&#39;)(if:$traffic &lt; 4)[Je roule pendant un petit moment, la musique à fond, ce qui me détend un peu. J&#39;ai eu de la chance, pas de gros traffic aujourd&#39;hui.
 
 En arrivant sur le campus, je regarde un peu aux alentours en essayant de trouver mon ami Alex. Je l&#39;as rencontré au début du semestre et on est rapidement devenus amis, mais j&#39;aimerais parfois que ça pourrait aller plus loin. Toutefois, je ne vois personne et décide donc de profiter pour réviser. Je le verrais sûrement pendant la journée. 
 (set: $sante to $sante + 1)
@@ -65,470 +70,394 @@ Malheureusement, je suis tombé sur un mauvais jour: je tombe sur les bouchons e
 
 J&#39;arrive sur le campus juste à temps pour le cours. 
 (set: $sante to $sante - 1)
-]
-
-[[Aller en cours -&gt; lundi-cours1-suv-lou]]</tw-passagedata><tw-passagedata pid="10" name=" lundi-tard" tags="" position="400,400" size="100,100">Je me suis laissé aller et il faut que je me dépêche si je veux prendre le bus. Malheureusement, je dois faire un choix entre manger et m&#39;habiller, choix que je fais rapidement. Pas de café ce matin! A part si je choisis de prendre la voiture à la place!
-
+][[Aller en cours -&gt; lundi-cours1-suv-lou]]</tw-passagedata><tw-passagedata pid="7" name=" lundi-tard" tags="" position="400,400" size="100,100">Je me suis laissé aller et il faut que je me dépêche si je veux prendre le bus. Malheureusement, je dois faire un choix entre manger et m&#39;habiller, choix que je fais rapidement. Pas de café ce matin! A part si je choisis de prendre la voiture à la place!
 (set: $choice1 to &quot;Je prends mon SUV jusqu&#39;au campus (~30 min)&quot;)
 (set: $choice2 to &quot;Tant pis pour le café, je préfére prendre les transports publics (~60 min)&quot;)
+(event: when time &gt; 12000)[(replace: $choice1)[[[$choice1 -&gt; lundi-campus-suv]]]] $choice1
 
-(event: when time &gt; 6000)[(replace: $choice1)[[[$choice1 -&gt; lundi-campus-suv]]]] $choice1
-
-(event: when time &gt; 12000)[(replace: $choice2)[[[$choice2 -&gt; lundi-campus-bus-tard]]]]$choice2
-</tw-passagedata><tw-passagedata pid="11" name=" lundi-pas-manger" tags="" position="500,250" size="100,100">(set: $sante to $sante - 1)
-A quoi bon manger? Si vraiment je peux toujours aller à la cafétéria du campus! Le plus important maintenant est l&#39;examen de vendredi!
+(event: when time &gt; 24000)[(replace: $choice2)[[[$choice2 -&gt; lundi-campus-bus-tard]]]]$choice2
+</tw-passagedata><tw-passagedata pid="8" name=" lundi-pas-manger" tags="" position="500,250" size="100,100">(set: $sante to $sante - 1)A quoi bon manger? Si vraiment je peux toujours aller à la cafétéria du campus! Le plus important maintenant est l&#39;examen de vendredi!
 
 Un bus part bientôt, mais il prend un moment avant d&#39;arriver. Je pourrais aller en voiture et avoir encore plus de temps!
 
-(set: $choice1 to &quot;Je prends mon SUV jusqu&#39;au campus (~30 min)&quot;)
-(set: $choice2 to &quot;Je préfére prendre les transports publics (~60 min)&quot;)
+(set: $choice1 to &quot;Je prends mon SUV jusqu&#39;au campus (~30 min)&quot;)(set: $choice2 to &quot;Je préfére prendre les transports publics (~60 min)&quot;)
+(event: when time &gt; 12000)[(replace: $choice1)[[[$choice1 -&gt; lundi-campus-suv]]]] $choice1
 
-(event: when time &gt; 6000)[(replace: $choice1)[[[$choice1 -&gt; lundi-campus-suv]]]] $choice1
-
-(event: when time &gt; 12000)[(replace: $choice2)[[[$choice2 -&gt; lundi-campus-bus-tot]]]]$choice2
-</tw-passagedata><tw-passagedata pid="12" name=" lundi-cours1-bus-lou" tags="" position="800,300" size="100,100">Le reste du lundi se passe ... comme un lundi. Les cours à 8h, c&#39;est quand même très dur, mais faut bien tenir jusqu&#39;à vendredi!
+(event: when time &gt; 24000)[(replace: $choice2)[[[$choice2 -&gt; lundi-campus-bus-tot]]]]$choice2
+</tw-passagedata><tw-passagedata pid="9" name=" lundi-cours1-bus-lou" tags="" position="800,300" size="100,100">(track: &#39;cours&#39;, &#39;play&#39;)Le reste du lundi se passe ... comme un lundi. Les cours à 8h, c&#39;est quand même très dur, mais faut bien tenir jusqu&#39;à vendredi!
 
 J&#39;ai mangé à midi avec mon amie Lou et elle m&#39;a proposé d&#39;aller manger un donut dans le nouveau café du centre-ville. Je lui ai dit que je reconfirmerais à la fin des cours dans le cas où je préférerais profiter pour étudier à la place. De plus, j&#39;ai pris le bus ce matin. Ce petit détour risque de me coûter 30 minutes de plus en transports pour rentrer! 
 
 
 [[Réviser à la bibliothéque de l&#39;université -&gt; lundi-reviser-bus]]
 (set: $choice2 to &quot;Aller au café avec Lou (~20 min)&quot;)
-(event: when time &gt; 4000)[(replace: $choice2)[[[$choice2 -&gt; lundi-café-lou-bus]]]]$choice2
+(event: when time &gt; 8000)[(replace: $choice2)[[[$choice2 -&gt; lundi-café-lou-bus]]]]$choice2
 (set: $choice1 to &quot;Cette journée m&#39;a fatigué, je préfére rentrer (~60 min)&quot;)
-(event: when time &gt; 12000)[(replace: $choice1)[[[$choice1 -&gt; lundi-rentrer-bus]]]]$choice1</tw-passagedata><tw-passagedata pid="13" name=" lundi-campus-bus-tot" tags="" position="600,300" size="100,100">(set: $ecologie to $ecologie + 1)
-Je me dépêche de prendre le bus et je pars en direction du campus. La route me prend presque une heure et j&#39;ai dû faire un changement. Je profite de ce temps pour avancer une série que je regarde, ce n&#39;est donc pas vraiment du temps perdu!
+(event: when time &gt; 24000)[(replace: $choice1)[[[$choice1 -&gt; lundi-rentrer-bus]]]]$choice1</tw-passagedata><tw-passagedata pid="10" name=" lundi-campus-bus-tot" tags="" position="600,300" size="100,100">(set: $ecologie to $ecologie + 1)(track: &#39;bus&#39;, &#39;play&#39;)Je me dépêche de prendre le bus et je pars en direction du campus. La route me prend presque une heure et j&#39;ai dû faire un changement. Je profite de ce temps pour avancer une série que je regarde, ce n&#39;est donc pas vraiment du temps perdu!
 
 Etant donné que j&#39;ai pris un bus plus tôt, je suis arrivé 30 minutes avant le début des cours. Je peux profiter de ce temps pour avancer mes révisions! D&#39;un autre côté, ... j&#39;aperçois Alex qui sort d&#39;un bus arrivé au même temps que le mien. Je l&#39;ai recontré au début du semestre et on est rapidement devenus amis. Pourtant, j&#39;aimerais parfois que ça aille plus loin.
 
-[[Sociabiliser avec Alex -&gt; lundi-Alex-matin]]
-[[Aller en cours -&gt; lundi-cours1-bus-lou]] </tw-passagedata><tw-passagedata pid="14" name=" lundi-Alex-matin" tags="" position="700,300" size="100,100">(set: $sociabilite = $sociabilite + 1)
-(set: $sante = $sante + 1)
-Je salue Alex qui me salue chaleureusement en retour. Il m&#39;invite à aller à la cafète, chose que jt&#39;accepte volontiers afin de passer du temps avec lui (et parce que la faim commence à se faire sentir). Notre discussion se poursuit jusqu&#39;à 8h, heure à laquelle on se sépare pour suivre nos cours respectifs
 
-[[Aller en cours -&gt; lundi-cours1-bus-alex]]</tw-passagedata><tw-passagedata pid="15" name=" lundi-campus-bus-tard" tags="" position="600,400" size="100,100">(set: $ecologie to $ecologie + 1)
-(set: $sante to $sante + 1)
-Je me dépêche de prendre le bus et je pars en direction du campus. La route me prend presque une heure et j&#39;ai dû faire un changement. Je profite de ce temps pour avancer une série que je regarde, ce n&#39;est donc pas vraiment du temps perdu! Toutefois, je commence à avoir faim, et je pourrai pas manger avant la fin du premier cours!
+[[Sociabiliser avec Alex -&gt; lundi-Alex-matin]]
+
+[[Aller en cours -&gt; lundi-cours1-bus-lou]] </tw-passagedata><tw-passagedata pid="11" name=" lundi-Alex-matin" tags="" position="700,300" size="100,100">(set: $sociabilite = $sociabilite + 1)(track: &#39;romance&#39;, &#39;play&#39;)Je salue Alex qui me salue chaleureusement en retour. Il m&#39;invite à aller à la cafète, chose que jt&#39;accepte volontiers afin de passer du temps avec lui (et parce que la faim commence à se faire sentir). Notre discussion se poursuit jusqu&#39;à 8h, heure à laquelle on se sépare pour suivre nos cours respectifs
+
+[[Aller en cours -&gt; lundi-cours1-bus-alex]]</tw-passagedata><tw-passagedata pid="12" name=" lundi-campus-bus-tard" tags="" position="600,400" size="100,100">(set: $ecologie to $ecologie + 1)(track: &#39;bus&#39;, &#39;play&#39;)Je me dépêche de prendre le bus et je pars en direction du campus. La route me prend presque une heure et j&#39;ai dû faire un changement. Je profite de ce temps pour avancer une série que je regarde, ce n&#39;est donc pas vraiment du temps perdu! Toutefois, je commence à avoir faim, et je pourrai pas manger avant la fin du premier cours!
 
 Le bus arrive au campus juste à temps pour le début des cours! Il ne faut pas être en retard!
 
-[[Aller en cours -&gt; lundi-cours1-bus-lou]] </tw-passagedata><tw-passagedata pid="16" name=" lundi-reviser-bus" tags="" position="925,300" size="100,100">(set: $revision = $revision + 1)
-J&#39;ai bien fait d&#39;aller réviser, le plus important est de passer l&#39;examen vendredi. Je pourrais toujours retourner au café après les révisions!
+[[Aller en cours -&gt; lundi-cours1-bus-lou]] </tw-passagedata><tw-passagedata pid="13" name=" lundi-reviser-bus" tags="" position="925,300" size="100,100">(set: $revision = $revision + 1)(track: &#39;revision&#39;, &#39;play&#39;)J&#39;ai bien fait d&#39;aller réviser, le plus important est de passer l&#39;examen vendredi. Je pourrais toujours retourner au café après les révisions!
 
 (set: $choice1 to &quot;Il est temps de rentrer (~60 min)&quot;)
-(event: when time &gt; 12000)[(replace: $choice1)[[[$choice1 -&gt; lundi-rentrer-bus]]]]$choice1</tw-passagedata><tw-passagedata pid="17" name=" lundi-café-lou-bus" tags="" position="925,400" size="100,100">(set: $sante to $sante + 1)
-Ca faisait un bout de temps que je n&#39;avais plus vu mon amie Lou! C&#39;est vrai que depuis qu&#39;on est rentrés à l&#39;université on se voit moins étant donné que nous avons des majeurs différents. Elle m&#39;avait bien manquée! 
+(event: when time &gt; 24000)[(replace: $choice1)[[[$choice1 -&gt; lundi-rentrer-bus]]]]$choice1</tw-passagedata><tw-passagedata pid="14" name=" lundi-café-lou-bus" tags="" position="925,400" size="100,100">(set: $sante to $sante + 1)(track: &#39;cafe&#39;, &#39;play&#39;)(set: $transLundi to &quot;bus&quot;)Ca faisait un bout de temps que je n&#39;avais plus vu mon amie Lou! C&#39;est vrai que depuis qu&#39;on est rentrés à l&#39;université on se voit moins étant donné que nous avons des majeurs différents. Elle m&#39;avait bien manquée! 
 
 Comme d&#39;habitude, Lou est à la pointe sur les tendences. Le donut était trop bon et le nouveau café est super joli. Ca a fait du bien de sortir, surtout après une longue journée de cours comme celle-ci!
 
 (set: $choice1 to &quot;Il est temps de rentrer (~70 min)&quot;)
-(event: when time &gt; 14000)[(replace: $choice1)[[[$choice1 -&gt; lundi-maison-soir]]]]$choice1</tw-passagedata><tw-passagedata pid="18" name=" lundi-cours1-suv-lou" tags="" position="800,200" size="100,100">Le reste du lundi se passe ... comme un lundi. Les cours à 8h, c&#39;est quand même très dur, mais faut bien tenir jusqu&#39;à vendredi!
+(event: when time &gt; 28000)[(replace: $choice1)[[[$choice1 -&gt; lundi-maison-soir]]]]$choice1
+
+&lt;img src=&quot;./images/lou_cafe.jpeg&quot;\&gt;
+</tw-passagedata><tw-passagedata pid="15" name=" lundi-cours1-suv-lou" tags="" position="800,200" size="100,100">(track: &#39;cours&#39;, &#39;play&#39;)Le reste du lundi se passe ... comme un lundi. Les cours à 8h, c&#39;est quand même très dur, mais faut bien tenir jusqu&#39;à vendredi!
 
 J&#39;ai mangé à midi avec mon amie Lou et elle m&#39;a proposé d&#39;aller manger un donut dans le nouveau café du centre-ville. Je lui ai dit que je reconfirmerais à la fin des cours dans le cas où je préférerais profiter pour étudier à la place. De plus, j&#39;ai pris le suv ce matin. Je peux amener mon amie chez elle sans que me fasse un grand détour! Heureusement que je l&#39;ai pris, c&#39;est plutôt pratique!
 
 
 [[Réviser à la bibliothéque de l&#39;université -&gt; lundi-reviser-suv]]
 (set: $choice2 to &quot;Aller au café avec Lou (~10 min)&quot;)
-(event: when time &gt; 2000)[(replace: $choice2)[[[$choice2 -&gt; lundi-café-lou-suv]]]]$choice2
+(event: when time &gt; 4000)[(replace: $choice2)[[[$choice2 -&gt; lundi-café-lou-suv]]]]$choice2
 (set: $choice1 to &quot;Je préfére rentrer (~30 min)&quot;)
-(event: when time &gt; 6000)[(replace: $choice1)[[[$choice1 -&gt; lundi-rentrer-suv]]]]$choice1</tw-passagedata><tw-passagedata pid="19" name=" lundi-rentrer-suv" tags="" position="1025,50" size="100,100">Je suis fatigué et j&#39;ai donc préféré rentrer plus tôt. Rien de mal à ça, il faut aussi savoir prendre du temps pour soi!
-(set: $traffic to (random:1, 4))
-(set: $ecologie to $ecologie - 1)
-(if:$traffic &lt;= 2)[
-J&#39;ai de la chance, pas de traffic au retour!
-(set: $sante to $sante + 1)
-](if:$traffic &gt; 2)[
-Malheureusement, je roule pile à la mauvaise heure et les bouchons s&#39;accumulent. Cela me provoque un sentiment de nervosité.
-(set: $sante to $sante - 1)
+(event: when time &gt; 12000)[(replace: $choice1)[[[$choice1 -&gt; lundi-rentrer-suv]]]]$choice1</tw-passagedata><tw-passagedata pid="16" name=" lundi-rentrer-suv" tags="" position="1075,50" size="100,100">(track: &#39;voiture&#39;, &#39;play&#39;)Je suis fatigué et j&#39;ai donc préféré rentrer plus tôt. Rien de mal à ça, il faut aussi savoir prendre du temps pour soi!
+(set: $traffic to (random:1, 4))(set: $ecologie to $ecologie - 1)
+(if:$traffic &lt;= 2)[J&#39;ai de la chance, pas de traffic au retour!
+](if:$traffic &gt; 2)[Malheureusement, je roule pile à la mauvaise heure et les bouchons s&#39;accumulent. Cela me provoque un sentiment de nervosité.(set: $sante to $sante - 1)
 ]
+En arrivant chez moi je décide de manger quelque chose. Je pourrais profiter pour me reposer un peu et commander un repas sur Oberfeats, ou bien préparer quelque chose par moi-même!
 
-En arrivant chez moi je décide de manger quelque chose. Je pourrais profiter pour me reposer un peu et commander un repas sur Oberfeats, ou bien préparer quelque chose par moi même!
-
-[[Flemme, je vais commander des sushis -&gt; lundi-soir-commande]]
-[[C&#39;est parti pour la cuisine! -&gt; lundi-soir-cuisine]]</tw-passagedata><tw-passagedata pid="20" name=" lundi-rentrer-bus" tags="" position="1075,175" size="100,100">Epuisé, je décide de prendre le bus pour rentrer. Ce dernier me semble encore plus interminable que d&#39;habitude, mais je n&#39;ose pas fermer les yeux par peur de rater mon arrêt.
-
-(set: $sante to $sante - 1)
-(set: $ecologie to $ecologie + 1)
-En arrivant chez moi je décide de manger quelque chose. Je pourrais profiter pour me reposer un peu et commander un repas sur Oberfeats, ou bien préparer quelque chose par moi même!
 
 [[Flemme, je vais commander des sushis -&gt; lundi-soir-commande]]
-[[C&#39;est parti pour la cuisine! -&gt; lundi-soir-cuisine]]</tw-passagedata><tw-passagedata pid="21" name=" lundi-cours1-bus-alex" tags="" position="800,400" size="100,100">Le reste du lundi se passe ... comme un lundi. Les cours à 8h, c&#39;est quand même très dur, mais faut bien tenir jusqu&#39;à vendredi!
+
+[[C&#39;est parti pour la cuisine! -&gt; lundi-soir-cuisine]]</tw-passagedata><tw-passagedata pid="17" name=" lundi-rentrer-bus" tags="" position="1075,175" size="100,100">(track: &#39;bus&#39;, &#39;play&#39;)Epuisé, je décide de prendre le bus pour rentrer. Ce dernier me semble encore plus interminable que d&#39;habitude, mais je n&#39;ose pas fermer les yeux par peur de rater mon arrêt.
+(set: $sante to $sante - 1)(set: $ecologie to $ecologie + 1)
+En arrivant chez moi je décide de manger quelque chose. Je pourrais profiter pour me reposer un peu et commander un repas sur Oberfeats, ou bien préparer quelque chose par moi même!
+
+
+[[Flemme, je vais commander des sushis -&gt; lundi-soir-commande]]
+
+[[C&#39;est parti pour la cuisine! -&gt; lundi-soir-cuisine]]</tw-passagedata><tw-passagedata pid="18" name=" lundi-cours1-bus-alex" tags="" position="800,400" size="100,100">(track: &#39;cours&#39;, &#39;play&#39;)Le reste du lundi se passe ... comme un lundi. Les cours à 8h, c&#39;est quand même très dur, mais faut bien tenir jusqu&#39;à vendredi!
 
 Lorsque j&#39;ai bu le café avec Alex ce matin, il m&#39;a proposé d&#39;aller visiter le tout nouveau café du centre-ville avec lui. J&#39;ai senti un petit noeud se former dans mon ventre, et lui ai répondu précipitement que je serais ravi, mais que tu reconfirmerais à la fin des cours, dans le cas où je préférerais étudier à la place ou bien rentrer plus tôt.
 
 
 [[Réviser à la bibliothéque de l&#39;université -&gt; lundi-reviser-bus]]
 (set: $choice2 to &quot;Aller au café avec Alex (~20 min)&quot;)
-(event: when time &gt; 4000)[(replace: $choice2)[[[$choice2 -&gt; lundi-café-alex]]]]$choice2
+(event: when time &gt; 8000)[(replace: $choice2)[[[$choice2 -&gt; lundi-café-alex]]]]$choice2
 (set: $choice1 to &quot;Je préfére rentrer (~60 min)&quot;)
-(event: when time &gt; 12000)[(replace: $choice1)[[[$choice1 -&gt; lundi-rentrer-bus]]]]$choice1</tw-passagedata><tw-passagedata pid="22" name=" lundi-café-alex" tags="" position="925,500" size="100,100">(set: $sociabilite to $sociabilite + 1)
-C&#39;est la première fois que je suis allé à un café seul à seul avec Alex. J&#39;espère que je n&#39;ai pas eu l&#39;air trop nerveux. On a bien discuté pendant une heure avant que chacun parte de son côté. J&#39;espère avoir l&#39;opportunité de refaire ça dans le futur!
+(event: when time &gt; 24000)[(replace: $choice1)[[[$choice1 -&gt; lundi-rentrer-bus]]]]$choice1</tw-passagedata><tw-passagedata pid="19" name=" lundi-café-alex" tags="" position="925,500" size="100,100">(set: $sociabilite to $sociabilite + 1)(set:$sante to $sante + 1)(track: &#39;cafe&#39;, &#39;play&#39;)(set: $transLundi to &quot;bus&quot;)C&#39;est la première fois que je suis allé à un café seul à seul avec Alex. J&#39;espère que je n&#39;ai pas eu l&#39;air trop nerveux. On a bien discuté pendant une heure avant que chacun parte de son côté. J&#39;espère avoir l&#39;opportunité de refaire ça dans le futur!
 
 L&#39;endroit avait été particulièrement bien trouvé par Alex. Le donut était trop bon et le nouveau café est super joli. Ca a fait du bien de sortir, surtout après une longue journée de cours comme celle-ci!
 
 (set: $choice1 to &quot;Il est temps de rentrer (~70 min)&quot;)
-(event: when time &gt; 14000)[(replace: $choice1)[[[$choice1 -&gt; lundi-maison-soir]]]]$choice1</tw-passagedata><tw-passagedata pid="23" name=" lundi-soir-commande" tags="" position="1225,100" size="100,100">(set: $ecologie = $ecologie - 1)
-C&#39;est vrai que c&#39;est pas mal de juste relaxer. Je savoure mes sushis, je regarde un petit film avec Leonard Dicaprisun et je me couche vers 22h30
+(event: when time &gt; 28000)[(replace: $choice1)[[[$choice1 -&gt; lundi-maison-soir]]]]$choice1
 
-[[Passer au jour suivant -&gt; mardi-réveil]]</tw-passagedata><tw-passagedata pid="24" name=" lundi-soir-cuisine" tags="" position="1225,250" size="100,100">Je me prépare un bon plat de pâtes aux champignons. Je le savoure en regardant un petit film avec Leonard Dicaprisun et je me couche vers 22h30.
+&lt;img src=&quot;./images/cafe_alex.jpeg&quot;\&gt;
+</tw-passagedata><tw-passagedata pid="20" name=" lundi-soir-commande" tags="" position="1225,100" size="100,100">(set: $ecologie = $ecologie - 1)C&#39;est vrai que c&#39;est pas mal de juste relaxer. Je savoure mes sushis, je regarde un petit film avec Leonard Dicaprisun et je me couche vers 22h30
 
-[[Passer au jour suivant -&gt; mardi-réveil]]</tw-passagedata><tw-passagedata pid="25" name=" lundi-reviser-suv" tags="" position="925,200" size="100,100">(set: $revision = $revision + 1)
-J&#39;ai bien fait d&#39;aller réviser, le plus important est de passer l&#39;examen vendredi. Je pourrais toujours retourner au café après les révisions!
+[[Passer au jour suivant -&gt; mardi-réveil]]
+
+&lt;img src=&quot;./images/eating.jpeg&quot;\&gt;
+</tw-passagedata><tw-passagedata pid="21" name=" lundi-soir-cuisine" tags="" position="1225,250" size="100,100">(track: &#39;cuisiner&#39;, &#39;play&#39;)Je me prépare un bon plat de pâtes aux champignons. Je le savoure en regardant un petit film avec //Leonard Dicaprisun// et je me couche vers 22h30.
+
+[[Passer au jour suivant -&gt; mardi-réveil]]
+
+&lt;img src=&quot;./images/eating.jpeg&quot;\&gt;
+</tw-passagedata><tw-passagedata pid="22" name=" lundi-reviser-suv" tags="" position="925,200" size="100,100">(set: $revision = $revision + 1)(track: &#39;revision&#39;, &#39;play&#39;)J&#39;ai bien fait d&#39;aller réviser, le plus important est de passer l&#39;examen vendredi. Je pourrais toujours retourner au café après les révisions!
 
 (set: $choice1 to &quot;Il est temps de rentrer (~30 min)&quot;)
-(event: when time &gt; 6000)[(replace: $choice1)[[[$choice1 -&gt; lundi-rentrer-suv]]]]$choice1</tw-passagedata><tw-passagedata pid="26" name=" lundi-café-lou-suv" tags="" position="925,600" size="100,100">(set: $sante to $sante + 1)
-Ca faisait un bout de temps que je n&#39;avais plus vu mon amie Lou! C&#39;est vrai que depuis qu&#39;on est rentrés à l&#39;université on se voit moins étant donné que nous avons des majeurs différents. Elle m&#39;avait bien manquée! 
+(event: when time &gt; 12000)[(replace: $choice1)[[[$choice1 -&gt; lundi-rentrer-suv]]]]$choice1</tw-passagedata><tw-passagedata pid="23" name=" lundi-café-lou-suv" tags="" position="925,600" size="100,100">(set: $sante to $sante + 1)(track: &#39;cafe&#39;, &#39;play&#39;)(set: $transLundi to &quot;suv&quot;)Ca faisait un bout de temps que je n&#39;avais plus vu mon amie Lou! C&#39;est vrai que depuis qu&#39;on est rentrés à l&#39;université on se voit moins étant donné que nous avons des majeurs différents. Elle m&#39;avait bien manquée! 
 
 Comme d&#39;habitude, Lou est à la pointe sur les tendences. Le donut était trop bon et le nouveau café est super joli. Ca a fait du bien de sortir, surtout après une longue journée de cours comme celle-ci!
 
 J&#39;ai pris la voiture, donc j&#39;ai pu passer encore un moment avec Lou pendant que je la ramenais!
-
 (set: $choice1 to &quot;Il est temps de rentrer (~40 min)&quot;)
 (set: $ecologie to $ecologie - 1)
-(event: when time &gt; 8000)[(replace: $choice1)[[[$choice1 -&gt; lundi-maison-soir]]]]$choice1</tw-passagedata><tw-passagedata pid="27" name=" lundi-maison-soir" tags="" position="1075,350" size="100,100">J&#39;arrive enfin chez moi après avoir passé du bon temps dans le café. Je dois désormais faire à manger, mais avec cette sortie, l&#39;envie de le faire me manque. Je pourrais toujours commander quelque chose?
+(event: when time &gt; 16000)[(replace: $choice1)[[[$choice1 -&gt; lundi-maison-soir]]]]$choice1
+&lt;img src=&quot;./images/lou_cafe.jpeg&quot;\&gt;
+</tw-passagedata><tw-passagedata pid="24" name=" lundi-maison-soir" tags="" position="1075,350" size="100,100">(if: $transLundi is &quot;bus&quot;)[(track: &#39;bus&#39;, &#39;play&#39;)](else:)[(track: &#39;voiture&#39;, &#39;play&#39;)]J&#39;arrive enfin chez moi après avoir passé du bon temps dans le café. Je dois désormais faire à manger, mais avec cette sortie, l&#39;envie de le faire me manque. Je pourrais toujours commander quelque chose?
 
 [[Flemme, je vais commander des sushis (set: $sante to $sante + 1) -&gt; lundi-soir-commande]]
-[[C&#39;est parti pour la cuisine! (set: $sante to $sante - 1)-&gt; lundi-soir-cuisine]]</tw-passagedata><tw-passagedata pid="28" name=" mardi-réveil" tags="" position="1425,450" size="100,100">Ah! il fait beau aujourd’hui, le soleil brille et les oiseaux chantent! Et surtout, je peux me lever tard! (En effet, les cours ne commencent qu&#39;à 14h). Faut pas que j’oublie que papa et maman m’invitent à dîner chez eux à midi. Mais là j’ai du temps libre. J’aimerais bien aller courir, mais il serait peut-être plus sage d’en profiter pour étudier un peu. Je sais pas.
+
+[[C&#39;est parti pour la cuisine! -&gt; lundi-soir-cuisine]]</tw-passagedata><tw-passagedata pid="25" name=" mardi-réveil" tags="" position="1425,450" size="100,100">(track: &#39;alarme&#39;, &#39;play&#39;)Ah! il fait beau aujourd’hui, le soleil brille et les oiseaux chantent! Et surtout, je peux me lever tard! (En effet, les cours ne commencent qu&#39;à 14h). Faut pas que j’oublie que papa et maman m’invitent à dîner chez eux à midi. Mais là j’ai du temps libre. J’aimerais bien aller courir, mais il serait peut-être plus sage d’en profiter pour étudier un peu. Je sais pas.
 
 [[Aller courir -&gt; mardi-courir]]
-[[Profiter pour réviser -&gt; mardi-réviser]]</tw-passagedata><tw-passagedata pid="29" name=" mardi-courir" tags="" position="1550,550" size="100,100">(set: $sante = $sante + 1)
-Qu&#39;est-ce que ça fait du bien de courir! Je me sens décontracté. J&#39;aurais de toute manière d&#39;autres moments pour étudier!
+
+[[Profiter pour réviser -&gt; mardi-réviser]]</tw-passagedata><tw-passagedata pid="26" name=" mardi-courir" tags="" position="1550,550" size="100,100">(set: $sante = $sante + 1)(track: &#39;marcher&#39;, &#39;play&#39;)Qu&#39;est-ce que ça fait du bien de courir! Je me sens décontracté. J&#39;aurais de toute manière d&#39;autres moments pour étudier!
+
 
 [[Revenir à la maison et se préparer pour aller chez les parents -&gt; mardi-avant-midi]]
-</tw-passagedata><tw-passagedata pid="30" name=" mardi-réviser" tags="" position="1550,425" size="100,100">(set: $revision = $revision + 1)
-J’ai pu bien avancer dans mes révisions, c’est déjà ça de fait et tant mieux ! J’irai courir un autre jour, il fait quand même un peu frisquet ce matin.
+</tw-passagedata><tw-passagedata pid="27" name=" mardi-réviser" tags="" position="1550,425" size="100,100">(set: $revision = $revision + 1)(track: &#39;revision&#39;, &#39;play&#39;)J’ai pu bien avancer dans mes révisions, c’est déjà ça de fait et tant mieux ! J’irai courir un autre jour, il fait quand même un peu frisquet ce matin.
+
 
 [[Se préparer pour aller chez les parents -&gt; mardi-avant-midi]]
-</tw-passagedata><tw-passagedata pid="31" name=" mardi-avant-midi" tags="" position="1675,500" size="100,100">Je suis enfin prêt, il est temps d&#39;aller voir Papa et Maman. C&#39;est vrai que ça fait un moment. Ils habitent pas très loin, j&#39;aurais même pu y aller à pied, mais une partie du chemin n&#39;a pas de trottoir. Sinon, il y a toujours la solution du bus ou de prendre la voiture.
+</tw-passagedata><tw-passagedata pid="28" name=" mardi-avant-midi" tags="" position="1675,500" size="100,100">Je suis enfin prêt, il est temps d&#39;aller voir Papa et Maman. C&#39;est vrai que ça fait un moment. Ils habitent pas très loin, j&#39;aurais même pu y aller à pied, mais une partie du chemin n&#39;a pas de trottoir. Sinon, il y a toujours la solution du bus ou de prendre la voiture.
+(set: $choice1 to &quot;Je n&#39;ai pas envie d&#39;attendre le bus, allons à pied! (~10 min)&quot;)(set: $choice2 to &quot;Je dois attendre un peu, mais prenons le bus (~15 min)&quot;)(set: $choice3 to &quot;Autant prendre la voiture, je dois aller en cours après (~5 min)&quot;)
 
-(set: $choice1 to &quot;Je n&#39;ai pas envie d&#39;attendre le bus, allons à pied! (~10 min)&quot;)
-(set: $choice2 to &quot;Je dois attendre un peu, mais prenons le bus (~15 min)&quot;)
-(set: $choice3 to &quot;Autant prendre la voiture, je dois aller en cours après (~5 min)&quot;)
+(event: when time &gt; 4000)[(replace: $choice1)[[[$choice1 -&gt; mardi-parents-pied]]]]$choice1
 
-(event: when time &gt; 2000)[(replace: $choice1)[[[$choice1 -&gt; mardi-parents-pied]]]]$choice1
+(event: when time &gt; 6000)[(replace: $choice2)[[[$choice2 -&gt; mardi-parents-bus]]]]$choice2
 
-(event: when time &gt; 3000)[(replace: $choice2)[[[$choice2 -&gt; mardi-parents-bus]]]]$choice2
+(event: when time &gt; 2000)[(replace: $choice3)[[[$choice3 -&gt; mardi-parents-voiture]]]]$choice3
+</tw-passagedata><tw-passagedata pid="29" name=" mardi-parents-voiture" tags="" position="1800,600" size="100,100">(set: $ecologie to $ecologie - 1)(set: $mardiVoiture to true)(track: &#39;voiture&#39;, &#39;play&#39;)Je prends ma voiture et le voyage se fait en un instant.
 
-(event: when time &gt; 1000)[(replace: $choice3)[[[$choice3 -&gt; mardi-parents-voiture]]]]$choice3
-</tw-passagedata><tw-passagedata pid="32" name=" mardi-parents-voiture" tags="" position="1800,600" size="100,100">(set: $ecologie to $ecologie - 1)
-(set: $mardiVoiture to true)
-Je prends ma voiture et le voyage se fait en un instant.
-
-[[Hâte du repas! -&gt; mardi-repas-voiture]]</tw-passagedata><tw-passagedata pid="33" name=" mardi-parents-pied" tags="" position="1800,375" size="100,100">(set: $mort to (random:1, 15))
-(set: $ecologie to $ecologie + 1)
-(set: $mardiVoiture to false)
-(if:$mort is 15)[
-Je m&#39;avance dans la route sans trottoir, lorsque soudain, une voiture me remarque un peu trop tard et me percutte. Je suis immédiattement ammené à l&#39;hopital, dans lequel je reste pendant prêt d&#39;un mois.
+[[Hâte du repas! -&gt; mardi-repas-voiture]]</tw-passagedata><tw-passagedata pid="30" name=" mardi-parents-pied" tags="" position="1800,350" size="100,100">(set: $mort to (random:1, 15))(set: $ecologie to $ecologie + 1)(set: $mardiVoiture to false)(if:$mort is 15)[(track: &#39;accident&#39;, &#39;play&#39;)Je m&#39;avance dans la route sans trottoir, lorsque soudain, une voiture me remarque un peu trop tard et me percutte. Je suis immédiattement ammené à l&#39;hopital, dans lequel je reste pendant prêt d&#39;un mois.
 [[C&#39;est la fin -&gt; fin-hopital]]
-](else:)[
-Le voyage s&#39;est passé sans trop de problèmes, même si un trottoir m&#39;aurait fait sentir plus en sécurité.
-
+](else:)[(track: &#39;marcher&#39;, &#39;play&#39;)Le voyage s&#39;est passé sans trop de problèmes, même si un trottoir m&#39;aurait fait sentir plus en sécurité.
+(set: $sante to $sante + 1)
 [[Hâte du repas! -&gt; mardi-repas-pas-voiture]]
-]</tw-passagedata><tw-passagedata pid="34" name=" mardi-parents-bus" tags="" position="1800,500" size="100,100">(set: $mardiVoiture to false)
-Après avoir attendu le bus pendant quelques minutes, le voyage s&#39;est fait rapidement et sans soucis!
+]</tw-passagedata><tw-passagedata pid="31" name=" mardi-parents-bus" tags="" position="1800,500" size="100,100">(set: $mardiVoiture to false)(track: &#39;bus&#39;, &#39;play&#39;)Après avoir attendu le bus pendant quelques minutes, le voyage s&#39;est fait rapidement et sans soucis!
 
-[[Hâte du repas! -&gt; mardi-repas-pas-voiture]]</tw-passagedata><tw-passagedata pid="35" name=" fin-hopital" tags="" position="2350,0" size="100,100">Un an plus tard je n&#39;ai plus vraiment de séquelles, mais cette expérience m&#39;a traumatisé. Il va sans dire que j&#39;ai perdu tout le semestre et qu&#39;il faudra recommencer mon expérience universitaire.
+[[Hâte du repas! -&gt; mardi-repas-pas-voiture]]</tw-passagedata><tw-passagedata pid="32" name=" fin-hopital" tags="" position="2350,0" size="100,100">(track: &#39;game-over&#39;, &#39;play&#39;)Un an plus tard je n&#39;ai plus vraiment de séquelles, mais cette expérience m&#39;a traumatisé. Il va sans dire que j&#39;ai perdu tout le semestre et qu&#39;il faudra recommencer mon expérience universitaire.
 
-[[Rejouer -&gt;Situation initiale]] </tw-passagedata><tw-passagedata pid="36" name=" mardi-repas-pas-voiture" tags="" position="1925,450" size="100,100">Le hachis parmentier de Papa : un vrai délice ! Et la crème au chocolat de Maman était exquise. En tout, on a passé un bon moment! Malheureusement, je ne peux pas rester plus longtemps, mes cours commencent dans 1h. 
+[[Rejouer -&gt;Start]] 
+
+&lt;img src=&quot;./images/game_over.jpeg&quot;\&gt;
+</tw-passagedata><tw-passagedata pid="33" name=" mardi-repas-pas-voiture" tags="" position="1925,450" size="100,100">Le hachis parmentier de Papa : un vrai délice ! Et la crème au chocolat de Maman était exquise. En tout, on a passé un bon moment! Malheureusement, je ne peux pas rester plus longtemps, mes cours commencent dans 1h. 
 
 Maman me propose de m&#39;amener avec elle en voiture jusqu&#39;à l&#39;université, vu qu&#39;elle doit aller de toute manière dans cette direction.
 
-(set: $choice1 to &quot;Aller sur le campus avec maman (~35 min)&quot;)
-(set: $choice2 to &quot;Refuser et aller en bus (~60 min)&quot;)
+(set: $choice1 to &quot;Aller sur le campus avec maman (~35 min)&quot;)(set: $choice2 to &quot;Refuser et aller en bus (~60 min)&quot;)
+(event: when time &gt; 14000)[(replace: $choice1)[[[$choice1 -&gt; mardi-campus-maman]]]] $choice1
 
-(event: when time &gt; 7000)[(replace: $choice1)[[[$choice1 -&gt; mardi-campus-maman]]]] $choice1
+(event: when time &gt; 24000)[(replace: $choice2)[[[$choice2 -&gt; mardi-campus-bus]]]]$choice2
 
-(event: when time &gt; 12000)[(replace: $choice2)[[[$choice2 -&gt; mardi-campus-bus]]]]$choice2</tw-passagedata><tw-passagedata pid="37" name=" mardi-repas-voiture" tags="" position="1925,600" size="100,100">Le hachis parmentier de Papa : un vrai délice ! Et la crème au chocolat de Maman était exquise. En tout, c&#39;était un moment bien passé! Malheureusement, je ne peux pas rester plus longtemps, mes cours commencent dans 1h. 
+&lt;img src=&quot;./images/manger_parents.jpeg&quot;\&gt;
+</tw-passagedata><tw-passagedata pid="34" name=" mardi-repas-voiture" tags="" position="1925,600" size="100,100">Le hachis parmentier de Papa : un vrai délice ! Et la crème au chocolat de Maman était exquise. En tout, c&#39;était un moment bien passé! Malheureusement, je ne peux pas rester plus longtemps, mes cours commencent dans 1h. 
 
 Maman voulait me proposer de m&#39;amener avec elle en voiture jusqu&#39;à l&#39;université, mais vu que je suis venu en voiture je dois refuser.
 
 (set: $choice1 to &quot;Aller sur le campus (~30 min)&quot;)
+(event: when time &gt; 12000)[(replace: $choice1)[[[$choice1 -&gt; mardi-campus-voiture]]]] $choice1
 
-(event: when time &gt; 6000)[(replace: $choice1)[[[$choice1 -&gt; mardi-campus-voiture]]]] $choice1</tw-passagedata><tw-passagedata pid="38" name=" mardi-campus-maman" tags="" position="2050,375" size="100,100">(set: $sante to $sante + 1)
-Maman m&#39;a amené sur le campus et j&#39;ai pu profiter de discuter un peu plus avec elle. J&#39;ai apprécié ce moment, on le fait plus si souvent depuis que j&#39;ai commencé l&#39;université.
+&lt;img src=&quot;./images/manger_parents.jpeg&quot;\&gt;
+</tw-passagedata><tw-passagedata pid="35" name=" mardi-campus-maman" tags="" position="2050,375" size="100,100">(set: $sante to $sante + 1)(track: &#39;voiture&#39;, &#39;play&#39;)Maman m&#39;a amené sur le campus et j&#39;ai pu profiter de discuter un peu plus avec elle. J&#39;ai apprécié ce moment, on le fait plus si souvent depuis que j&#39;ai commencé l&#39;université.
 
 Heureusement à cette heure-ci il n&#39;y a pas beaucoup de traffic, on est donc arrivés rapidement au campus.
 
-[[Aller en cours -&gt; mardi-cours]]</tw-passagedata><tw-passagedata pid="39" name=" mardi-campus-bus" tags="" position="2050,475" size="100,100">(set: $ecologie to $ecologie + 1)
-J&#39;ai refusé la proposition de Maman par conviction. Je pense qu&#39;elle voulait juste passer un moment de plus avec moi, et aller dans la direction c&#39;était juste une excuse. Mais j&#39;aurais peut-être du accepter, on se voit rarement maintenant.
+[[Aller en cours -&gt; mardi-cours]]</tw-passagedata><tw-passagedata pid="36" name=" mardi-campus-bus" tags="" position="2050,475" size="100,100">(set: $ecologie to $ecologie + 1)(track: &#39;bus&#39;, &#39;play&#39;)J&#39;ai refusé la proposition de Maman par conviction. Je pense qu&#39;elle voulait juste passer un moment de plus avec moi, et aller dans la direction c&#39;était juste une excuse. Mais j&#39;aurais peut-être du accepter, on se voit rarement maintenant.
 
 Le voyage en bus est long comme d&#39;habitude, mais rien de particulier s&#39;est passé. J&#39;ai pu regarder quelques vidéos et discuter avec des amis.
 
 [[Aller en cours -&gt; mardi-cours]]
-</tw-passagedata><tw-passagedata pid="40" name=" mardi-campus-voiture" tags="" position="2050,600" size="100,100">Si j&#39;avais su que Maman allait proposer de m&#39;amener je serais pas venu en voiture. J&#39;aurais pu passer encore un moment avec elle, depuis que j&#39;ai commencé l&#39;université on se voit beaucoup moins. 
+</tw-passagedata><tw-passagedata pid="37" name=" mardi-campus-voiture" tags="" position="2050,600" size="100,100">(track: &#39;voiture&#39;, &#39;play&#39;)Si j&#39;avais su que Maman allait proposer de m&#39;amener je serais pas venu en voiture. J&#39;aurais pu passer encore un moment avec elle, depuis que j&#39;ai commencé l&#39;université on se voit beaucoup moins. 
 
 Le traffic à cette heure ci était calme et j&#39;ai rapidement pu rejoindre le campus.
 
-[[Aller en cours -&gt; mardi-cours]]</tw-passagedata><tw-passagedata pid="41" name=" mardi-cours" tags="" position="2200,500" size="100,100">Il est 13h50. Le cours de développement écologique commence dans 10 minutes.
+[[Aller en cours -&gt; mardi-cours]]</tw-passagedata><tw-passagedata pid="38" name=" mardi-cours" tags="" position="2200,500" size="100,100">Il est 13h50. Le cours de développement écologique commence dans 10 minutes.
 
-*ding, notification de sms* Oh tiens, c’est Alex (mon crush) qui m’envoie un message. Il me propose d’aller boire un cappuccino au caramel au bord du lac. Trop mignon ! Je commence le cours dans pas longtemps. J&#39;accepte ou refuse l’invitation d’Alex ?
+*ding, notification de sms* 
+
+Oh tiens, c’est Alex (mon crush) qui m’envoie un message. Il me propose d’aller boire un cappuccino au caramel au bord du lac. Trop mignon ! Je commence le cours dans pas longtemps. J&#39;accepte ou refuse l’invitation d’Alex ?
 
 [[Accepter l&#39;invitation d&#39;Alex -&gt; mardi-lac-Alex]]
-[[Refuser l&#39;invitation d&#39;Alex -&gt; mardi-cours-2]]</tw-passagedata><tw-passagedata pid="42" name=" mardi-lac-Alex" tags="" position="2325,450" size="100,100">(set: $sociabilite to $sociabilite + 1)
-Alex m’a offert le cappuccino et un joli bouquet de roses. On a passé un excellent moment ensemble. J’ai bien fait d’aller prendre l’air, je me serais endormi en plein cours sinon…
 
+
+[[Refuser l&#39;invitation d&#39;Alex -&gt; mardi-cours-2]]</tw-passagedata><tw-passagedata pid="39" name=" mardi-lac-Alex" tags="" position="2325,425" size="100,100">(set: $sociabilite to $sociabilite + 1)(track: &#39;park&#39;, &#39;play&#39;)Alex m’a offert le cappuccino et un joli bouquet de roses. On a passé un excellent moment ensemble. J’ai bien fait d’aller prendre l’air, je me serais endormi en plein cours sinon…
 (if: $mardiVoiture is false)[
 J&#39;aimerais prolonger ce moment, mais il me faut rentrer bientôt. Alors que je me dis ça, Alex me propose de me ramener chez moi dans sa //EnviroDrive//. J&#39;accepte de suite!
 
 (set: $choice2 to &quot;Rentrer avec Alex (~40 min)&quot;)
-(event: when time &gt; 8000)[(replace: $choice2)[[[$choice2 -&gt; mardi-rentrer-Alex]]]]$choice2
+(event: when time &gt; 16000)[(replace: $choice2)[[[$choice2 -&gt; mardi-rentrer-Alex]]]]$choice2
 ](if: $mardiVoiture is true)[
 J&#39;aurais aimé prolonger ce moment, mais chaque événement a une fin. Il faudrait que je rentre bientôt. 
 
 Une fois que j&#39;ai la voiture, je pourrais profiter pour aller faire mes courses. Je dirais pas non à faire un tour après une journée chargée en émotions. Sinon, je peux rentrer maintenant et aller me reposer.
-
 (set: $choice2 to &quot;Aller faire les courses (~20 min)&quot;)
-(event: when time &gt; 4000)[(replace: $choice2)[[[$choice2 -&gt; mardi-courses]]]]$choice2
-
+(event: when time &gt; 8000)[(replace: $choice2)[[[$choice2 -&gt; mardi-courses]]]]$choice2
 (set: $choice1 to &quot;Rentrer (~40 min)&quot;)
-(event: when time &gt; 8000)[(replace: $choice1)[[[$choice1 -&gt; mardi-rentrer-seul]]]]$choice1
-]</tw-passagedata><tw-passagedata pid="43" name=" mardi-cours-2" tags="" position="2325,600" size="100,100">(set: $revision to $revision + 1)
-Je ne peux pas me permettre de sécher ce cours, il est bien trop important pour mes révisions. Tant pis pour Alex, je lui proposerai d&#39;aller au lac la semaine prochaine!
+(event: when time &gt; 16000)[(replace: $choice1)[[[$choice1 -&gt; mardi-rentrer-seul]]]]$choice1
+]
+&lt;img src=&quot;./images/alex_parc.jpeg&quot;\&gt;
+</tw-passagedata><tw-passagedata pid="40" name=" mardi-cours-2" tags="" position="2325,600" size="100,100">(set: $revision to $revision + 1)(track: &#39;cours&#39;, &#39;play&#39;)Je ne peux pas me permettre de sécher ce cours, il est bien trop important pour mes révisions. Tant pis pour Alex, je lui proposerai d&#39;aller au lac la semaine prochaine!
 
 Le cours est long. Si long que je me suis retrouvé à fermer les yeux pendant quelques instants. Mais il est enfin terminé. Il est temps de rentrer!
-
 Il faudrait que j&#39;aille faire des courses, mon frigo commence à être vide.
 (if: $mardiVoiture is true)[
 (set: $choice1 to &quot;Prendre la voiture et aller au //Malwart// le plus proche (~5 min)&quot;)
-(event: when time &gt; 1000)[(replace: $choice1)[[[$choice1 -&gt; mardi-courses]]]] $choice1
-
+(event: when time &gt; 2000)[(replace: $choice1)[[[$choice1 -&gt; mardi-courses]]]] $choice1
 (set: $choice2 to &quot;Rentrer à la maison (~40 min)&quot;)
-(event: when time &gt; 8000)[(replace: $choice1)[[[$choice2 -&gt; mardi-maison]]]] $choice2
+(event: when time &gt; 16000)[(replace: $choice1)[[[$choice2 -&gt; mardi-maison]]]] $choice2
 ](if: $mardiVoiture is false)[
 Pour aller au //Malwart// le plus proche, j’ai le choix entre: marcher, appeler un taxi ou encore prendre le bus, mais ce dernier a toujours du retard.
 
 (set: $choice1 to &quot;Aller à pied (~15 min)&quot;)
-(event: when time &gt; 3000)[(replace: $choice1)[[[$choice1 -&gt; mardi-marche-avant-courses]]]] $choice1
-
+(event: when time &gt; 6000)[(replace: $choice1)[[[$choice1 -&gt; mardi-marche-avant-courses]]]] $choice1
 (set: $choice2 to &quot;Aller en taxi (~5 min)&quot;)
-(event: when time &gt; 1000)[(replace: $choice2)[[[$choice2 -&gt; mardi-taxi-avant-courses]]]] $choice2
-
+(event: when time &gt; 2000)[(replace: $choice2)[[[$choice2 -&gt; mardi-taxi-avant-courses]]]] $choice2
 (set: $choice3 to &quot;Aller en bus (~20 min)&quot;)
-(event: when time &gt; 2500)[(replace: $choice3)[[[$choice3 -&gt; mardi-bus-avant-courses]]]] $choice3
-
+(event: when time &gt; 5000)[(replace: $choice3)[[[$choice3 -&gt; mardi-bus-avant-courses]]]] $choice3
 (set: $choice4 to &quot;Rentrer à la maison en bus (~60 min)&quot;)
-(event: when time &gt; 12000)[(replace: $choice4)[[[$choice4 -&gt; mardi-maison]]]] $choice4
+(event: when time &gt; 24000)[(replace: $choice4)[[[$choice4 -&gt; mardi-maison]]]] $choice4
 ]
-</tw-passagedata><tw-passagedata pid="44" name=" mardi-rentrer-Alex" tags="" position="2450,175" size="100,100">(set: $sociabilite to $sociabilite + 1)
-(set: $sante to $sante + 1)
-La route était pleine de bouchons. En général je serais devenu légerement nerveux, mais dans ce cas ça me permet de passer plus de temps avec Alex. Il m&#39;a fait écouter quelques musiques, et on a discuté. J&#39;ai même de la peine qu&#39;il n&#39;y ait pas eu plus de bouchons.
+</tw-passagedata><tw-passagedata pid="41" name=" mardi-rentrer-Alex" tags="" position="2450,175" size="100,100">(set: $sociabilite to $sociabilite + 1)(set: $sante to $sante + 1)(track: &#39;voiture&#39;, &#39;play&#39;)(set: $transMardi to &quot;voiture&quot;)La route était pleine de bouchons. En général je serais devenu légerement nerveux, mais dans ce cas ça me permet de passer plus de temps avec Alex. Il m&#39;a fait écouter quelques musiques, et on a discuté. J&#39;ai même de la peine qu&#39;il n&#39;y ait pas eu plus de bouchons.
 
 Il m&#39;a déposé devant la porte et on s&#39;est dit &quot;au revoir&quot;. Je suis très content qu&#39;il m&#39;ait proposé cette escapade, et je suis content d&#39;avoir accepté.
 
-[[Rentrer à la maison -&gt; mardi-maison]]</tw-passagedata><tw-passagedata pid="45" name=" mardi-courses" tags="" position="2450,425" size="100,100">J&#39;arrive en 5 minutes au //Malwart//. Je sais ce dont j&#39;ai besoin, donc je ne fais pas long. Une fois tout acheté, il est temps de renter!
+[[Rentrer à la maison -&gt; mardi-maison]]</tw-passagedata><tw-passagedata pid="42" name=" mardi-courses" tags="" position="2450,425" size="100,100">(track: &#39;voiture&#39;, &#39;play&#39;)J&#39;arrive en 5 minutes au //Malwart//. Je sais ce dont j&#39;ai besoin, donc je ne fais pas long. Une fois tout acheté, il est temps de renter!
 
 (set: $choice1 to &quot;Rentrer (~20 min)&quot;)
-(event: when time &gt; 4000)[(replace: $choice1)[[[$choice1 -&gt; mardi-maison]]]] $choice1</tw-passagedata><tw-passagedata pid="46" name=" mardi-rentrer-seul" tags="" position="2450,300" size="100,100">(set: $ecologie to $ecologie - 1)
-(set: $sante to $sante - 1)
-La route était pleine de bouchons, j&#39;en ai rarement vu autant. Au début j&#39;étais calme. Je repensais encore à la belle escapade avec Alex au lieu de mon cours. Toutefois, plus ça durait plus ces arrêts incessants me rendent nerveux. Triste fin pour une si belle journée.
+(event: when time &gt; 8000)[(replace: $choice1)[[[$choice1 -&gt; mardi-maison]]]] $choice1
+
+&lt;img src=&quot;./images/supermarket.jpeg&quot;\&gt;
+</tw-passagedata><tw-passagedata pid="43" name=" mardi-rentrer-seul" tags="" position="2450,300" size="100,100">(set: $ecologie to $ecologie - 1)(set: $sante to $sante - 1)(track: &#39;voiture&#39;, &#39;play&#39;)(set: $transMardi to &quot;voiture&quot;)La route était pleine de bouchons, j&#39;en ai rarement vu autant. Au début j&#39;étais calme. Je repensais encore à la belle escapade avec Alex au lieu de mon cours. Toutefois, plus ça durait plus ces arrêts incessants me rendent nerveux. Triste fin pour une si belle journée.
 
 Après un long moment je suis enfin à la maison.
 
-[[Rentrer à la maison -&gt; mardi-maison]]</tw-passagedata><tw-passagedata pid="47" name=" mardi-marche-avant-courses" tags="" position="2450,650" size="100,100">(set: $ecologie to $ecologie + 1)
-Une petite marche ne fais pas de mal. Ma playlist en fond, j&#39;arrive à //Malwart// en à peine 15 minutes.
+[[Rentrer à la maison -&gt; mardi-maison]]</tw-passagedata><tw-passagedata pid="44" name=" mardi-marche-avant-courses" tags="" position="2450,650" size="100,100">(set: $ecologie to $ecologie + 1)(track: &#39;marcher&#39;, &#39;play&#39;)(set: $transMardi to &quot;bus&quot;)Une petite marche ne fais pas de mal. Ma playlist en fond, j&#39;arrive à //Malwart// en à peine 15 minutes.
 
 Les courses faites, je peux rentrer.
 
 (set: $choice1 to &quot;Rentrer à la maison (~40 min)&quot;)
-(event: when time &gt; 8000)[(replace: $choice1)[[[$choice1 -&gt; mardi-maison]]]] $choice1</tw-passagedata><tw-passagedata pid="48" name=" mardi-taxi-avant-courses" tags="" position="2450,550" size="100,100">(set: $ecologie to $ecologie - 1)
-J&#39;ai eu de la chance, un taxi passait justement à côté du campus. On ne discute pas beaucoup, et 5 minutes plus tard il me dépose au //Malwart//.
+(event: when time &gt; 16000)[(replace: $choice1)[[[$choice1 -&gt; mardi-maison]]]] $choice1
+&lt;img src=&quot;./images/supermarket.jpeg&quot;\&gt;
+</tw-passagedata><tw-passagedata pid="45" name=" mardi-taxi-avant-courses" tags="" position="2450,550" size="100,100">(set: $ecologie to $ecologie - 1)(track: &#39;taxi&#39;, &#39;play&#39;)(set: $transMardi to &quot;bus&quot;)J&#39;ai eu de la chance, un taxi passait justement à côté du campus. On ne discute pas beaucoup, et 5 minutes plus tard il me dépose au //Malwart//.
 
 Les courses faites, je peux rentrer chez moi. 
 
 (set: $choice1 to &quot;Rentrer à la maison (~40 min)&quot;)
-(event: when time &gt; 8000)[(replace: $choice1)[[[$choice1 -&gt; mardi-maison]]]] $choice1</tw-passagedata><tw-passagedata pid="49" name=" mardi-bus-avant-courses" tags="" position="2450,750" size="100,100">Comme prévu, le bus avait du retard. Ils pourraient prévoir ce retard sur les horaires quand même! Bref, je n&#39;ai pas envie de m&#39;énerver.
+(event: when time &gt; 16000)[(replace: $choice1)[[[$choice1 -&gt; mardi-maison]]]] $choice1
+&lt;img src=&quot;./images/supermarket.jpeg&quot;\&gt;
+</tw-passagedata><tw-passagedata pid="46" name=" mardi-bus-avant-courses" tags="" position="2450,750" size="100,100">(track: &#39;bus&#39;, &#39;play&#39;)(set: $transMardi to &quot;bus&quot;)Comme prévu, le bus avait du retard. Ils pourraient prévoir ce retard sur les horaires quand même! Bref, je n&#39;ai pas envie de m&#39;énerver.
 
 J&#39;arrive enfin à //Malwart//. Je fais mes achats rapidement et il est désormais temps de rentrer.
 
 (set: $choice1 to &quot;Rentrer à la maison (~40 min)&quot;)
-(event: when time &gt; 8000)[(replace: $choice1)[[[$choice1 -&gt; mardi-maison]]]] $choice1</tw-passagedata><tw-passagedata pid="50" name=" mardi-maison" tags="" position="2675,450" size="100,100">Enfin à la maison! Il est 20h actuellement, bien plus tard que l&#39;heure à laquelle j&#39;arrive habituellement. Je me fais rapidement quelque chose à manger, en regardant ma série.
+(event: when time &gt; 16000)[(replace: $choice1)[[[$choice1 -&gt; mardi-maison]]]] $choice1
+&lt;img src=&quot;./images/supermarket.jpeg&quot;\&gt;
+</tw-passagedata><tw-passagedata pid="47" name=" mardi-maison" tags="" position="2675,450" size="100,100">Enfin à la maison! Il est 20h actuellement, bien plus tard que l&#39;heure à laquelle j&#39;arrive habituellement. Je me fais rapidement quelque chose à manger, en regardant ma série.
 
 Il est 21h, c&#39;est encore très tôt pour aller se coucher. Je peux en profiter pour réviser encore un moment, pour m’occuper autrement ou alors aller dormir plus tôt.
 
 [[Réviser jusqu&#39;à minuit -&gt; mardi-reviser]]
+
 [[S&#39;occuper jusqu&#39;à 22h30 -&gt; mardi-occuper]]
-[[Dormir plus tôt (set: $sante to $sante + 1) -&gt; mercredi-reveil]]</tw-passagedata><tw-passagedata pid="51" name=" mardi-reviser" tags="" position="2800,550" size="100,100">(set:$revision to $revision + 1)
-(set:$sante to $sante - 1)
-Il est actuellement minuit. Je suis ko, faut vraiment que je me repose…
 
-(set: $bienDormi to false)
+[[Dormir plus tôt (set: $sante to $sante + 1) -&gt; mercredi-reveil]]</tw-passagedata><tw-passagedata pid="48" name=" mardi-reviser" tags="" position="2800,550" size="100,100">(set:$revision to $revision + 1)(set:$sante to $sante - 1)(track: &#39;revision&#39;, &#39;play&#39;)Il est actuellement minuit. Je suis ko, faut vraiment que je me repose…
+(set: $bienDormi to false)[[Aller dormir -&gt; mercredi-reveil]] </tw-passagedata><tw-passagedata pid="49" name=" mardi-occuper" tags="" position="2800,350" size="100,100">(set: $sante to $sante + 1)Je réviserai à un autre moment. Je vais finir mon manga et après au dodo.
 
-[[Aller dormir -&gt; mercredi-reveil]] </tw-passagedata><tw-passagedata pid="52" name=" mardi-occuper" tags="" position="2800,350" size="100,100">(set: $sante to $sante + 1)
-Je réviserai à un autre moment. Je vais finir mon manga et après au dodo.
-
-[[Aller dormir -&gt; mercredi-reveil]]</tw-passagedata><tw-passagedata pid="53" name=" mercredi-reveil" tags="" position="3100,425" size="100,100">(if: $bienDormi is false)[
-	Aujourd&#39;hui j&#39;ai eu de la peine à me lever. J&#39;aurais peut-être pas dû rester autant de temps à étudier, mais l&#39;examen est dans deux jours. Bon, un petit café est la journée se passera mieux !
-](else:)[
-	Aujourd&#39;hui je me suis réveillé en forme, et, vu que les cours ne commencent qu&#39;à 12h30, j&#39;hésite à y aller en vélo. Faire du sport de temps à autres c&#39;est bien aussi !
+[[Aller dormir -&gt; mercredi-reveil]]</tw-passagedata><tw-passagedata pid="50" name=" mercredi-reveil" tags="" position="3100,425" size="100,100">(track: &#39;alarme&#39;, &#39;play&#39;)(if: $bienDormi is false)[	Aujourd&#39;hui j&#39;ai eu de la peine à me lever. J&#39;aurais peut-être pas dû rester autant de temps à étudier, mais l&#39;examen est dans deux jours. Bon, un petit café et la journée se passera mieux !
+](else:)[Aujourd&#39;hui je me suis réveillé en forme, et, vu que les cours ne commencent qu&#39;à 12h30, j&#39;hésite à y aller en vélo. Faire du sport de temps à autres c&#39;est bien aussi !
 ]
-(set: $choice1 to &quot;Aller à l&#39;université en SUV (~30 min)&quot;)
-(set: $choice2 to &quot;Aller à l&#39;université en bus (~60 min)&quot;)
-(set: $choice3 to &quot;Aller à l&#39;université en vélo (~ 1h40min)&quot;)
+(set: $choice1 to &quot;Aller à l&#39;université en SUV (~30 min)&quot;)(set: $choice2 to &quot;Aller à l&#39;université en bus (~60 min)&quot;)(set: $choice3 to &quot;Aller à l&#39;université en vélo (~ 1h40min)&quot;)
+(event: when time &gt; 12000)[(replace: $choice1)[[[$choice1 -&gt; mercredi-campus-suv]]]] $choice1
 
-(event: when time &gt; 6000)[(replace: $choice1)[[[$choice1 -&gt; mercredi-campus-suv]]]] $choice1
+(event: when time &gt; 24000)[(replace: $choice2)[[[$choice2 -&gt; mercredi-campus-bus]]]]$choice2
 
-(event: when time &gt; 12000)[(replace: $choice2)[[[$choice2 -&gt; mercredi-campus-bus]]]]$choice2
+(event: when time &gt; 40000)[(replace: $choice3)[[[$choice3 -&gt; mercredi-campus-velo]]]]$choice3
+</tw-passagedata><tw-passagedata pid="51" name=" mercredi-campus-velo" tags="" position="3275,600" size="100,100">(set: $ecologie to $ecologie + 1)(set: $propositionMercredi to false)(set: $velo to true)(set: $sante to $sante + 1)(set: $mort to (random:1, 15))(if:$mort is 15)[(track: &#39;accident&#39;, &#39;play&#39;)Tout se passe bien, jusqu&#39;au moment ou je dois brièvement traverser la route principale. C&#39;était peut-être pas la meilleure idée le vélo finalement, mais c&#39;est trop tard pour revenir en arrière. Je m&#39;élance dans la route, lorsqu&#39;une voiture me percutte. Je suis immédiattement ammené à l&#39;hopital.
 
-(event: when time &gt; 20000)[(replace: $choice3)[[[$choice3 -&gt; mercredi-campus-velo]]]]$choice3
-</tw-passagedata><tw-passagedata pid="54" name=" mercredi-campus-velo" tags="" position="3275,600" size="100,100">(set: $ecologie to $ecologie + 1)
-(set: $velo to true)
-(set: $sante to $sante + 1)
-(set: $mort to (random:1, 15))
-
-(if:$mort is 15)[
-Tout se passe bien, jusqu&#39;au moment ou je dois brièvement traverser la route principale. C&#39;était peut-être pas la meilleure idée le vélo finalement, mais c&#39;est trop tard pour revenir en arrière. Je m&#39;élance dans la route, lorsqu&#39;une voiture me percutte. Je suis immédiattement ammené à l&#39;hopital.
 [[C&#39;est la fin -&gt; fin-hopital]]
-](else:)[
-Tout s&#39;est bien passé, même si j&#39;ai eu peur quand j&#39;ai du traverser la route principale. C&#39;est vrai que je ne suis pas habitué de voir des cyclistes ici, le manque de voies cyclables et la nécessité de traverser les routes principales (ou parfois les trottoirs mêmes sont inexistants) expliquent pourquoi. Bon je suis arrivé c&#39;est le principal, et tout cet effort m&#39;a fait du bien!
-[[Aller en cours -&gt; mercredi-cours]]
-]</tw-passagedata><tw-passagedata pid="55" name=" mercredi-campus-bus" tags="" position="3275,275" size="100,100">(set: $ecologie to $ecologie + 1)
-(set: $rencontre to (random:1, 5))
-(if: $random is 5)[
-(set: $sante to $sante + 1)
-En montant dans le bus je croise mon amie Lou. Je m&#39;attendais pas à cette rencontre, vu qu&#39;elle ne prend pas le bus souvent, mais c&#39;est sympa de la revoir. Le trajet se passe bien plus vite comme ça!
-](else:)[
-(set: $sante to $sante - 1)
-Le bus est interminable et je loupe mon changement. Encore 15 minutes à attendre avant le prochain. C&#39;est des petites choses, mais elles mettent une mauvaise ambiance dans la journée. En plus, elles arrives souvent. 
-(if: $sociabilite &gt; 1)[
-Je sais! Je vais discuter avec Alex pour passer le temps! Je lui envois un message et, heureusement, il répond vite. Je pourrais lui proposer de se voir ce soir, mais je ne sais pas si j&#39;ose le faire. De plus, si je lui propose de se voir je pourrais plus étudier.
-[[Proposer une recontre à Alex -&gt; mercredi-proposition]]
-]
-]
-[[Aller en cours -&gt; mercredi-cours]]</tw-passagedata><tw-passagedata pid="56" name=" mercredi-proposition" tags="" position="3425,250" size="100,100">(set: $sociabilite to $sociabilite + 1)
-(set: $propositionMercredi to true)
-Alex a accepté ma proposition! Hâte d&#39;être ce soir!!
+](else:)[(track: &#39;velo&#39;, &#39;play&#39;)Tout s&#39;est bien passé, même si j&#39;ai eu peur quand j&#39;ai du traverser la route principale. C&#39;est vrai que je ne suis pas habitué de voir des cyclistes ici, le manque de voies cyclables et la nécessité de traverser les routes principales (ou parfois les trottoirs mêmes sont inexistants) expliquent pourquoi. Bon je suis arrivé c&#39;est le principal, et tout cet effort m&#39;a fait du bien!
 
-[[Aller en cours -&gt; mercredi-cours]] </tw-passagedata><tw-passagedata pid="57" name=" mercredi-cours" tags="" position="3550,400" size="100,100">Le cours n&#39;avait rien d&#39;extraordinaire. J&#39;ai même fait quelques sudokus pour passer le temps. Mais c&#39;est quand même important d&#39;être là, on ne sait jamais ce qu&#39;on pourrait apprendre!
+[[Aller en cours -&gt; mercredi-cours]]
+]</tw-passagedata><tw-passagedata pid="52" name=" mercredi-campus-bus" tags="" position="3275,275" size="100,100">(set: $ecologie to $ecologie + 1)(set: $rencontre to (random:1, 5))(set: $propositionMercredi to false)(track: &#39;bus&#39;, &#39;play&#39;)(if: $random is 5)[
+(set: $sante to $sante + 1)En montant dans le bus je croise mon amie Lou. Je m&#39;attendais pas à cette rencontre, vu qu&#39;elle ne prend pas le bus souvent, mais c&#39;est sympa de la revoir. Le trajet se passe bien plus vite comme ça!
+](else:)[(set: $sante to $sante - 1)Le bus est interminable et je loupe mon changement. Encore 15 minutes à attendre avant le prochain. C&#39;est des petites choses, mais elles mettent une mauvaise ambiance dans la journée. En plus, elles arrives souvent. 
+(if: $sociabilite &gt; 1)[Je sais! Je vais discuter avec Alex pour passer le temps! Je lui envois un message et, heureusement, il répond vite. Je pourrais lui proposer de se voir ce soir, mais je ne sais pas si j&#39;ose le faire. De plus, si je lui propose de se voir je pourrais plus étudier.
+[[Proposer une recontre à Alex -&gt; mercredi-proposition]]
+]]
+[[Aller en cours -&gt; mercredi-cours]]</tw-passagedata><tw-passagedata pid="53" name=" mercredi-proposition" tags="" position="3425,250" size="100,100">(set: $sociabilite to $sociabilite + 1)(set: $propositionMercredi to true)(track: &#39;romance&#39;, &#39;play&#39;)Alex a accepté ma proposition! Hâte d&#39;être ce soir!!
+
+[[Aller en cours -&gt; mercredi-cours]] </tw-passagedata><tw-passagedata pid="54" name=" mercredi-cours" tags="" position="3550,400" size="100,100">(track: &#39;cours&#39;, &#39;play&#39;)Le cours n&#39;avait rien d&#39;extraordinaire. J&#39;ai même fait quelques sudokus pour passer le temps. Mais c&#39;est quand même important d&#39;être là, on ne sait jamais ce qu&#39;on pourrait apprendre!
 
 (if: $propositionMercredi is true)[
 (set: $sociabilite to $sociabilite + 1)
 Encore un très bon moment passé avec Alex. Je pouvais sentir un peu de tension de chaque côté, mais je n&#39;ai pas osé agir dessus ce soir. C&#39;est sur, la prochaine fois j&#39;essaierais!
 (set: $choice1 to &quot;Prendre le bus pour rentrer (~65 min)&quot;)
-(event: when time &gt; 13000)[(replace: $choice1)[[[$choice1 -&gt; mercredi-rentrer-bus]]]] $choice1
+(event: when time &gt; 26000)[(replace: $choice1)[[[$choice1 -&gt; mercredi-rentrer-bus]]]] $choice1
 ](else:)[
 J&#39;ai encore du temps cet après-midi, je pourrais aller à la bibliothèque réviser un moment. Après tout, l&#39;examen c&#39;est bientôt!
+
+
 [[Aller réviser à la bibliothèque -&gt; mercredi-biblio]]
-](if: $velo is true)[
-J&#39;ai toujours le vélo avec moi. Est-ce que je rentre de nouveau en vélo? Dans ce cas je pourrais pas réviser. Sinon je peux attendre un bus vide dans lequel je pourrais l&#39;amener.
-(set: $choice2 to &quot;Rentrer en vélo (~ 1h40min)&quot;)
-(event: when time &gt; 20000)[(replace: $choice2)[[[$choice2 -&gt; mercredi-rentrer-velo]]]] $choice2
-](if: $voitureMercredi is true)[
-(set: $choice3 to &quot;Rentrer en voiture (~30 min)&quot;)
-(event: when time &gt; 6000)[(replace: $choice3)[[[$choice3 -&gt; mercredi-rentrer-suv]]]] $choice3
-](else:)[
-(set: $choice4 to &quot;Prendre le bus pour rentrer (~ 60 min)&quot;)
-(event: when time &gt; 12000)[(replace: $choice4)[[[$choice4 -&gt; mercredi-rentrer-bus]]]] $choice4
-]</tw-passagedata><tw-passagedata pid="58" name=" mercredi-biblio" tags="" position="3675,200" size="100,100">(set: $revision to $revision + 1)
-(set: $mercrediRevisions to true)
-J&#39;ai passé une bonne heure à la bibliothéque pour avancer les révisions, j&#39;espère être prêt pour l&#39;examen! Il commence à se faire tard toutefois, il va falloir rentrer!
+(if: $velo is true)[J&#39;ai toujours le vélo avec moi. Est-ce que je rentre de nouveau en vélo? Dans ce cas je pourrais pas réviser. Sinon je peux attendre un bus vide dans lequel je pourrais l&#39;amener.(set: $choice2 to &quot;Rentrer en vélo (~ 1h40min)&quot;)(event: when time &gt; 40000)[(replace: $choice2)[[[$choice2 -&gt; mercredi-rentrer-velo]]]] $choice2
+](if: $voitureMercredi is true)[(set: $choice3 to &quot;Rentrer en voiture (~30 min)&quot;)(event: when time &gt; 12000)[(replace: $choice3)[[[$choice3 -&gt; mercredi-rentrer-suv]]]] $choice3](else:)[(set: $choice4 to &quot;Prendre le bus pour rentrer (~ 60 min)&quot;)
+(event: when time &gt; 24000)[(replace: $choice4)[[[$choice4 -&gt; mercredi-rentrer-bus]]]] $choice4
+]]</tw-passagedata><tw-passagedata pid="55" name=" mercredi-biblio" tags="" position="3675,200" size="100,100">(set: $revision to $revision + 1)(set: $mercrediRevisions to true)(track: &#39;revision&#39;, &#39;play&#39;)J&#39;ai passé une bonne heure à la bibliothéque pour avancer les révisions, j&#39;espère être prêt pour l&#39;examen! Il commence à se faire tard toutefois, il va falloir rentrer!
 
 (if: $velo is true)[
 J&#39;ai toujours le vélo avec moi, mais c&#39;est un peu tard pour rentrer avec maintenant. Je peux attendre un bus vide dans lequel je pourrais l&#39;amener.
 ](if: $voitureMercredi is true)[
 (set: $choice3 to &quot;Rentrer en voiture (~30 min)&quot;)
-(event: when time &gt; 6000)[(replace: $choice3)[[[$choice3 -&gt; mercredi-rentrer-suv]]]] $choice3
+(event: when time &gt; 12000)[(replace: $choice3)[[[$choice3 -&gt; mercredi-rentrer-suv]]]] $choice3
 ](else:)[
 (set: $choice4 to &quot;Prendre le bus pour rentrer (~ 60 min)&quot;)
-(event: when time &gt; 12000)[(replace: $choice4)[[[$choice4 -&gt; mercredi-rentrer-bus]]]] $choice4
-]</tw-passagedata><tw-passagedata pid="59" name=" mercredi-rentrer-bus" tags="" position="3825,525" size="100,100">Le trajet en bus était long et ce n&#39;est jamais un trajet plaisant. Mais au moins j&#39;ai pas à penser au traffic de la route, je peux juste regarder des vidéos ou écouter de la musique tranquillement.
+(event: when time &gt; 24000)[(replace: $choice4)[[[$choice4 -&gt; mercredi-rentrer-bus]]]] $choice4
+]</tw-passagedata><tw-passagedata pid="56" name=" mercredi-rentrer-bus" tags="" position="3825,525" size="100,100">(track: &#39;bus&#39;, &#39;play&#39;)Le trajet en bus était long et ce n&#39;est jamais un trajet plaisant. Mais au moins j&#39;ai pas à penser au traffic de la route, je peux juste regarder des vidéos ou écouter de la musique tranquillement.
 
-[[Rentrer à la maison -&gt; mercredi-maison-soir]] </tw-passagedata><tw-passagedata pid="60" name=" mercredi-rentrer-velo" tags="" position="3825,275" size="100,100">(set: $sante to $sante + 1)
-(set: $mort to (random:1, 10))
+[[Rentrer à la maison -&gt; mercredi-maison-soir]] </tw-passagedata><tw-passagedata pid="57" name=" mercredi-rentrer-velo" tags="" position="3825,275" size="100,100">(set: $sante to $sante + 1)(set: $mort to (random:1, 10))(if:$mort is 10)[Il commence à se faire tard. Je roule sans trop de soucis, mais retraverser la route principale m&#39;inquiète. Surtout que, bien que la route soit encore visible, la lumière commence peu à peu à s&#39;amoindrir. Je m&#39;élance dans cet enfer de voitures, quand, soudain, une voiture me percutte. Je suis immédiattement ammené à l&#39;hôpital.
 
-(if:$mort is 10)[
-Il commence à se faire tard. Je roule sans trop de soucis, mais retraverser la route principale m&#39;inquiète. Surtout que, bien que la route soit encore visible, la lumière commence peu à peu à s&#39;amoindrir. Je m&#39;élance dans cet enfer de voitures, quand, soudain, une voiture me percutte. Je suis immédiattement ammené à l&#39;hôpital.
 [[C&#39;est la fin -&gt; fin-hopital]]
-](else:)[
-Je suis arrivé sain et sauf chez moi, bien que la route principale avec cette visibilité ait été un enfer. Je suis pas passé loin de l&#39;accident! Mais tout est bien qui fini bien, je suis toujours vivant et en forme!
+](else:)[Je suis arrivé sain et sauf chez moi, bien que la route principale avec cette visibilité ait été un enfer. Je suis pas passé loin de l&#39;accident! Mais tout est bien qui fini bien, je suis toujours vivant et en forme!
+
 [[Rentrer à la maison -&gt; mercredi-maison-soir]]
-]</tw-passagedata><tw-passagedata pid="61" name=" mercredi-rentrer-suv" tags="" position="3825,400" size="100,100">Le trajet s&#39;effectue sans problèmes, je suis même arrivé plus vite à la maison que prévu!
+]</tw-passagedata><tw-passagedata pid="58" name=" mercredi-rentrer-suv" tags="" position="3825,400" size="100,100">(set:$voiture to true)Le trajet s&#39;effectue sans problèmes, je suis même arrivé plus vite à la maison que prévu!
 
-[[Rentrer à la maison -&gt; mercredi-maison-soir]]</tw-passagedata><tw-passagedata pid="62" name=" mercredi-campus-suv" tags="" position="3275,450" size="100,100">(set: $ecologie to $ecologie - 1)
-(set: $traffic to (random:1, 5))
-(set: $voitureMercredi to true)
-(if: $traffic &gt; 3)[
-(set: $sante to $sante - 1)
-Encore une journée pleine de traffic. Pourquoi ils n&#39;élargissent pas les routes, s&#39;ils savent qu&#39;on est autant? Si seulement le métro allait de chez moi jusqu&#39;au campus, au moins il y aurait plus ce soucis. J&#39;espère ne pas arriver en retard!
-](else:)[
-(set: $sante to $sante + 1)
-Heureusement que aujourd&#39;hui c&#39;est une journée à peu de traffic! C&#39;est reposant de rouler quand il n&#39;y a pas beaucoup de gens. Et j&#39;arrive beaucoup plus vite sur le campus! Je pourrais avancer un peu dans mes révisions!
-(set: $revision to $revision + 1)
-]
-
-[[Aller en cours -&gt; mercredi-cours]] </tw-passagedata><tw-passagedata pid="63" name=" mercredi-maison-soir" tags="" position="4000,400" size="100,100">(if: $velo is true)[
-Enfin à la maison! Maintenant c&#39;est: douche, manger, dodo. Je suis épuisé!
-
+[[Rentrer à la maison -&gt; mercredi-maison-soir]]</tw-passagedata><tw-passagedata pid="59" name=" mercredi-campus-suv" tags="" position="3275,450" size="100,100">(set: $ecologie to $ecologie - 1)(set: $traffic to (random:1, 5))(set: $voitureMercredi to true)(track: &#39;voiture&#39;, &#39;play&#39;)(set: $propositionMercredi to false)(if: $traffic &gt; 3)[(set: $sante to $sante - 1)Encore une journée pleine de traffic. Pourquoi ils n&#39;élargissent pas les routes, s&#39;ils savent qu&#39;on est autant? Si seulement le métro allait de chez moi jusqu&#39;au campus, au moins il y aurait plus ce soucis. J&#39;espère ne pas arriver en retard!](else:)[(set: $sante to $sante + 1)Heureusement que aujourd&#39;hui c&#39;est une journée à peu de traffic! C&#39;est reposant de rouler quand il n&#39;y a pas beaucoup de gens. Et j&#39;arrive beaucoup plus vite sur le campus! Je pourrais avancer un peu dans mes révisions!
+(set: $revision to $revision + 1)]
+[[Aller en cours -&gt; mercredi-cours]] </tw-passagedata><tw-passagedata pid="60" name=" mercredi-maison-soir" tags="" position="4000,400" size="100,100">(if: $velo is true)[(track: &#39;velo&#39;, &#39;play&#39;)Enfin à la maison! Maintenant c&#39;est: douche, manger, dodo. Je suis épuisé!
 [[Aller dormir -&gt; jeudi-reveil]]
-](else:)[
-Enfin à la maison! Cette journée (if:$propositionMercredi is false)[banale] m&#39;a épuisé. Je vais manger et regarder quelques épisodes avant d&#39;aller dormir.
-
-[[Aller dormir -&gt; jeudi-reveil]]
-]</tw-passagedata><tw-passagedata pid="64" name=" jeudi-reveil" tags="" position="4200,400" size="100,100">(set: $revision to $revision + 1)
-J&#39;ai pu me lever tard aujourd&#39;hui. En effet, j&#39;ai pas de cours! J&#39;ai même pu avancer tranquillement sur mes révisions.
+](else:)[Enfin à la maison! Cette journée (if:$propositionMercredi is false)[banale] m&#39;a épuisé. Je vais manger et regarder quelques épisodes avant d&#39;aller dormir.
+(if:$voiture is true)[(track: &#39;voiture&#39;, &#39;play&#39;)](else:)[(track: &#39;bus&#39;, &#39;play&#39;)
+][[Aller dormir -&gt; jeudi-reveil]]
+]</tw-passagedata><tw-passagedata pid="61" name=" jeudi-reveil" tags="" position="4200,400" size="100,100">(set: $revision to $revision + 1)(track: &#39;alarme&#39;, &#39;play&#39;)(set: $alex to false)J&#39;ai pu me lever tard aujourd&#39;hui. En effet, j&#39;ai pas de cours! J&#39;ai même pu avancer tranquillement sur mes révisions.
 
 Après deux heures de travail, je suis à bout. Je sens que je dois me vider la tête, m&#39;amuser un peu.
 
-(if: $sociabilite &lt; 2)[
-Et, alors que je pensais à sortir, je reçois un message. Lou m’a écrit pour m’inviter à une soirée étudiants ce soir chez une connaissance. J’hésite à y aller car j’ai mon examen demain, mais d’un autre côté, je sens que j’ai aussi besoin de me détendre et de passer un bon moment. Lou m’a dit qu’elle viendra en voiture et qu’elle pourra me raccompagner à la maison. Après tout ce n’est qu’une petite soirée…
+(if: $sociabilite &lt; 2)[Et, alors que je pensais à sortir, je reçois un message. Lou m’a écrit pour m’inviter à une soirée étudiants ce soir chez une connaissance. J’hésite à y aller car j’ai mon examen demain, mais d’un autre côté, je sens que j’ai aussi besoin de me détendre et de passer un bon moment. Lou m’a dit qu’elle viendra en voiture et qu’elle pourra me raccompagner à la maison. Après tout ce n’est qu’une petite soirée…
+
 [[Accepter l&#39;invitation de Lou -&gt; jeudi-accepter-Lou]]
+
 [[Refuser l&#39;invitation de Lou -&gt; jeudi-refuser-Lou]]
-](else:)[
-Et, alors que je pensais à sortir, je reçois un message. Alex m’a écrit pour m’inviter à une soirée étudiants ce soir chez une connaissance. J’hésite à y aller car j’ai mon examen demain, mais d’un autre côté, je sens que j’ai aussi besoin de me détendre et de passer un bon moment en compagnie d’Alex. Je sens qu’on s’apprécie bien. Après tout ce n’est qu’une petite soirée…
+](else:)[Et, alors que je pensais à sortir, je reçois un message. Alex m’a écrit pour m’inviter à une soirée étudiants ce soir chez une connaissance. J’hésite à y aller car j’ai mon examen demain, mais d’un autre côté, je sens que j’ai aussi besoin de me détendre et de passer un bon moment en compagnie d’Alex. Je sens qu’on s’apprécie bien. Après tout ce n’est qu’une petite soirée…
 
 [[Accepter l&#39;invitation d&#39;Alex -&gt; jeudi-accepter-alex]]
+
 [[Refuser l&#39;invitation d&#39;Alex -&gt; jeudi-refuser-alex]]
-]</tw-passagedata><tw-passagedata pid="65" name=" jeudi-refuser-alex" tags="" position="4375,375" size="100,100">(set: $sante to $sante - 1)
-(set: $sociabilite to $sociabilite - 1)
+]</tw-passagedata><tw-passagedata pid="62" name=" jeudi-refuser-alex" tags="" position="4375,375" size="100,100">(set: $sante to $sante - 1)(set: $sociabilite to $sociabilite - 1)(set:$revision to $revision+1)On peut pas faire mieux pour une journée banale… Alex devra attendre pour son bisou. Les études sont plus importantes que l’amour ? C’est une question en suspens… Dans tous les cas et quelque soit la réponse, j&#39;ai soupé et je suis allé me coucher à 21h30.
 
-On peut pas faire mieux pour une journée banale… Alex devra attendre pour son bisou. Les études sont plus importantes que l’amour ? C’est une question en suspens… Dans tous les cas et quelque soit la réponse, j&#39;ai soupé et je suis allé me coucher à 21h30.
-
-[[Aller se coucher -&gt; vendredi-réveil]] </tw-passagedata><tw-passagedata pid="66" name=" jeudi-accepter-alex" tags="" position="4375,250" size="100,100">(set: $soiree to &quot;Alex&quot;)
-Il faut que je me détende et j&#39;ai très envie de voir Alex. Ainsi, je lui dis que je serai présent. J&#39;hésite entre prendre ma voiture ou aller en bus. Je risque de ne plus avoir moyen de rentrer en allant en transports, mais si je vais en voiture je pourrais moins en profiter. 
+[[Aller se coucher -&gt; vendredi-réveil]] </tw-passagedata><tw-passagedata pid="63" name=" jeudi-accepter-alex" tags="" position="4375,250" size="100,100">(track: &#39;romance&#39;, &#39;play&#39;)(set: $soiree to &quot;Alex&quot;)Il faut que je me détende et j&#39;ai très envie de voir Alex. Ainsi, je lui dis que je serai présent. J&#39;hésite entre prendre ma voiture ou aller en bus. Je risque de ne plus avoir moyen de rentrer en allant en transports, mais si je vais en voiture je pourrais moins en profiter. 
 
 (set: $choice2 to &quot;Aller en transports publics (~50 min)&quot;)
-(event: when time &gt; 10000)[(replace: $choice2)[[[$choice2 -&gt; jeudi-soiree-alex-bus]]]]$choice2
-
+(event: when time &gt; 20000)[(replace: $choice2)[[[$choice2 -&gt; jeudi-soiree-alex-bus]]]]$choice2
 (set: $choice3 to &quot;Prendre mon SUV (~20 min)&quot;)
-(event: when time &gt; 4000)[(replace: $choice3)[[[$choice3 -&gt; jeudi-soiree-alex-voiture]]]]$choice3
-</tw-passagedata><tw-passagedata pid="67" name=" jeudi-accepter-Lou" tags="" position="4375,625" size="100,100">(set: $soiree to &quot;Lou&quot;)
-Il faut que je me détende. Je dis donc à Lou que je serai présent. Bien qu&#39;elle m&#39;ai proposé de m&#39;y amener en voiture, peut-être que c&#39;est mieux que je prenne la mienne, ou bien que j&#39;aille en transports, afin de rentrer quand je veux. Si ça se trouve, je n&#39;aurais pas envie de faire très tard et embêter mon amie pour rentrer tôt. D&#39;un autre côté, les transports ne sont pas très fiables pendant la nuit.
+(event: when time &gt; 8000)[(replace: $choice3)[[[$choice3 -&gt; jeudi-soiree-alex-voiture]]]]$choice3
+</tw-passagedata><tw-passagedata pid="64" name=" jeudi-accepter-Lou" tags="" position="4375,625" size="100,100">(set: $soiree to &quot;Lou&quot;)Il faut que je me détende. Je dis donc à Lou que je serai présent. Bien qu&#39;elle m&#39;ai proposé de m&#39;y amener en voiture, peut-être que c&#39;est mieux que je prenne la mienne, ou bien que j&#39;aille en transports, afin de rentrer quand je veux. Si ça se trouve, je n&#39;aurais pas envie de faire très tard et embêter mon amie pour rentrer tôt. D&#39;un autre côté, les transports ne sont pas très fiables pendant la nuit.
 
 (set: $choice1 to &quot;Accepter d&#39;aller en voiture avec Lou (~22 min)&quot;)
-(event: when time &gt; 4500)[(replace: $choice1)[[[$choice1 -&gt; jeudi-soiree-voiture-Lou]]]]$choice1
-
+(event: when time &gt; 9000)[(replace: $choice1)[[[$choice1 -&gt; jeudi-soiree-voiture-Lou]]]]$choice1
 (set: $choice2 to &quot;Aller en transports publics (~50 min)&quot;)
-(event: when time &gt; 10000)[(replace: $choice2)[[[$choice2 -&gt; jeudi-soiree-bus]]]]$choice2
+(event: when time &gt; 20000)[(replace: $choice2)[[[$choice2 -&gt; jeudi-soiree-bus]]]]$choice2
+(set: $choice3 to &quot;Prendre mon SUV (~20 min)&quot;)
+(event: when time &gt; 8000)[(replace: $choice3)[[[$choice3 -&gt; jeudi-soiree-voiture]]]]$choice3
+</tw-passagedata><tw-passagedata pid="65" name=" jeudi-refuser-Lou" tags="" position="4375,500" size="100,100">(set: $sante to $sante - 1)(set:$revision to $revision+ 1)On peut pas faire mieux pour une journée banale… J&#39;ai soupé et je suis allé me coucher à 21h30. Il faut être en forme pour demain.
 
-(set: $choice3 to &quot;Prendre mon SUV (~20 min&quot;)
-(event: when time &gt; 4000)[(replace: $choice3)[[[$choice3 -&gt; jeudi-soiree-voiture]]]]$choice3
-</tw-passagedata><tw-passagedata pid="68" name=" jeudi-refuser-Lou" tags="" position="4375,500" size="100,100">(set: $sante to $sante - 1)
-On peut pas faire mieux pour une journée banale… J&#39;ai soupé et je suis allé me coucher à 21h30. Il faut être en forme pour demain.
-
-[[Aller dormir -&gt; vendredi-réveil]]</tw-passagedata><tw-passagedata pid="69" name=" vendredi-réveil" tags="" position="5200,425" size="100,100">(if: $soiree is &quot;Alex&quot;)[
-Aujourd&#39;hui, jour d&#39;examen! Je suis de bonne humeur et, j’ai des papillons dans le ventre hihi ! Faut pas que j’oublie que j’ai le fameux examen cet après-midi. Allez, concentration ! Je vais le faire !
-](else:)[
-Aujourd&#39;hui, jour d&#39;examen. Je me suis réveillé dans le stress, pourtant j’ai beaucoup révisé. J’ai le coeur qui palpite. Je vais prendre une grande respiration. 
+[[Aller dormir -&gt; vendredi-réveil]]</tw-passagedata><tw-passagedata pid="66" name=" vendredi-réveil" tags="" position="5200,425" size="100,100">(track: &#39;alarme&#39;, &#39;play&#39;)(if: $soiree is &quot;Alex&quot;)[Aujourd&#39;hui, jour d&#39;examen! Je suis de bonne humeur et, j’ai des papillons dans le ventre hihi ! Faut pas que j’oublie que j’ai le fameux examen cet après-midi. Allez, concentration ! Je vais le faire !
+](else:)[Aujourd&#39;hui, jour d&#39;examen. Je me suis réveillé dans le stress, pourtant j’ai beaucoup révisé. J’ai le coeur qui palpite. Je vais prendre une grande respiration. 
 
 *Souffle*… allez ça va bien se passer. 
 ]
-
 Pour aller sur le campus je peux toujours prendre le bus ou la voiture:
 
 (set: $choice1 to &quot;Prendre le bus (~60 min)&quot;)
-(event: when time &gt; 12000)[(replace: $choice1)[[[$choice1 -&gt; vendredi-bus]]]] $choice1
-
+(event: when time &gt; 24000)[(replace: $choice1)[[[$choice1 -&gt; vendredi-bus]]]] $choice1
 (set: $choice2 to &quot;Prendre la voiture (~30 min)&quot;)
-(event: when time &gt; 6000)[(replace: $choice2)[[[$choice2 -&gt; vendredi-voiture]]]]$choice2
-</tw-passagedata><tw-passagedata pid="70" name=" jeudi-soiree-voiture" tags="" position="4575,675" size="100,100">(set: $ecologie to $ecologie - 1)
-Je préfére pouvoir partir quand je veux. Toutefois, ça voudra dire que je ne pourrais pas boire. C&#39;est peut-être pour le mieux, j&#39;ai un examen demain de toute manière.
+(event: when time &gt; 12000)[(replace: $choice2)[[[$choice2 -&gt; vendredi-voiture]]]]$choice2
+</tw-passagedata><tw-passagedata pid="67" name=" jeudi-soiree-voiture" tags="" position="4575,675" size="100,100">(set: $ecologie to $ecologie - 1)(track: &#39;voiture&#39;, &#39;play&#39;)Je préfére pouvoir partir quand je veux. Toutefois, ça voudra dire que je ne pourrais pas boire. C&#39;est peut-être pour le mieux, j&#39;ai un examen demain de toute manière.
 (set: $transportFete to &quot;voiture&quot;)
-[[Allons faire la fête! -&gt; jeudi-fete]]</tw-passagedata><tw-passagedata pid="71" name=" jeudi-soiree-bus" tags="" position="4575,575" size="100,100">(set: $ecologie to $ecologie + 1)
-Je prends les transports et j&#39;arrive à la soirée un peu moins d&#39;une heure plus tard. 
+[[Allons faire la fête! -&gt; jeudi-fete]]</tw-passagedata><tw-passagedata pid="68" name=" jeudi-soiree-bus" tags="" position="4575,575" size="100,100">(set: $ecologie to $ecologie + 1)(track: &#39;bus&#39;, &#39;play&#39;)Je prends les transports et j&#39;arrive à la soirée un peu moins d&#39;une heure plus tard. 
 
-(set: $transportFete to &quot;bus&quot;)
-[[Allons faire la fête! -&gt; jeudi-fete]]</tw-passagedata><tw-passagedata pid="72" name=" jeudi-soiree-voiture-Lou" tags="" position="4575,775" size="100,100">Lou arrive quelques minutes après l&#39;heure de rendez-vous. La ponctualité n&#39;a jamais été son point fort! On se met en route pour la soirée, et elle me parle de ses amis qui y seront.
+(set: $transportFete to &quot;bus&quot;)[[Allons faire la fête! -&gt; jeudi-fete]]</tw-passagedata><tw-passagedata pid="69" name=" jeudi-soiree-voiture-Lou" tags="" position="4575,775" size="100,100">(track: &#39;voiture&#39;, &#39;play&#39;)Lou arrive quelques minutes après l&#39;heure de rendez-vous. La ponctualité n&#39;a jamais été son point fort! On se met en route pour la soirée, et elle me parle de ses amis qui y seront.
 (set: $transportFete to &quot;Lou&quot;)
-[[Allons faire la fête! -&gt; jeudi-fete]]</tw-passagedata><tw-passagedata pid="73" name=" jeudi-fete" tags="" position="4725,675" size="100,100">(set: $sante to $sante + 1)
-La soirée est vraiment cool. Les gens dansent, rient, boivent. On s’éclate. 
+[[Allons faire la fête! -&gt; jeudi-fete]]</tw-passagedata><tw-passagedata pid="70" name=" jeudi-fete" tags="" position="4725,675" size="100,100">(set: $sante to $sante + 1)(track: &#39;party&#39;, &#39;play&#39;)La soirée est vraiment cool. Les gens dansent, rient, boivent. On s’éclate. 
 
 - Lou : Hey! Josh a préparé son fameux cocktail : le Columbia Queen. Faut qu’tu l’goûtes!
 - Moi : Il est à quoi ?
@@ -536,13 +465,11 @@ La soirée est vraiment cool. Les gens dansent, rient, boivent. On s’éclate.
 - Moi : Hmm, je vais réfléchir…
 
 [[Boire le //Columbia Queen// -&gt; jeudi-soiree-columbia]]
-[[Ne pas boire le //Columbia Queen// -&gt; jeudi-soiree-pas-boire]]
-</tw-passagedata><tw-passagedata pid="74" name=" jeudi-soiree-columbia" tags="" position="4850,725" size="100,100">(set: $sante to $sante - 1)
-(set: $malade to (random:1, 3))
 
-(if: $malade is 3)[
-(set: $sante to 2)
-Ce cocktail est vraiment bon, mais il a un arrière-goût bizarre. 
+[[Ne pas boire le //Columbia Queen// -&gt; jeudi-soiree-pas-boire]]
+
+&lt;img src=&quot;./images/party.jpeg&quot;\&gt;
+</tw-passagedata><tw-passagedata pid="71" name=" jeudi-soiree-columbia" tags="" position="4850,725" size="100,100">(set: $sante to $sante - 1)(set: $malade to (random:1, 3))(track: &#39;party&#39;, &#39;play&#39;)(if: $malade is 3)[(set: $sante to 2)Ce cocktail est vraiment bon, mais il a un arrière-goût bizarre. 
 
 //5 minutes plus tard//
 
@@ -567,37 +494,34 @@ J’ai la tête qui tourne. Je me sens vraiment pas bien. Il faut que j’aille 
 On se rend aux urgences à 23h00 et un médecin me voit deux heures plus tard. Heureusement, ce n&#39;est rien de grave, mais je ne suis pas à la maison avant 4h.
 
 [[Le lendemain, ... -&gt; vendredi-reveil-hopital]]
-](else:)[
-Ce cocktail est vraiment bon, mais il a un arrière-goût bizarre. 
+](else:)[Ce cocktail est vraiment bon, mais il a un arrière-goût bizarre. 
 
 J&#39;ai un peu mal au ventre après l&#39;avoir bu, mais c&#39;est sûrement à cause de l&#39;alcool. C&#39;est peut-être le moment d&#39;arrêter de boire et de gentillement rentrer.
 
-(if: $transportFete is &quot;voiture&quot;)[
-C&#39;est vrai que j&#39;étais venu en voiture, j&#39;aurais pas dû boire autant. Je peux essayer de rentrer dans cet état, mais c&#39;est peut-être mieux si je dors ici. Il y a pas de chambres libres, donc faudrait dormir dans la voiture. 
+(if: $transportFete is &quot;voiture&quot;)[C&#39;est vrai que j&#39;étais venu en voiture, j&#39;aurais pas dû boire autant. Je peux essayer de rentrer dans cet état, mais c&#39;est peut-être mieux si je dors ici. Il y a pas de chambres libres, donc faudrait dormir dans la voiture. 
 
 (set: $choice1 to &quot;Rentrer à la maison (~30 min)&quot;)
-(event: when time &gt; 6000)[(replace: $choice1)[[[$choice1 -&gt; jeudi-retour-seul-voiture]]]] $choice1
+(event: when time &gt; 12000)[(replace: $choice1)[[[$choice1 -&gt; jeudi-retour-seul-voiture]]]] $choice1
+
 [[Dormir dans la voiture -&gt; vendredi-réveil-voiture]] 
-](else-if: $transportFete is &quot;bus&quot;)[
-C&#39;est bien trop tard, il y a plus de bus à ce moment. Lou m&#39;avait proposer de rentrer avec elle, peut-être qu&#39;elle peut me ramener ? Je crois que c&#39;est mon seul choix, il y a nulle part où dormir ici et il faudrait que je repasse par chez moi demain avant d&#39;aller à l&#39;examen.
+](else-if: $transportFete is &quot;bus&quot;)[C&#39;est bien trop tard, il y a plus de bus à ce moment. Lou m&#39;avait proposer de rentrer avec elle, peut-être qu&#39;elle peut me ramener ? Je crois que c&#39;est mon seul choix, il y a nulle part où dormir ici et il faudrait que je repasse par chez moi demain avant d&#39;aller à l&#39;examen.
 
 (set: $choice2 to &quot;Rentrer à la maison avec Lou (~30 min)&quot;)
-(event: when time &gt; 6000)[(replace: $choice2)[[[$choice2 -&gt; jeudi-rentrer-Lou]]]] $choice2
-](else-if: $transportFete is &quot;Lou&quot;)[
-Je vais dire à Lou que j&#39;aimerais rentrer, et elle a l&#39;air d&#39;être plutôt d&#39;accord. Elle aussi commence à fatiguer. 
+(event: when time &gt; 12000)[(replace: $choice2)[[[$choice2 -&gt; jeudi-rentrer-Lou]]]] $choice2
+](else-if: $transportFete is &quot;Lou&quot;)[Je vais dire à Lou que j&#39;aimerais rentrer, et elle a l&#39;air d&#39;être plutôt d&#39;accord. Elle aussi commence à fatiguer. 
 (set: $choice2 to &quot;Rentrer à la maison avec Lou (~30 min)&quot;)
-(event: when time &gt; 6000)[(replace: $choice2)[[[$choice2 -&gt; jeudi-rentrer-Lou]]]] $choice2
+(event: when time &gt; 12000)[(replace: $choice2)[[[$choice2 -&gt; jeudi-rentrer-Lou]]]] $choice2
 ]
-]</tw-passagedata><tw-passagedata pid="75" name=" jeudi-soiree-pas-boire" tags="" position="4850,600" size="100,100">(if: $transportFete is &quot;voiture&quot;)[
-Je suis venu en voiture, boire ce n&#39;est probablement pas la meilleure des idées. Et en plus, qui sait ce que Josh a mis dans son cocktail? Je le sens pas.
+]
+&lt;img src=&quot;./images/cocktail.jpeg&quot;\&gt;
+</tw-passagedata><tw-passagedata pid="72" name=" jeudi-soiree-pas-boire" tags="" position="4850,600" size="100,100">(if: $transportFete is &quot;voiture&quot;)[Je suis venu en voiture, boire ce n&#39;est probablement pas la meilleure des idées. Et en plus, qui sait ce que Josh a mis dans son cocktail? Je le sens pas.
 
 - Moi : Lou, j&#39;ai pas envie de boire ce soir, j&#39;ai la bagnole. Et en parlant de ça, il commence à se faire tard, je vais rentrer bientôt. T&#39;as besoin que je te ramène?
 - Lou : Responsable? Toi? L&#39;université t&#39;as bien changé! Merci pour la proposition, mais je vais encore rester un moment. Rentre bien!
 
 (set: $choice1 to &quot;Rentrer à la maison (~20 min)&quot;)
-(event: when time &gt; 4000)[(replace: $choice1)[[[$choice1 -&gt; vendredi-réveil]]]] $choice1
-](else-if: $transportFete is &quot;bus&quot;)[
-J’ai déjà assez bu. Et en plus qui sait ce que Josh a mis dans son cocktail, je le sens pas. 
+(event: when time &gt; 8000)[(replace: $choice1)[[[$choice1 -&gt; vendredi-réveil]]]] $choice1
+](else-if: $transportFete is &quot;bus&quot;)[J’ai déjà assez bu. Et en plus qui sait ce que Josh a mis dans son cocktail, je le sens pas. 
 
 - Moi : Lou, j’ai pas envie de boire le cocktail. D’ailleurs il se fait tard, je vais bientôt rentrer.
 - Lou : Ah! Déjà? Tu veux pas rester encore un moment?
@@ -612,9 +536,8 @@ Je regarde sur mon téléphone et Lou a raison. Le dernier bus est parti il y a 
 Une heure passe et je bois encore un peu. Après avoir fait le tour de la soirée 2 fois, on est enfin prêts à partir.
 
 (set: $choice2 to &quot;Rentrer à la maison avec Lou (~30 min)&quot;)
-(event: when time &gt; 6000)[(replace: $choice2)[[[$choice2 -&gt; jeudi-rentrer-Lou]]]] $choice2
-](else-if: $transportFete is &quot;Lou&quot;)[
-J’ai déjà assez bu. Et en plus qui sait ce que Josh a mis dans son cocktail, je le sens pas.
+(event: when time &gt; 12000)[(replace: $choice2)[[[$choice2 -&gt; jeudi-rentrer-Lou]]]] $choice2
+](else-if: $transportFete is &quot;Lou&quot;)[J’ai déjà assez bu. Et en plus qui sait ce que Josh a mis dans son cocktail, je le sens pas.
 
 - Moi : Lou, j’ai pas envie de boire le cocktail. D’ailleurs il se fait tard, faut que je rentre bientôt. T’es toujours ok pour me raccompagner chez moi ?
 - Moi : Pas de soucis, je te ramène à la maison.
@@ -622,33 +545,28 @@ J’ai déjà assez bu. Et en plus qui sait ce que Josh a mis dans son cocktail,
 Après avoir fait le tour de la soirée 2 fois, on est enfin prêts à partir.
 
 (set: $choice2 to &quot;Rentrer à la maison avec Lou (~30 min)&quot;)
-(event: when time &gt; 6000)[(replace: $choice2)[[[$choice2 -&gt; jeudi-rentrer-Lou]]]] $choice2
-]</tw-passagedata><tw-passagedata pid="76" name=" jeudi-rentrer-Lou" tags="" position="5025,525" size="100,100">(set: $mort to (random:1, 10))
+(event: when time &gt; 12000)[(replace: $choice2)[[[$choice2 -&gt; jeudi-rentrer-Lou]]]] $choice2
+]</tw-passagedata><tw-passagedata pid="73" name=" jeudi-rentrer-Lou" tags="" position="5000,525" size="100,100">(set: $mort to (random:1, 10))(if:$mort is 10)[(track: &#39;accident&#39;, &#39;play&#39;)On rentre dans la voiture de Lou. Toutefois, à travers le peu d&#39;esprit qui me reste, je sens quelque chose qui cloche. Lou n&#39;avais pas bu autant que moi, mais elle avait quand même pas mal bu non? Alors que j&#39;essaie de formuler ces pensées, je ressents un lourd choc et une violente douleur. La voiture a cessé d&#39;avancer. Heureusement, des passants ont vu la scène et appellent l&#39;ambulance.
 
-(if:$mort is 10)[
-On rentre dans la voiture de Lou. Toutefois, à travers le peu d&#39;esprit qui me reste, je sens quelque chose qui cloche. Lou n&#39;avais pas bu autant que moi, mais elle avait quand même pas mal bu non? Alors que j&#39;essaie de formuler ces pensées, je ressents un lourd choc et une violente douleur. La voiture a cessé d&#39;avancer. Heureusement, des passants ont vu la scène et appellent l&#39;ambulance.
 [[C&#39;est la fin -&gt; fin-hopital]]
-](else:)[
-On rentre dans la voiture de Lou. Toutefois, à travers le peu d&#39;esprit qui me reste, je sens quelque chose qui cloche. Lou n&#39;avais pas bu autant que moi, mais elle avait quand même pas mal bu non? Heureusement, la rentrée s&#39;est passé sans trop de problèmes, mais je devrais lui en parler demain, un jour ça pourrait mal se passer.
-[[Rentrer à la maison -&gt; vendredi-réveil]]
-]</tw-passagedata><tw-passagedata pid="77" name=" jeudi-retour-seul-voiture" tags="" position="4975,850" size="100,100">(set: $mort to (random:1, 5))
+](else:)[(track: &#39;voiture&#39;, &#39;play&#39;)On rentre dans la voiture de Lou. Toutefois, à travers le peu d&#39;esprit qui me reste, je sens quelque chose qui cloche. Lou n&#39;avais pas bu autant que moi, mais elle avait quand même pas mal bu non? Heureusement, la rentrée s&#39;est passé sans trop de problèmes, mais je devrais lui en parler demain, un jour ça pourrait mal se passer.
 
-(if:$mort is 5)[
-Je ne suis clairement pas en état de prendre la voiture. Je le sais, mais mon esprit est trop flou pour que j&#39;en ai pleinement conscience. Alors que j&#39;essaie de formuler ces pensées, je ressents un lourd choc et une violente douleur. La voiture a cessé d&#39;avancer. Heureusement, des passants ont vu la scène et appellent l&#39;ambulance.
-[[C&#39;est la fin -&gt; fin-hopital]]
-](else:)[
-Je ne suis clairement pas en état de prendre la voiture. Je le sais, mais mon esprit est trop flou pour que j&#39;en ai plainement conscience. Heureusement, la rentrée s&#39;est passé sans trop de problèmes, mais c&#39;est la dernière fois que je me mets autant en danger..
 [[Rentrer à la maison -&gt; vendredi-réveil]]
-]</tw-passagedata><tw-passagedata pid="78" name=" vendredi-réveil-voiture" tags="" position="5200,675" size="100,100">J&#39;ai bien fait de dormir ici, je n&#39;étais clairement pas en état de rentrer. Au moins, bien que la nuit n&#39;aie pas été confortable, j&#39;ai pu me reposer un peu. Temps de rentrer chercher mes affaires, prendre un douche et manger quelque chose avant l&#39;examen!
+]</tw-passagedata><tw-passagedata pid="74" name=" jeudi-retour-seul-voiture" tags="" position="5000,850" size="100,100">(set: $mort to (random:1, 5))(if:$mort is 5)[(track: &#39;accident&#39;, &#39;play&#39;)Je ne suis clairement pas en état de prendre la voiture. Je le sais, mais mon esprit est trop flou pour que j&#39;en ai pleinement conscience. Alors que j&#39;essaie de formuler ces pensées, je ressents un lourd choc et une violente douleur. La voiture a cessé d&#39;avancer. Heureusement, des passants ont vu la scène et appellent l&#39;ambulance.
+
+[[C&#39;est la fin -&gt; fin-hopital]]
+](else:)[(track: &#39;voiture&#39;, &#39;play&#39;)Je ne suis clairement pas en état de prendre la voiture. Je le sais, mais mon esprit est trop flou pour que j&#39;en ai plainement conscience. Heureusement, la rentrée s&#39;est passé sans trop de problèmes, mais c&#39;est la dernière fois que je me mets autant en danger..
+
+[[Rentrer à la maison -&gt; vendredi-réveil]]
+]</tw-passagedata><tw-passagedata pid="75" name=" vendredi-réveil-voiture" tags="" position="5200,675" size="100,100">(track: &#39;alarme&#39;, &#39;play&#39;)J&#39;ai bien fait de dormir ici, je n&#39;étais clairement pas en état de rentrer. Au moins, bien que la nuit n&#39;aie pas été confortable, j&#39;ai pu me reposer un peu. Temps de rentrer chercher mes affaires, prendre un douche et manger quelque chose avant l&#39;examen!
 
 (set: $choice1 to &quot;Renter à la maison (~20 min)&quot;)
-(event: when time &gt; 4000)[(replace: $choice1)[[[$choice1 -&gt; vendredi-maison]]]] $choice1</tw-passagedata><tw-passagedata pid="79" name=" vendredi-reveil-hopital" tags="" position="5200,550" size="100,100">(set: $soiree to &quot;mal&quot;)
-Aujourd&#39;hui, jour d&#39;examen! Après la grosse épreuve de hier soir, j’ai très mal dormi. Je ne suis pas à 100% de ma forme. Le stress monte. Je n’aurais jamais dû accepter cet horrible cocktail. Je vais mettre toute l’énergie qui me reste dans l’examen.
+(event: when time &gt; 8000)[(replace: $choice1)[[[$choice1 -&gt; vendredi-maison]]]] $choice1</tw-passagedata><tw-passagedata pid="76" name=" vendredi-reveil-hopital" tags="" position="5200,550" size="100,100">(track: &#39;alarme&#39;, &#39;play&#39;)(set: $soiree to &quot;mal&quot;)Aujourd&#39;hui, jour d&#39;examen! Après la grosse épreuve de hier soir, j’ai très mal dormi. Je ne suis pas à 100% de ma forme. Le stress monte. Je n’aurais jamais dû accepter cet horrible cocktail. Je vais mettre toute l’énergie qui me reste dans l’examen.
 
 Je n&#39;ai pas le courage ni la force de prendre la voiture. Faudra prendre le bus.
 
 (set: $choice1 to &quot;Prendre le bus (~60 min)&quot;)
-(event: when time &gt; 12000)[(replace: $choice1)[[[$choice1 -&gt; vendredi-bus]]]] $choice1</tw-passagedata><tw-passagedata pid="80" name=" vendredi-maison" tags="" position="5375,650" size="100,100">J&#39;arrive le lendemain à la maison. J&#39;ai mal au dos, mais je suis fier de ne pas avoir pris la voiture hier soir. Je n&#39;étais clairement pas en état. Et comme ça j&#39;ai pu un peu dormir aussi. Je suis plutôt en forme.
+(event: when time &gt; 24000)[(replace: $choice1)[[[$choice1 -&gt; vendredi-bus]]]] $choice1</tw-passagedata><tw-passagedata pid="77" name=" vendredi-maison" tags="" position="5375,650" size="100,100">(track: &#39;voiture&#39;, &#39;play&#39;)J&#39;arrive le lendemain à la maison. J&#39;ai mal au dos, mais je suis fier de ne pas avoir pris la voiture hier soir. Je n&#39;étais clairement pas en état. Et comme ça j&#39;ai pu un peu dormir aussi. Je suis plutôt en forme.
 
 Toutefois, je stresse pour l&#39;examen, alors que pourtant j&#39;ai beaucoup révisé. J’ai le coeur qui palpite. Je vais prendre une grande respiration. 
 
@@ -658,133 +576,155 @@ Toutefois, je stresse pour l&#39;examen, alors que pourtant j&#39;ai beaucoup r�
 Pour aller sur le campus je peux toujours prendre le bus ou la voiture:
 
 (set: $choice1 to &quot;Prendre le bus (~60 min)&quot;)
-(event: when time &gt; 12000)[(replace: $choice1)[[[$choice1 -&gt; vendredi-bus]]]] $choice1
-
+(event: when time &gt; 24000)[(replace: $choice1)[[[$choice1 -&gt; vendredi-bus]]]] $choice1
 (set: $choice2 to &quot;Prendre la voiture (~30 min)&quot;)
-(event: when time &gt; 6000)[(replace: $choice2)[[[$choice2 -&gt; vendredi-voiture]]]]$choice2</tw-passagedata><tw-passagedata pid="81" name=" jeudi-soiree-alex-bus" tags="" position="4575,150" size="100,100">(set: $ecologie to $ecologie + 1)
+(event: when time &gt; 12000)[(replace: $choice2)[[[$choice2 -&gt; vendredi-voiture]]]]$choice2</tw-passagedata><tw-passagedata pid="78" name=" jeudi-soiree-alex-bus" tags="" position="4575,150" size="100,100">(set: $ecologie to $ecologie + 1)(track: &#39;bus&#39;, &#39;play&#39;)Je prends les transports et j&#39;arrive à la soirée un peu moins d&#39;une heure plus tard. 
 
-Je prends les transports et j&#39;arrive à la soirée un peu moins d&#39;une heure plus tard. 
-
-(set: $transportFete to &quot;bus&quot;)
-[[Allons faire la fête! -&gt; jeudi-fete-alex]]</tw-passagedata><tw-passagedata pid="82" name=" jeudi-soiree-alex-voiture" tags="" position="4575,275" size="100,100">(set: $ecologie to $ecologie - 1)
-
-Je préfére pouvoir partir quand je veux. Toutefois, ça voudra dire que je ne pourrais pas boire. C&#39;est peut-être pour le mieux, j&#39;ai un examen demain de toute manière.
+(set: $transportFete to &quot;bus&quot;)[[Allons faire la fête! -&gt; jeudi-fete-alex]]</tw-passagedata><tw-passagedata pid="79" name=" jeudi-soiree-alex-voiture" tags="" position="4575,275" size="100,100">(set: $ecologie to $ecologie - 1)(track: &#39;voiture&#39;, &#39;play&#39;)Je préfére pouvoir partir quand je veux. Toutefois, ça voudra dire que je ne pourrais pas boire. C&#39;est peut-être pour le mieux, j&#39;ai un examen demain de toute manière.
 (set: $transportFete to &quot;voiture&quot;)
-[[Allons faire la fête! -&gt; jeudi-fete-alex]]</tw-passagedata><tw-passagedata pid="83" name=" jeudi-fete-alex" tags="" position="4800,225" size="100,100">(set: $sociabilite to $sociabilite + 1)
-(set: $sante to $sante + 1)
-(if: $sociabilite &gt;= 5)[
-(set:$alex to true)
-La soirée se passe hyper bien. Alex m’a pris à part, dans le jardin derrière la maison. 
+[[Allons faire la fête! -&gt; jeudi-fete-alex]]</tw-passagedata><tw-passagedata pid="80" name=" jeudi-fete-alex" tags="" position="4725,225" size="100,100">(set: $sociabilite to $sociabilite + 1)(set: $sante to $sante + 1)(if: $sociabilite &gt;= 5)[(track: &#39;romance&#39;, &#39;play&#39;)(set:$alex to true)La soirée se passe hyper bien. Alex m’a pris à part, dans le jardin derrière la maison. 
 
 - Alex : Je me sens bien avec toi.
 - Moi : Moi aussi.
 
 On s’est embrassé. Je suis heureux et me sens apaisé. Je vais à l’examen avec la tête moins lourde.
 
-Cette soirée était vraiment magique, mais je dois pas oublier mon examen de demain. Ainsi, il faut malheureusement que je rentre.
-](else:)[
-La soirée s&#39;est bien passée, mais je n&#39;ai pas pu avoir un moment seul à seul avec Alex. Mais bon, je suis déjà content qu&#39;il ait pensé à m&#39;inviter à la soirée ! On aura du temps pour nous une autre fois.
+Cette soirée était vraiment magique, mais je dois pas oublier mon examen de demain. Ainsi, il faut malheureusement que je rentre.&lt;script&gt;
+img = document.createElement(&quot;img&quot;)
+img.src = &quot;./images/alex_fin.jpeg&quot;
+passage = document.getElementsByTagName(&quot;tw-passage&quot;) 
+passage[0].appendChild(img)
+&lt;/script&gt;
+](else:)[(track: &#39;party&#39;, &#39;play&#39;)La soirée s&#39;est bien passée, mais je n&#39;ai pas pu avoir un moment seul à seul avec Alex. Mais bon, je suis déjà content qu&#39;il ait pensé à m&#39;inviter à la soirée ! On aura du temps pour nous une autre fois.
 
-Il se fait tard, c&#39;est peut-être le moment de rentrer.
+Il se fait tard, c&#39;est peut-être le moment de rentrer.&lt;script&gt;
+img = document.createElement(&quot;img&quot;)
+img.src = &quot;./images/party.jpeg&quot;
+passage = document.getElementsByTagName(&quot;tw-passage&quot;) 
+passage[0].appendChild(img)
+&lt;/script&gt;
 ]
-(if: $transportFete is &quot;voiture&quot;)[
-J&#39;étais venu en voiture, donc j&#39;ai évité de beaucoup boire. Je peux essayer de rentrer dans cet état, mais c&#39;est peut-être mieux si je dors ici. Il y a pas de chambres libres, donc faudrait dormir dans la voiture. 
+(if: $transportFete is &quot;voiture&quot;)[J&#39;étais venu en voiture, donc j&#39;ai évité de beaucoup boire. Je peux essayer de rentrer dans cet état, mais c&#39;est peut-être mieux si je dors ici. Il y a pas de chambres libres, donc faudrait dormir dans la voiture. 
 
 (set: $choice1 to &quot;Rentrer à la maison (~30 min)&quot;)
-(event: when time &gt; 6000)[(replace: $choice1)[[[$choice1 -&gt; jeudi-retour-seul-voiture]]]] $choice1
+(event: when time &gt; 12000)[(replace: $choice1)[[[$choice1 -&gt; jeudi-retour-seul-voiture]]]] $choice1
+
 [[Dormir dans la voiture -&gt; vendredi-réveil-voiture]] 
-](else:)[
-C&#39;est bien trop tard, il y a plus de bus à ce moment. Peut-être que quelqu&#39;un pense rentrer maintenant et pourrait me ramener ? Je crois que c&#39;est mon seul choix, il y a nulle part où dormir ici et il faudrait que je repasse par chez moi demain avant d&#39;aller à l&#39;examen. Heureusement, il y a quelqu&#39;un qui est d&#39;accord de m&#39;amener. Il a l&#39;air fatigué, mais ça devrait le faire
-
+](else:)[C&#39;est bien trop tard, il y a plus de bus à ce moment. Peut-être que quelqu&#39;un pense rentrer maintenant et pourrait me ramener ? Je crois que c&#39;est mon seul choix, il y a nulle part où dormir ici et il faudrait que je repasse par chez moi demain avant d&#39;aller à l&#39;examen. Heureusement, il y a quelqu&#39;un qui est d&#39;accord de m&#39;amener. Il a l&#39;air fatigué, mais ça devrait le faire
 (set: $choice2 to &quot;Rentrer à la maison avec la personne (~30 min)&quot;)
-(event: when time &gt; 6000)[(replace: $choice2)[[[$choice2 -&gt; jeudi-rentrer-covoiture]]]] $choice2
-]</tw-passagedata><tw-passagedata pid="84" name=" jeudi-rentrer-covoiture" tags="" position="4925,150" size="100,100">(set: $mort to (random:1, 10))
+(event: when time &gt; 12000)[(replace: $choice2)[[[$choice2 -&gt; jeudi-rentrer-covoiture]]]] $choice2
+]</tw-passagedata><tw-passagedata pid="81" name=" jeudi-rentrer-covoiture" tags="" position="5000,150" size="100,100">(set: $mort to (random:1, 10))(if:$mort is 10)[(track: &#39;accident&#39;, &#39;play&#39;)On rentre dans sa voiture. Toutefois, à travers le peu d&#39;esprit qui me reste, je sens quelque chose qui cloche. Il me semblait que la personne était juste fatiguée, mais peut-être qu&#39;elle avait aussi bu? Alors que j&#39;essaie de formuler ces pensées, je ressents un lourd choc et une violente douleur. La voiture a cessé d&#39;avancer. Heureusement, des passants ont vu la scène et appellent l&#39;ambulance.
 
-(if:$mort is 10)[
-On rentre dans sa voiture. Toutefois, à travers le peu d&#39;esprit qui me reste, je sens quelque chose qui cloche. Il me semblait que la personne était juste fatiguée, mais peut-être qu&#39;elle avait aussi bu? Alors que j&#39;essaie de formuler ces pensées, je ressents un lourd choc et une violente douleur. La voiture a cessé d&#39;avancer. Heureusement, des passants ont vu la scène et appellent l&#39;ambulance.
 [[C&#39;est la fin -&gt; fin-hopital]]
-]
-(else:)[
-On rentre dans sa voiture. La personne était plaisante, et on discute un peu pour qu&#39;elle reste réveillée. On se reverra probablement jamais, mais c&#39;était un voyage sympathique et heureusement que la personne n&#39;avait pas bu.
+](else:)[(track: &#39;voiture&#39;, &#39;play&#39;)On rentre dans sa voiture. La personne était plaisante, et on discute un peu pour qu&#39;elle reste réveillée. On se reverra probablement jamais, mais c&#39;était un voyage sympathique et heureusement que la personne n&#39;avait pas bu.
+
 [[Rentrer à la maison -&gt; vendredi-réveil]]
-]</tw-passagedata><tw-passagedata pid="85" name=" vendredi-bus" tags="" position="5550,425" size="100,100">(set: $stress to (random:1, 3))
-
-(if: $sante - $stress &lt; 3)[
-(set: $sante to $sante - 1)
-Le trajet est interminable. Le stress me ronge et j&#39;ai l&#39;impression que le bus n&#39;avance pas. Quand j&#39;arrive enfin au terminal afin de prendre la correspondance, l&#39;autre bus est en retard. 
+]</tw-passagedata><tw-passagedata pid="82" name=" vendredi-bus" tags="" position="5550,425" size="100,100">(set: $stress to (random:1, 3))(track: &#39;bus&#39;, &#39;play&#39;)(if: $sante - $stress &lt; 3)[(set: $sante to $sante - 1)Le trajet est interminable. Le stress me ronge et j&#39;ai l&#39;impression que le bus n&#39;avance pas. Quand j&#39;arrive enfin au terminal afin de prendre la correspondance, l&#39;autre bus est en retard. 
 
 J&#39;arrive enfin sur le campus. Il manque pas beaucoup de temps avant l&#39;examen. Je vais le faire!
 
 [[Passer l&#39;examen -&gt; vendredi-examen]]
-](else:)[
-(set: $sante to $sante + 1)
-Le trajet est long, mais je peux me détendre en écoutant de la musique. Je pense que j&#39;ai bien fait de prendre les bus, j&#39;aurais pu me stresser encore plus en prenant la voiture
+](else:)[(set: $sante to $sante + 1)Le trajet est long, mais je peux me détendre en écoutant de la musique. Je pense que j&#39;ai bien fait de prendre les bus, j&#39;aurais pu me stresser encore plus en prenant la voiture
 
 J&#39;arrive enfin sur le campus. Il manque pas beaucoup de temps avant l&#39;examen. Je vais le faire!
 
 [[Passer l&#39;examen -&gt; vendredi-examen]]
-]</tw-passagedata><tw-passagedata pid="86" name=" vendredi-voiture" tags="" position="5550,575" size="100,100">(set: $stress to (random:1, 3))
-
-(if: $sante - $stress &lt; 5)[
-(set: $sante to $sante - 1)
-Il fallait que ce soit le jour où je tombe sur les bouchons. J&#39;ai l&#39;impression que la file n&#39;avance pas et je sens le stress monter. Quand les voitures commencent enfin à diminuer, je me prends les feux rouges. Il va falloir que je me calme un peu avant l&#39;examen.
+]</tw-passagedata><tw-passagedata pid="83" name=" vendredi-voiture" tags="" position="5550,575" size="100,100">(set: $stress to (random:1, 3))(track: &#39;voiture&#39;, &#39;play&#39;)(if: $sante - $stress &lt; 5)[(set: $sante to $sante - 1)Il fallait que ce soit le jour où je tombe sur les bouchons. J&#39;ai l&#39;impression que la file n&#39;avance pas et je sens le stress monter. Quand les voitures commencent enfin à diminuer, je me prends les feux rouges. Il va falloir que je me calme un peu avant l&#39;examen.
 
 J&#39;arrive enfin sur le campus. Il manque pas beaucoup de temps. Je vais le faire!
 
 [[Passer l&#39;examen -&gt; vendredi-examen]]
-](else:)[
-(set: $sante to $sante + 1)
-Je mets un peu de musique et il y a pas grand monde sur la route. Que demander de plus? Ce trajet me fait du bien et je me détends un peu avant l&#39;examen.
+](else:)[(set: $sante to $sante + 1)Je mets un peu de musique et il y a pas grand monde sur la route. Que demander de plus? Ce trajet me fait du bien et je me détends un peu avant l&#39;examen.
 
 J&#39;arrive enfin sur le campus. Il manque pas beaucoup de temps. Je vais le faire!
 
 [[Passer l&#39;examen -&gt; vendredi-examen]]
 ]
-</tw-passagedata><tw-passagedata pid="87" name=" vendredi-examen" tags="" position="5750,500" size="100,100">17h00: fin de l’examen.
+</tw-passagedata><tw-passagedata pid="84" name=" vendredi-examen" tags="" position="5750,500" size="100,100">(track: &#39;examen&#39;, &#39;play&#39;)17h00: fin de l’examen.
 
-(if: $soiree is &quot;Alex&quot;)[
-J’ai l’impression que l’examen s’est bien passé, en tout cas j’ai la pêche ! Mais peut-être que c’est parce que je pense à Alex… enfin bon, c’est fini maintenant. C’est l’heure de l’été !
-](else-if: $soiree is &quot;mal&quot;)[
-Bon on verra bien. J&#39;étais pas en état. Je vais juste rentrer chez moi, et dormir.
-](else:)[
-J’ai tout donné, normalement ça doit bien se passer. Le stress diminue. L’été est là, les beaux jours arrivent.
+(if: $alex is true)[J’ai l’impression que l’examen s’est bien passé, en tout cas j’ai la pêche ! Mais peut-être que c’est parce que je pense à Alex… enfin bon, c’est fini maintenant. C’est l’heure de l’été !
+](else-if: $soiree is &quot;mal&quot;)[Bon on verra bien. J&#39;étais pas en état. Je vais juste rentrer chez moi, et dormir.
+](else:)[J’ai tout donné, normalement ça doit bien se passer. Le stress diminue. L’été est là, les beaux jours arrivent.
 ]
 
-[[Recevoir les résultats -&gt; resultats]]</tw-passagedata><tw-passagedata pid="88" name=" resultats" tags="" position="5925,500" size="100,100">Un mois plus tard, les résultats sont enfin disponibles sur le site.
-(set: $revision to 5)
-(set: $sante to 7)
-
-(if: $revision + ($sante-4)/4 &gt; 6)[
-(set: $examen to true)
-Trop bien ! Je suis hyper content.e. J’ai bossé et ça a porté ces fruits. Une chose de faite ! Bravo !
-](else:)[
-(set: $examen to false)
-AH… bon bah… je… ferai mieux aux rattrapages… Faut vraiment que j’apprenne à m’organiser… Dommage…
-]
-
-[[Fin -&gt; end]]</tw-passagedata><tw-passagedata pid="89" name=" situation-initiale-2" tags="" position="175,300" size="100,100">Hello ! Je suis un étudiant de 21 ans à l’Université de //Green Academics// au Canada et j’étudie les sciences de l’environnement . J’habite seul, à 55 min de l’uni en transports et si je prends le gros Pick-up, c’est en moyenne 30 min de trajet (même si pratique car plus rapide, ce type de voiture pollue beaucoup).
+[[Recevoir les résultats -&gt; resultats]]</tw-passagedata><tw-passagedata pid="85" name=" resultats" tags="" position="5925,500" size="100,100">Un mois plus tard, les résultats sont enfin disponibles sur le site.(set: $passer to $revision + ($sante - 1)/4)(if: $passer &gt; 4)[(set: $examen to true)(track: &#39;game-success&#39;, &#39;play&#39;)Trop bien ! Je suis hyper content.e. J’ai bossé et ça a porté ces fruits. Une chose de faite ! Bravo !
+&lt;script&gt;
+img = document.createElement(&quot;img&quot;)
+img.src = &quot;./images/game_success.jpeg&quot;
+passage = document.getElementsByTagName(&quot;tw-passage&quot;) 
+passage[0].appendChild(img)
+&lt;/script&gt;
+](else:)[(set: $examen to false)(track: &#39;game-over&#39;, &#39;play&#39;)AH… bon bah… je… ferai mieux aux rattrapages… Faut vraiment que j’apprenne à m’organiser… Dommage…
+&lt;script&gt;
+img = document.createElement(&quot;img&quot;)
+img.src = &quot;./images/game_over.jpeg&quot;
+passage = document.getElementsByTagName(&quot;tw-passage&quot;) 
+passage[0].appendChild(img)
+&lt;/script&gt;
+][[Fin -&gt; end]]</tw-passagedata><tw-passagedata pid="86" name=" situation-initiale-2" tags="" position="175,300" size="100,100">Hello ! Je suis un étudiant de 21 ans à l’Université de //Green Academics// au Canada et j’étudie les sciences de l’environnement . J’habite seul, à 55 min de l’uni en transports et si je prends le gros Pick-up, c’est en moyenne 30 min de trajet (même si pratique car plus rapide, ce type de voiture pollue beaucoup).
 Comme on est à la fin de l’année, les examens approchent et le stress monte. Justement, j’ai un examen hyper important ce vendredi que je dois à tout prix réussir pour passer en deuxième année… Mais attends, vu qu’on est lundi, ça veut dire qu’il ne me reste plus que quelques jours pour réviser ! Va falloir que je m’organise pour préparer au mieux cette épreuve… Entre les révisions, la maison, et les activités (santé et santé mentale/sociabilité), ça va être compliqué… mais je peux le faire ! 
 Bon allez, il faut que je dorme, demain c’est lundi et je dois bien commencer la semaine.
 
-[[Aller dormir -&gt;lundi-réveil]]</tw-passagedata><tw-passagedata pid="90" name=" end" tags="" position="6100,500" size="100,100">Voici les résultats du jeu:
+[[Aller dormir -&gt;lundi-réveil]]</tw-passagedata><tw-passagedata pid="87" name=" end" tags="" position="6100,500" size="100,100">Voici les résultats du jeu:
+
 
 - Ecologie : $ecologie
 (if:$ecologie &lt; 4)[Il faut faire des efforts au niveau écologique, c&#39;est pas très bien de prendre autant la voiture.](else-if: $ecologie &lt; 7)[Des efforts ont été faits, on peut pas demander beaucoup plus!](else:)[Wow! T&#39;es un champion de l&#39;écologie!]
 
 - Santé: $sante
-(if:$sante &lt; 4)[Il faut savoir prendre des pauses parfois. Les études ce n&#39;est pas tout! Il faut prendre soin de soi-même](else-if:$sante &lt; 7)[Comme-ci comme-ça. On est en forme, mais on pourrait toujours aller mieux!](else:)[Tu as fini le jeu en pleine forme! Aller bien c&#39;est le plus important!]
+(if:$sante &lt; 5)[Il faut savoir prendre des pauses parfois. Les études ce n&#39;est pas tout! Il faut prendre soin de soi-même](else-if:$sante &lt; 7)[Comme-ci comme-ça. On est en forme, mais on pourrait toujours aller mieux!](else:)[Tu as fini le jeu en pleine forme! Aller bien c&#39;est le plus important!]
 
 - Alex: (if: $alex is true)[Tu as pu développer une relation avec Alex!](else:)[Malheureusement, Alex n&#39;es toujours que ton crush]
 
-- Examen : $revision
-(if:$revision &lt; 5)[Tu n&#39;as vraiment pas beaucoup étudié. C&#39;est pas comme ça que tu vas passer l&#39;année, ...](else-if: $revision &lt; 7)[(if:$examen is true)[Tu as travaillé assez pour passer. Bien joué!](else:)[Bien que t&#39;aies travaillé assez pour passer, ta santé était trop faible pour être à l&#39;aise à l&#39;examen. Il faut aussi savoir prendre soin de soi-même!]](else:)[Facile les études pour toi! Bien joué!]
+- Examen : $passer
+(if:$passer &lt; 4)[Tu n&#39;as vraiment pas beaucoup étudié. C&#39;est pas comme ça que tu vas passer l&#39;année, ...](else-if: $revision is 4)[(if:$examen is true)[Tu as travaillé assez pour passer. Bien joué!](else:)[Bien que t&#39;aies travaillé assez pour passer, ta santé était trop faible pour être à l&#39;aise à l&#39;examen. Il faut aussi savoir prendre soin de soi-même!]](else:)[Facile les études pour toi! Bien joué!]
+
 
 
 
 Merci d&#39;avoir joué.
 
 
-[[Rejouer -&gt;Situation initiale]]</tw-passagedata></tw-storydata>
+[[Rejouer -&gt;Start]]</tw-passagedata><tw-passagedata pid="88" name="hal.tracks" tags="" position="150,50" size="100,100">alarme: ./audio/alarm.mp3
+park: ./audio/park.mp3
+revision: ./audio/revision.mp3
+bus: ./audio/bus.mp3
+cafe: ./audio/cafe.mp3
+cuisiner: ./audio/cuisiner.mp3
+examen: ./audio/exam.mp3
+game-over: ./audio/game-over.mp3
+game-success: ./audio/game-success.mp3
+party: ./audio/party.mp3
+romance: ./audio/romance.mp3
+taxi: ./audio/taxi.mp3
+velo: ./audio/velo.mp3
+voiture: ./audio/voiture.mp3
+marcher: ./audio/marcher.mp3
+cours: ./audio/cours.mp3
+accident: ./audio/accident.mp3</tw-passagedata><tw-passagedata pid="89" name="Start" tags="" position="50,425" size="100,100">&lt;h1&gt;La Dernière Ligne Droite&lt;/h1&gt;
+
+&lt;h3&gt;Une fiction interactive réalisée par 
+Clara Montoya et André da Glória Santiago&lt;/h3&gt;
+
+
+&lt;style&gt;
+tw-story{
+background-image: url(&quot;./images/start.jpeg&quot;);
+background-repeat: no-repeat;
+width: max-content;
+background-position: center;
+}
+body{
+background-color: black;
+}
+tw-passage{
+background: rgba(0,0,0,0.5);
+width: inherit;
+text-align: center;
+}
+&lt;/style&gt;
+
+[[Commencer -&gt;Situation initiale]] </tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
